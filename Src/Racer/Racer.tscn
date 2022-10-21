@@ -61,7 +61,7 @@ script = ExtResource( 1 )
 polygon = PoolVector2Array( 40, 0, -24, -24, -24, 24 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 40, 0, -24, -24, -24, 24 )
+polygon = PoolVector2Array( 32, -2, -18, -20, -22, -18, -22, 18, -18, 20, 32, 2 )
 
 [node name="ThrustingParticles" type="Particles2D" parent="."]
 position = Vector2( -26, 0 )
