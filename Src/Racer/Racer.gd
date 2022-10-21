@@ -3,7 +3,9 @@ extends RigidBody2D
 class_name Racer
 
 
-var thrusting := false
+onready var thrusting_particles := $ThrustingParticles
+
+var thrusting := false setget set_thrusting
 var turning := 0
 var braking := false
 var boosting := false
@@ -41,3 +43,8 @@ func boost() -> void:
 	boosting = true
 	yield(get_tree().create_timer(1.5), "timeout")
 	boosting = false
+
+
+func set_thrusting(value: bool) -> void:
+	thrusting = value
+	thrusting_particles.emitting = thrusting
