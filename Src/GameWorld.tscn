@@ -1,3 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/game_world.tres" type="Environment" id=1]
 
 [node name="GameWorld" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
