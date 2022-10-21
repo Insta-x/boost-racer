@@ -78,3 +78,9 @@ amount = 300
 local_coords = false
 process_material = SubResource( 4 )
 texture = ExtResource( 2 )
+
+[node name="DashCooldownTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="DashCooldownTimer" to="." method="_on_DashCooldownTimer_timeout"]
