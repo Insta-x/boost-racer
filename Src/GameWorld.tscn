@@ -1,8 +1,88 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/game_world.tres" type="Environment" id=1]
+[ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
 
 [node name="GameWorld" type="Node2D"]
+
+[node name="OuterWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
+polygon = PoolVector2Array( 0, 5120, -64, 5120, -64, -576, 9024, -576, 9024, 5184, -64, 5184, 0, 5120, 4544, 5120, 5056, 4608, 5312, 4864, 8064, 4864, 8512, 4416, 8960, 4416, 8960, 1344, 7744, 512, 7744, -64, 6400, -64, 6400, 512, 4160, 512, 4160, -256, 3136, -256, 2496, 384, 1792, 384, 1792, -256, 1408, -512, 256, -512, 0, -256 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PoolVector2Array( 320, 1344, 320, -128, 448, -256, 1344, -256, 1472, -128, 1472, 0, 1344, -128, 1088, -128, 1088, 1152, 512, 1152 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall2"]
+polygon = PoolVector2Array( 320, 1536, 512, 1344, 1088, 1344, 1280, 1536, 1280, 2304, 1088, 2496, 512, 2496, 320, 2304 )
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall3"]
+polygon = PoolVector2Array( 1280, 64, 1344, 64, 1472, 192, 1472, 704, 2688, 704, 3200, 64, 3840, 64, 3840, 1024, 1728, 1024, 1600, 1024, 1600, 1536, 1728, 1536, 1728, 1856, 1472, 2112, 1472, 1408, 1280, 1216 )
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
+polygon = PoolVector2Array( 320, 4672, 320, 2496, 512, 2688, 1088, 2688, 2240, 3968, 1088, 3968 )
+
+[node name="Wall5" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall5"]
+polygon = PoolVector2Array( 512, 4800, 1088, 4224, 2240, 4224, 2240, 4608, 2048, 4800 )
+
+[node name="Wall6" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall6"]
+polygon = PoolVector2Array( 2304, 4800, 2496, 4608, 2496, 4224, 4608, 4224, 4864, 4480, 4864, 4544, 4608, 4800, 2496, 4800 )
+
+[node name="Wall7" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall7"]
+polygon = PoolVector2Array( 2240, 3776, 1280, 2688, 1472, 2496, 3776, 2496, 3776, 3136, 2240, 3136 )
+
+[node name="Wall8" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall8"]
+polygon = PoolVector2Array( 2496, 3968, 2496, 3328, 4032, 3328, 4032, 2496, 4608, 2496, 4608, 3968 )
+
+[node name="Wall9" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall9"]
+polygon = PoolVector2Array( 4736, 2496, 4736, 3200, 5312, 3200, 5312, 2496 )
+
+[node name="Wall10" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall10"]
+polygon = PoolVector2Array( 5504, 2496, 5504, 3200, 6144, 3200, 6144, 2496 )
+
+[node name="Wall11" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall11"]
+polygon = PoolVector2Array( 4736, 3392, 4736, 3968, 5248, 3968, 5248, 3456, 6656, 3456, 6656, 3392, 6272, 3392 )
+
+[node name="Wall12" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall12"]
+polygon = PoolVector2Array( 4864, 4224, 5056, 4416, 5248, 4224 )
+
+[node name="Wall13" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall13"]
+polygon = PoolVector2Array( 5248, 4544, 5248, 4480, 5504, 4224, 6400, 4224, 6400, 4672, 5376, 4672 )
+
+[node name="PlayerRacer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 5056 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerRacer"]
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
