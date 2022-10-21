@@ -6,6 +6,7 @@ class_name Racer
 onready var thrusting_particles := $ThrustingParticles
 onready var boosting_particles := $BoostingParticles
 onready var dash_cooldown_timer := $DashCooldownTimer
+onready var boost_charge_particles := $BoostChargeParticles
 
 var thrusting := false setget set_thrusting
 var turning := 0
@@ -50,6 +51,7 @@ func boost() -> void:
 	self.boosting = true
 	yield(get_tree().create_timer(1.5), "timeout")
 	self.boosting = false
+	boost_charge_particles.emitting = true
 	
 	dash_cooldown_timer.start()
 
@@ -66,3 +68,4 @@ func set_boosting(value: bool) -> void:
 
 func _on_DashCooldownTimer_timeout() -> void:
 	can_boost = true
+	boost_charge_particles.emitting = false
