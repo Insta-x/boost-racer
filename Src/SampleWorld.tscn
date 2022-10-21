@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=1]
+
+[node name="SampleWorld" type="Node2D"]
+
+[node name="OuterWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
+polygon = PoolVector2Array( 0, 0, 0, 1792, -64, 1792, -64, -64, 2432, -64, 2432, 1792, 0, 1792, 0, 1728, 2368, 1728, 2368, 0 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PoolVector2Array( 192, 192, 1599.72, 192, 1792, 448, 1792, 1280, 2176, 1536, 192, 1536 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall2"]
+position = Vector2( 320, 320 )
+polygon = PoolVector2Array( 1856, -128, 1472, -128, 1856, 320 )
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall3"]
+position = Vector2( 320, 320 )
+polygon = PoolVector2Array( 1856, 512, 1856, 1088, 1600, 896, 1600, 256 )
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
+position = Vector2( 320, 320 )
+
+[node name="PlayerRacer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 64 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerRacer"]
+current = true
