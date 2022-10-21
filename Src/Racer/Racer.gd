@@ -3,10 +3,13 @@ extends RigidBody2D
 class_name Racer
 
 
-var thrusting := false
+onready var thrusting_particles := $ThrustingParticles
+onready var boosting_particles := $BoostingParticles
+
+var thrusting := false setget set_thrusting
 var turning := 0
 var braking := false
-var boosting := false
+var boosting := false setget set_boosting
 
 var thrust_force := 200.0
 var turn_speed := PI * 3 / 2
@@ -38,6 +41,15 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 
 
 func boost() -> void:
-	boosting = true
+	self.boosting = true
 	yield(get_tree().create_timer(1.5), "timeout")
-	boosting = false
+	self.boosting = false
+
+
+func set_thrusting(value: bool) -> void:
+	thrusting = value
+	thrusting_particles.emitting = thrusting
+
+func set_boosting(value: bool) -> void:
+	boosting = value
+	boosting_particles.emitting = boosting
