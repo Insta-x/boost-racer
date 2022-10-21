@@ -1,0 +1,14 @@
+# Import cache
+.import/
+
+# Export presets
+export_presets.cfg
+
+# Binaries
+bin/
+build/
+lib/
+
+# GitAPI
+addons/
+godot-git-plugin-master/
