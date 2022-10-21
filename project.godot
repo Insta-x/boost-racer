@@ -9,10 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "EditorVCSInterface",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
+"base": "Area2D",
+"class": "AreaGuider",
+"language": "GDScript",
+"path": "res://Src/Lee/AreaGuider.gd"
+}, {
+"base": "Racer",
+"class": "EnemyRacer",
+"language": "GDScript",
+"path": "res://Src/Racer/EnemyRacer.gd"
 }, {
 "base": "RigidBody2D",
 "class": "Racer",
@@ -20,18 +25,20 @@ _global_script_classes=[ {
 "path": "res://Src/Racer/Racer.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": "",
+"AreaGuider": "",
+"EnemyRacer": "",
 "Racer": ""
 }
 
 [application]
 
 config/name="boost-racer"
+run/main_scene="res://Src/SampleWorld.tscn"
 config/icon="res://icon.png"
 
 [gdnative]
 
-singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+singletons=[  ]
 
 [input]
 

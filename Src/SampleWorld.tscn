@@ -1,32 +1,49 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Lee/AreaGuider.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Src/Lee/RacerGuider.tscn" type="PackedScene" id=3]
 
 [node name="SampleWorld" type="Node2D"]
 
 [node name="OuterWall" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
 polygon = PoolVector2Array( 0, 0, 0, 1792, -64, 1792, -64, -64, 2432, -64, 2432, 1792, 0, 1792, 0, 1728, 2368, 1728, 2368, 0 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PoolVector2Array( 192, 192, 1599.72, 192, 1792, 448, 1792, 1280, 2176, 1536, 1664, 1536, 1088, 960, 448, 768, 192, 512 )
 
 [node name="Wall2" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall2"]
 position = Vector2( 320, 320 )
 polygon = PoolVector2Array( 1856, -128, 1472, -128, 1856, 320 )
 
 [node name="Wall3" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall3"]
 position = Vector2( 320, 320 )
 polygon = PoolVector2Array( 1856, 512, 1856, 1088, 1600, 896, 1600, 256 )
 
 [node name="Wall4" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
 position = Vector2( 320, 320 )
@@ -37,3 +54,61 @@ position = Vector2( 64, 64 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRacer"]
 current = true
+
+[node name="RacerGuider" parent="." instance=ExtResource( 3 )]
+
+[node name="EnemyRacer" parent="RacerGuider" index="0"]
+position = Vector2( 105, 134 )
+rotation = 3.14159
+
+[node name="AreaGuider" parent="RacerGuider" instance=ExtResource( 2 )]
+position = Vector2( 857, 101 )
+
+[node name="Direction" parent="RacerGuider/AreaGuider" index="0"]
+position = Vector2( 227, 5 )
+
+[node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider" index="1"]
+polygon = PoolVector2Array( -907, -142, -887, 259, -635, 261, -607, 115, 595, 105, 592, -134 )
+
+[node name="AreaGuider2" parent="RacerGuider" instance=ExtResource( 2 )]
+position = Vector2( 1847, 353 )
+
+[node name="Direction" parent="RacerGuider/AreaGuider2" index="0"]
+position = Vector2( 197, 237 )
+
+[node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider2" index="1"]
+polygon = PoolVector2Array( -426, -386, -126, -376, -40, -139, 199, 133, 161, 327, -410, -162 )
+
+[node name="AreaGuider3" parent="RacerGuider" instance=ExtResource( 2 )]
+position = Vector2( 2301, 614 )
+
+[node name="Direction" parent="RacerGuider/AreaGuider3" index="0"]
+position = Vector2( 8, 846 )
+
+[node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider3" index="1"]
+polygon = PoolVector2Array( -245, -144, -332, 54, -159, 237, -141, 655, 77, 671, 77, -630, -329, -632, -332, -411, -138, -403, -143, 10 )
+
+[node name="AreaGuider4" parent="RacerGuider" instance=ExtResource( 2 )]
+position = Vector2( 2248, 1667 )
+
+[node name="Direction" parent="RacerGuider/AreaGuider4" index="0"]
+position = Vector2( -1454, -14 )
+
+[node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider4" index="1"]
+polygon = PoolVector2Array( 133, 84, 148, -434, -119, -422, -92, -129, -2037, -150, -2040, 69 )
+
+[node name="AreaGuider5" parent="RacerGuider" instance=ExtResource( 2 )]
+position = Vector2( 92, 1392 )
+
+[node name="Direction" parent="RacerGuider/AreaGuider5" index="0"]
+position = Vector2( 8, -884 )
+
+[node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider5" index="1"]
+polygon = PoolVector2Array( 336, 128, 336, 352, -121, 364, -139, -1089, 148, -1078, 151, 93 )
+
+[editable path="RacerGuider"]
+[editable path="RacerGuider/AreaGuider"]
+[editable path="RacerGuider/AreaGuider2"]
+[editable path="RacerGuider/AreaGuider3"]
+[editable path="RacerGuider/AreaGuider4"]
+[editable path="RacerGuider/AreaGuider5"]
