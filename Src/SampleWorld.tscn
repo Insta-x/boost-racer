@@ -12,7 +12,7 @@ polygon = PoolVector2Array( 0, 0, 0, 1792, -64, 1792, -64, -64, 2432, -64, 2432,
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
-polygon = PoolVector2Array( 192, 192, 1599.72, 192, 1792, 448, 1792, 1280, 2176, 1536, 192, 1536 )
+polygon = PoolVector2Array( 192, 192, 1599.72, 192, 1792, 448, 1792, 1280, 2176, 1536, 1664, 1536, 1088, 960, 448, 768, 192, 512 )
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 
@@ -30,6 +30,7 @@ polygon = PoolVector2Array( 1856, 512, 1856, 1088, 1600, 896, 1600, 256 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
 position = Vector2( 320, 320 )
+polygon = PoolVector2Array( -128, 1216, -128, 384, 64, 576, 704, 768, 1152, 1216 )
 
 [node name="PlayerRacer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64, 64 )
