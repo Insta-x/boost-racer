@@ -16,7 +16,7 @@ var boosting := false setget set_boosting
 var thrust_force := 200.0
 var turn_speed := PI * 3 / 2
 var boost_force := 400.0
-var max_speed := 300.0
+var max_speed := 500.0
 var max_boost_speed := 1000.0
 var can_boost := true
 
