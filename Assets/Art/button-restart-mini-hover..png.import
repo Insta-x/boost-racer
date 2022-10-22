@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button=play.png-ceeca0e5519aa360c9613bfcc2f9991f.stex"
+path="res://.import/button-restart-mini-hover..png-f28b48725087e8b44d8158e4c7141977.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/button=play.png"
-dest_files=[ "res://.import/button=play.png-ceeca0e5519aa360c9613bfcc2f9991f.stex" ]
+source_file="res://Assets/Art/button-restart-mini-hover..png"
+dest_files=[ "res://.import/button-restart-mini-hover..png-f28b48725087e8b44d8158e4c7141977.stex" ]
 
 [params]
 

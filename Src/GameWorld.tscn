@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/game_world.tres" type="Environment" id=1]
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Src/RaceComponents/FinishArea2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sound/music.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Src/RaceComponents/FinishArea2D.tscn" type="PackedScene" id=4]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -110,7 +111,7 @@ __meta__ = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
 
-[node name="FinishArea2D" parent="." instance=ExtResource( 3 )]
+[node name="FinishArea2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 13504, -64 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FinishArea2D"]
@@ -118,3 +119,7 @@ polygon = PoolVector2Array( 0, 0, -320, 0, -256, 192, -192, 256, 0, 320 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

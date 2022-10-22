@@ -58,6 +58,7 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 [global]
 
 size=false
+wid=false
 
 [input]
 
