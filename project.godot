@@ -48,6 +48,7 @@ singletons=[  ]
 [global]
 
 size=false
+wid=false
 
 [input]
 

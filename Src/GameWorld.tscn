@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/game_world.tres" type="Environment" id=1]
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sound/music.mp3" type="AudioStream" id=3]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -127,3 +128,6 @@ position = Vector2( 128, 4992 )
 
 [node name="FinishPosition2D" type="Position2D" parent="."]
 position = Vector2( 8256, 64 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
