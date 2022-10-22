@@ -2,7 +2,6 @@ extends RigidBody2D
 
 class_name Racer
 
-
 onready var thrusting_particles := $ThrustingParticles
 onready var boosting_particles := $BoostingParticles
 onready var dash_cooldown_timer := $DashCooldownTimer
@@ -11,7 +10,7 @@ onready var thrusting_sfx := $ThrustingSFX
 onready var boosting_sfx := $BoostingSFX
 
 var thrusting := false setget set_thrusting
-var turning := 0
+var turning := 0.0
 var braking := false
 var boosting := false setget set_boosting
 

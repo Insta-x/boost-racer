@@ -9,18 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "AreaGuider",
+"language": "GDScript",
+"path": "res://Src/Lee/AreaGuider.gd"
+}, {
+"base": "Racer",
+"class": "EnemyRacer",
+"language": "GDScript",
+"path": "res://Src/Racer/EnemyRacer.gd"
+}, {
 "base": "RigidBody2D",
 "class": "Racer",
 "language": "GDScript",
 "path": "res://Src/Racer/Racer.gd"
 } ]
 _global_script_class_icons={
+"AreaGuider": "",
+"EnemyRacer": "",
 "Racer": ""
 }
 
 [application]
 
 config/name="boost-racer"
+run/main_scene="res://Src/SampleWorld.tscn"
 config/icon="res://icon.png"
 
 [display]
