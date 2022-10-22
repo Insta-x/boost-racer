@@ -1,12 +1,12 @@
-extends TextureRect
+extends ColorRect
 
-onready var RankingLabel := $HBoxContainer/RankingLabel
-onready var NameLabel := $HBoxContainer/NameLabel
-onready var TimeLabel := $HBoxContainer/TimeLabel
+onready var RankingLabel := $Polygon2D/Polygon2D2/HBoxContainer/RankingLabel
+onready var NameLabel := $Polygon2D/Polygon2D2/HBoxContainer/NameLabel
+onready var TimeLabel := $Polygon2D/Polygon2D2/HBoxContainer/TimeLabel
 
 var ranking := "1"
-var racerName := "name"
-var time := "00:00.000"
+var racerName := ""
+var time := "--:--.---"
 
 func _ready():
 	RankingLabel.text = ranking

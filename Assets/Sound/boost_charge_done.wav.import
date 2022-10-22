@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/boost_charge_done.wav-fc7aa5b6edda86f02eae54c43e0beb89.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/boost_charge_done.wav"
+dest_files=[ "res://.import/boost_charge_done.wav-fc7aa5b6edda86f02eae54c43e0beb89.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
