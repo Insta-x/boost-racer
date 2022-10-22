@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Lee/AreaGuider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Lee/RacerGuider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Lee/BoostGuider.tscn" type="PackedScene" id=4]
 
 [node name="SampleWorld" type="Node2D"]
 
@@ -78,6 +79,9 @@ position = Vector2( 181, 260 )
 [node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider2" index="1"]
 polygon = PoolVector2Array( -347, -377, -101, -379, -19, -149, 313, 259, 321, 503, 69, 239, -63, 93, -251, -137 )
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RacerGuider/AreaGuider2"]
+polygon = PoolVector2Array( 330, 1055, 334, 1179, -67, 914, 81, 850 )
+
 [node name="AreaGuider3" parent="RacerGuider" instance=ExtResource( 2 )]
 position = Vector2( 2301, 614 )
 
@@ -97,7 +101,7 @@ position = Vector2( -1443, -75 )
 polygon = PoolVector2Array( 167, -143, 158, 79, -2048, 73, -2044, -143 )
 
 [node name="AreaGuider5" parent="RacerGuider" instance=ExtResource( 2 )]
-position = Vector2( 92, 1392 )
+position = Vector2( 93, 1394 )
 
 [node name="Direction" parent="RacerGuider/AreaGuider5" index="0"]
 position = Vector2( 52, -1045 )
@@ -105,9 +109,31 @@ position = Vector2( 52, -1045 )
 [node name="CollisionPolygon2D" parent="RacerGuider/AreaGuider5" index="1"]
 polygon = PoolVector2Array( -148, -1188, 128, -1204, 120, 352, -128, 340 )
 
+[node name="BoostGuider" parent="RacerGuider" instance=ExtResource( 4 )]
+position = Vector2( 140, 95 )
+
+[node name="CollisionPolygon2D" parent="RacerGuider/BoostGuider" index="0"]
+polygon = PoolVector2Array( -134, -89, 637, -93, 630, 101, -134, 87 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RacerGuider/BoostGuider"]
+polygon = PoolVector2Array( 1379, -92, 1612, -94, 1683, 110, 1458, 117 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RacerGuider/BoostGuider"]
+polygon = PoolVector2Array( 2030, 523, 2238, 522, 2236, 923, 2035, 923 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="RacerGuider/BoostGuider"]
+polygon = PoolVector2Array( 2030, 523, 2238, 522, 2232, 1044, 2038, 1059 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="RacerGuider/BoostGuider"]
+polygon = PoolVector2Array( 2221, 1437, 2224, 1625, 604, 1634, 600, 1434 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="RacerGuider/BoostGuider"]
+polygon = PoolVector2Array( 78, 567, 74, 1643, -150, 1639, -146, 563 )
+
 [editable path="RacerGuider"]
 [editable path="RacerGuider/AreaGuider"]
 [editable path="RacerGuider/AreaGuider2"]
 [editable path="RacerGuider/AreaGuider3"]
 [editable path="RacerGuider/AreaGuider4"]
 [editable path="RacerGuider/AreaGuider5"]
+[editable path="RacerGuider/BoostGuider"]
