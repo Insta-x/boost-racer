@@ -56,7 +56,7 @@ position = Vector2( 64, 64 )
 position = Vector2( 105, 134 )
 rotation = 3.14159
 
-[node name="Camera2D" type="Camera2D" parent="RacerGuider/EnemyRacer" index="7"]
+[node name="Camera2D" type="Camera2D" parent="RacerGuider/EnemyRacer" index="10"]
 position = Vector2( 41, 70 )
 rotation = 3.14159
 current = true

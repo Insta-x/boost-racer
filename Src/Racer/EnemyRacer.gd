@@ -25,6 +25,7 @@ func _physics_process(delta:float) -> void:
 	avoid_wall()
 	actions()
 	debug()
+	if thrusting and not boosting: boost()
 
 func actions() -> void:
 	# kalo ga searah, searahin dulu
@@ -46,10 +47,10 @@ func actions() -> void:
 	braking = (deg2rad(45) < vrot and vrot < deg2rad(360-45)) and linear_velocity.length() > 50 or linear_velocity.length() - (target_velocity + adjust_velocity).length() > -30
 	
 	# boosting
-	boosting = false
-	if canboost > 0: 
-		if vrot < deg2rad(15) or vrot > deg2rad(360-15):
-			boost()
+	#boosting = false
+	#if canboost > 0: 
+	#	if vrot < deg2rad(15) or vrot > deg2rad(360-15):
+	#		boost()
 			
 	# thrusting
 	if PI/2 < deg2rad(90-45) and drot < deg2rad(270+45): 
@@ -62,6 +63,7 @@ func actions() -> void:
 		thrusting = true
 	else:
 		thrusting = false
+	
 
 onready var raycastL := $RayCastLeft
 onready var raycastR := $RayCastRight
