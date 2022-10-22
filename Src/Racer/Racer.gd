@@ -2,7 +2,6 @@ extends RigidBody2D
 
 class_name Racer
 
-
 onready var thrusting_particles := $ThrustingParticles
 onready var boosting_particles := $BoostingParticles
 
