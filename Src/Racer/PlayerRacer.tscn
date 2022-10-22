@@ -5,3 +5,4 @@
 
 [node name="PlayerRacer" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+racer_id = 0
