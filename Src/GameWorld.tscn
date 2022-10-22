@@ -1,3 +1,129 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/game_world.tres" type="Environment" id=1]
+[ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
 
 [node name="GameWorld" type="Node2D"]
+
+[node name="OuterWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
+polygon = PoolVector2Array( 0, 5120, -64, 5120, -64, -576, 9024, -576, 9024, 5184, -64, 5184, 0, 5120, 4544, 5120, 4992, 4672, 5056, 4672, 5248, 4864, 8064, 4864, 8512, 4416, 8960, 4416, 8960, 1088, 8384, 512, 8384, -64, 6528, -64, 6528, 896, 4160, 896, 4160, -256, 3136, -256, 2496, 384, 1792, 384, 1792, -256, 1408, -512, 256, -512, 0, -256 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PoolVector2Array( 320, 1344, 320, -128, 448, -256, 1344, -256, 1472, -128, 1472, 0, 1344, -128, 1088, -128, 1088, 1152, 512, 1152 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall2"]
+polygon = PoolVector2Array( 320, 1536, 512, 1344, 1088, 1344, 1280, 1536, 1280, 2304, 1088, 2496, 512, 2496, 320, 2304 )
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall3"]
+polygon = PoolVector2Array( 1280, 64, 1344, 64, 1472, 192, 1472, 704, 2688, 704, 3200, 64, 3840, 64, 3840, 896, 1600, 896, 1600, 1536, 1728, 1536, 1728, 1856, 1472, 2112, 1472, 1408, 1280, 1216 )
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
+polygon = PoolVector2Array( 320, 4672, 320, 2496, 512, 2688, 1088, 2688, 2240, 3968, 1088, 3968 )
+
+[node name="Wall5" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall5"]
+polygon = PoolVector2Array( 512, 4800, 1088, 4224, 2240, 4224, 2240, 4608, 2048, 4800 )
+
+[node name="Wall6" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall6"]
+polygon = PoolVector2Array( 2304, 4800, 2496, 4608, 2496, 4224, 4608, 4224, 4864, 4480, 4864, 4544, 4608, 4800, 2496, 4800 )
+
+[node name="Wall7" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall7"]
+polygon = PoolVector2Array( 2240, 3776, 1280, 2688, 1472, 2496, 3776, 2496, 3776, 3136, 2240, 3136 )
+
+[node name="Wall8" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall8"]
+polygon = PoolVector2Array( 2496, 3968, 2496, 3328, 4032, 3328, 4032, 2496, 4544, 2496, 4544, 3968 )
+
+[node name="Wall9" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall9"]
+polygon = PoolVector2Array( 4736, 2496, 4736, 3200, 5504, 3200, 5504, 2496 )
+
+[node name="Wall10" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall10"]
+polygon = PoolVector2Array( 5760, 2496, 5760, 3200, 6400, 3200, 6400, 2496 )
+
+[node name="Wall11" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall11"]
+polygon = PoolVector2Array( 4736, 3392, 4736, 3968, 5376, 3968, 5376, 3456, 7296, 3456, 7296, 4224, 8064, 4224, 8704, 3648, 8704, 1280, 8128, 960, 7360, 1728, 7360, 2496, 6592, 2496, 6592, 3392 )
+
+[node name="Wall12" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall12"]
+polygon = PoolVector2Array( 4864, 4224, 4992, 4352, 5056, 4352, 5184, 4224 )
+
+[node name="Wall13" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall13"]
+polygon = PoolVector2Array( 5184, 4544, 5184, 4480, 5440, 4224, 6400, 4224, 6848, 4672, 5312, 4672 )
+
+[node name="Wall14" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall14"]
+polygon = PoolVector2Array( 5568, 3968, 5568, 3648, 6720, 3648, 6400, 3968 )
+
+[node name="Wall15" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall15"]
+polygon = PoolVector2Array( 6464, 4096, 7040, 4672, 8000, 4672, 8512, 4224, 8704, 4224, 8704, 3840, 8128, 4416, 7104, 4416, 7104, 3648, 6912, 3648 )
+
+[node name="Wall16" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall16"]
+polygon = PoolVector2Array( 8064, 704, 7360, 1408, 7360, 896, 6784, 896, 6784, 256, 8064, 256 )
+
+[node name="Wall17" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall17"]
+polygon = PoolVector2Array( 6976, 1088, 5760, 1088, 5760, 1664, 5376, 1664, 5376, 1984, 5760, 1984, 5760, 2304 )
+
+[node name="Wall18" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall18"]
+polygon = PoolVector2Array( 6016, 2304, 7168, 2304, 7168, 1152 )
+
+[node name="Wall19" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall19"]
+polygon = PoolVector2Array( 5504, 2304, 5504, 2176, 5120, 2176, 5120, 1472, 5504, 1472, 5504, 1344, 3456, 1344, 3456, 1856, 1984, 1856, 1536, 2304 )
+
+[node name="Wall20" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall20"]
+polygon = PoolVector2Array( 1984, 1664, 3264, 1664, 3264, 1152, 5504, 1152, 5504, 1088, 3264, 1088, 1792, 1088, 1792, 1344, 1984, 1344 )
+
+[node name="PlayerRacer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 5056 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerRacer"]
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
+
+[node name="StartPosition2D" type="Position2D" parent="."]
+position = Vector2( 128, 4992 )
+
+[node name="FinishPosition2D" type="Position2D" parent="."]
+position = Vector2( 8256, 64 )
