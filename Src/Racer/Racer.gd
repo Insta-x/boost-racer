@@ -7,6 +7,8 @@ onready var thrusting_particles := $ThrustingParticles
 onready var boosting_particles := $BoostingParticles
 onready var dash_cooldown_timer := $DashCooldownTimer
 onready var boost_charge_particles := $BoostChargeParticles
+onready var thrusting_sfx := $ThrustingSFX
+onready var boosting_sfx := $BoostingSFX
 
 var thrusting := false setget set_thrusting
 var turning := 0
@@ -59,11 +61,17 @@ func boost() -> void:
 func set_thrusting(value: bool) -> void:
 	thrusting = value
 	thrusting_particles.emitting = thrusting
-
-
+	if (!thrusting_sfx.playing && thrusting):
+		thrusting_sfx.play()
+	elif(!thrusting):
+		thrusting_sfx.stop()
+	
 func set_boosting(value: bool) -> void:
 	boosting = value
 	boosting_particles.emitting = boosting
+	if (boosting):
+		boosting_sfx.play()
+
 
 
 func _on_DashCooldownTimer_timeout() -> void:
