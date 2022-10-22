@@ -48,7 +48,7 @@ func actions() -> void:
 	# boosting
 	boosting = false
 	if canboost > 0: 
-		if deg2rad(15) < vrot and vrot < deg2rad(360-15):
+		if vrot < deg2rad(15) or vrot > deg2rad(360-15):
 			boost()
 			
 	# thrusting
