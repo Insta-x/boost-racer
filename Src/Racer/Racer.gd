@@ -9,6 +9,8 @@ onready var boost_charge_particles := $BoostChargeParticles
 onready var thrusting_sfx := $ThrustingSFX
 onready var boosting_sfx := $BoostingSFX
 
+export (int) var racer_id := -1
+
 var thrusting := false setget set_thrusting
 var turning := 0.0
 var braking := false

@@ -6,6 +6,7 @@
 
 [node name="PlayerRacer" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+racer_id = 0
 
 [node name="BoostChargeDoneSFX" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource( 3 )
