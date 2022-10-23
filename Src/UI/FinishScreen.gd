@@ -44,7 +44,12 @@ func _on_Racer_finished(var value : int) -> void:
 	elif (count < 11):
 		temp = ScorePanelContainer2.get_child(count - 6)
 	else : return
-	temp.set_label_name(str(value))
+	
+	if value == 0:
+		temp.set_label_name("Player")
+	else:
+		temp.set_label_name("Racer #" + str(value))
+	
 	var finish_time := OS.get_ticks_msec() - start_time
 	temp.set_label_time(finish_time)
 	count+=1
