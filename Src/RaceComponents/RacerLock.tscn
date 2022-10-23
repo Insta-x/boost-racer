@@ -3,6 +3,7 @@
 [ext_resource path="res://Src/RaceComponents/RacerLock.gd" type="Script" id=1]
 
 [node name="RacerLock" type="Polygon2D"]
+z_index = 1
 color = Color( 0, 1.86, 2, 0.5 )
 polygon = PoolVector2Array( -32, 40, -8, 16, 8, 16, 32, 40, 40, 32, 16, 8, 16, -8, 40, -32, 32, -40, 8, -16, -8, -16, -32, -40, -40, -32, -16, -8, -16, 8, -40, 32 )
 script = ExtResource( 1 )
