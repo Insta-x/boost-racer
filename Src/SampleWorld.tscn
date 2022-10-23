@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/SampleWorld.gd" type="Script" id=2]
@@ -6,9 +6,31 @@
 [ext_resource path="res://Assets/Sound/tutorial_music.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Assets/game_world.tres" type="Environment" id=5]
 [ext_resource path="res://Src/UI/TutorialUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/background.png" type="Texture" id=8]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 192, 192, 1600, 192, 1792, 448, 1792, 1280, 2176, 1536, 1664, 1536, 1088, 960, 448, 768, 192, 512 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 1792, 192, 2176, 640, 2176, 192 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 1920, 576, 2176, 832, 2176, 1408, 1920, 1216 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 192, 704, 384, 896, 1024, 1088, 1472, 1536, 192, 1536 )
 
 [node name="SampleWorld" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 7232, 4224 )
+scale = Vector2( 300, 300 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="OuterWall" type="StaticBody2D" parent="."]
 
@@ -23,30 +45,15 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PoolVector2Array( 192, 192, 1599.72, 192, 1792, 448, 1792, 1280, 2176, 1536, 1664, 1536, 1088, 960, 448, 768, 192, 512 )
 
-[node name="Wall2" type="StaticBody2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall2"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 320, 320 )
 polygon = PoolVector2Array( 1856, -128, 1472, -128, 1856, 320 )
 
-[node name="Wall3" type="StaticBody2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall3"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 320, 320 )
 polygon = PoolVector2Array( 1856, 512, 1856, 1088, 1600, 896, 1600, 256 )
 
-[node name="Wall4" type="StaticBody2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 320, 320 )
 polygon = PoolVector2Array( -128, 1216, -128, 384, 64, 576, 704, 768, 1152, 1216 )
 
@@ -67,3 +74,149 @@ following = NodePath("../PlayerRacer")
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 0, 0, 2368, 0, 2368, 1728, 0, 1728, 0, 0 )
+width = 16.0
+default_color = Color( 1.5, 1.5, 1.5, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 192, 192, 1600, 192, 1792, 448, 1792, 1280, 2176, 1536, 1664, 1536, 1088, 960, 448, 768, 192, 512, 192, 192 )
+width = 16.0
+default_color = Color( 1.5, 1.5, 1.5, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 1792, 192, 2176, 192, 2176, 640, 1792, 192 )
+width = 16.0
+default_color = Color( 1.5, 1.5, 1.5, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D4" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 1920, 576, 2176, 832, 2176, 1408, 1920, 1216, 1920, 576 )
+width = 16.0
+default_color = Color( 1.5, 1.5, 1.5, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D5" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 1472, 1536, 1024, 1088, 384, 896, 192, 704, 192, 1536, 1472, 1536 )
+width = 16.0
+default_color = Color( 1.5, 1.5, 1.5, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+position = Vector2( 96, 32 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="Lights"]
+position = Vector2( 704, 160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D3" type="Light2D" parent="Lights"]
+position = Vector2( 1376, 32 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D4" type="Light2D" parent="Lights"]
+position = Vector2( 2176, 160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D5" type="Light2D" parent="Lights"]
+position = Vector2( 1920, 544 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D6" type="Light2D" parent="Lights"]
+position = Vector2( 1824, 1248 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D7" type="Light2D" parent="Lights"]
+position = Vector2( 2208, 1024 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D8" type="Light2D" parent="Lights"]
+position = Vector2( 1920, 1568 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D9" type="Light2D" parent="Lights"]
+position = Vector2( 1344, 1344 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D10" type="Light2D" parent="Lights"]
+position = Vector2( 800, 992 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D11" type="Light2D" parent="Lights"]
+position = Vector2( 160, 672 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D12" type="Light2D" parent="Lights"]
+position = Vector2( 160, 1216 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="Light2D13" type="Light2D" parent="Lights"]
+position = Vector2( 480, 1568 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
