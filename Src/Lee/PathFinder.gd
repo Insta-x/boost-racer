@@ -102,9 +102,9 @@ func _ready():
 		if racer.get("guideID") == null: continue
 		racer.guideID = len(next)
 		racer.racer_id = racer.guideID + 1
-		racer.body_2.color = Color(color_1[count])
-		count+=1
 		racer.body_1.color = Color(color_1[count])
+		count+=1
+		racer.body_2.color = Color(color_1[count])
 		count+=1
 		racers.append(racer)
 		# djikstra yg agk random :v
