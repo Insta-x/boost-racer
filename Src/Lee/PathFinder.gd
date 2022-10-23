@@ -54,7 +54,7 @@ func updatenext(pos : Vector2, guide_id : int) -> void:
 	racers[guide_id].nextnext = next[guide_id][nxt]
 
 func _ready():
-	print("jumlah titik:", n)
+#	print("jumlah titik:", n)
 	# bikin grafnya
 	for i in n: adj.append([])
 	var ARR = []
@@ -82,7 +82,7 @@ func _ready():
 							to[k] = j
 				if flag == 0:
 					to.push_back(j)
-		print(i, to)
+#		print(i, to)
 		for j in to:
 			adj[j].append(Vector2(i, dist(arr[i].position, arr[j].position)))
 			#adj[j].append(Vector2(i, dist(arr[i].position, arr[j].position)))
@@ -113,7 +113,7 @@ func _ready():
 				var v := int(V.x)
 				if vis[v] != inf: continue
 				queue.push_back(Vector3(d + (V.y) * (1 + balancer[u][v] * 2) * (1 + randf() * 2), v, u))
-			if u == 0: print(d)
+#			if u == 0: print(d)
 		var t = 0
 		while t != 1:
 			balancer[t][vis[t]] += 1
@@ -121,7 +121,7 @@ func _ready():
 			t = vis[t]
 			
 		next.append(vis)
-		print(vis)
+#		print(vis)
 		updatenext(racer.position, racer.guideID)
 		
 	$Timer.start()

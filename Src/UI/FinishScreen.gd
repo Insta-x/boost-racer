@@ -45,14 +45,13 @@ func _on_Player_finished() -> void:
 	_on_Racer_finished(0)
 	panel.show()
 
-
-
 func set_start_time(value: float) -> void:
 	start_time = value
 
 
 func _on_RetryButton_pressed():
 	get_tree().reload_current_scene()
+
 
 func _on_ExitButton_pressed():
 	get_tree().change_scene("res://Src/UI/Menu.tscn")

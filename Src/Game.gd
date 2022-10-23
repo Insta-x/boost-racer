@@ -17,12 +17,12 @@ func start() -> void:
 
 func _on_racer_finished(racer_id: int) -> void:
 	var finish_time := OS.get_ticks_msec() - race_time
-	print(racer_id, ": ", finish_time / 1000.0)
+#	print(racer_id, ": ", finish_time / 1000.0)
 
 
 func _on_player_finished() -> void:
 	var finish_time := OS.get_ticks_msec() - race_time
-	print("Player: ", finish_time / 1000.0)
+#	print("Player: ", finish_time / 1000.0)
 
 
 func _on_StartTimer_timeout() -> void:

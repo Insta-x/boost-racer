@@ -65,7 +65,6 @@ func actions() -> void:
 onready var raycastL := $RayCastLeft
 onready var raycastR := $RayCastRight
 onready var raycastF := $RayCastFront
-onready var raycastP := $RayCastPredict
 
 func avoid_wall() -> void:
 	raycastL.global_rotation = 0
