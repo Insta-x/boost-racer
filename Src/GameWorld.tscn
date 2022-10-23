@@ -172,7 +172,7 @@ position = Vector2( 12638, 7861 )
 position = Vector2( 11870, 7848 )
 
 [node name="Position2D24" type="Position2D" parent="PathFinder/Nodes" index="10"]
-position = Vector2( 11838, 6661 )
+position = Vector2( 11790, 6728 )
 
 [node name="Position2D25" type="Position2D" parent="PathFinder/Nodes" index="11"]
 position = Vector2( 11120, 6655 )
@@ -184,7 +184,7 @@ position = Vector2( 10580, 7271 )
 position = Vector2( 10337, 7274 )
 
 [node name="Position2D9" type="Position2D" parent="PathFinder/Nodes" index="14"]
-position = Vector2( 13914, 7999 )
+position = Vector2( 13876, 7909 )
 
 [node name="Position2D10" type="Position2D" parent="PathFinder/Nodes" index="15"]
 position = Vector2( 13096, 7999 )
@@ -202,193 +202,229 @@ position = Vector2( 8710, 7236 )
 position = Vector2( 8168, 7230 )
 
 [node name="Position2D32" type="Position2D" parent="PathFinder/Nodes" index="20"]
-position = Vector2( 3744, 7174 )
+position = Vector2( 3767, 7198 )
 
-[node name="Position2D36" type="Position2D" parent="PathFinder/Nodes" index="21"]
-position = Vector2( 3874, 6193 )
+[node name="Position2D82" type="Position2D" parent="PathFinder/Nodes" index="21"]
+position = Vector2( 5100, 7146 )
 
-[node name="Position2D37" type="Position2D" parent="PathFinder/Nodes" index="22"]
-position = Vector2( 5387, 6144 )
+[node name="Position2D83" type="Position2D" parent="PathFinder/Nodes" index="22"]
+position = Vector2( 6954, 7165 )
 
-[node name="Position2D38" type="Position2D" parent="PathFinder/Nodes" index="23"]
-position = Vector2( 5361, 4526 )
+[node name="Position2D36" type="Position2D" parent="PathFinder/Nodes" index="23"]
+position = Vector2( 3945, 6174 )
 
-[node name="Position2D58" type="Position2D" parent="PathFinder/Nodes" index="24"]
+[node name="Position2D37" type="Position2D" parent="PathFinder/Nodes" index="24"]
+position = Vector2( 5351, 6068 )
+
+[node name="Position2D38" type="Position2D" parent="PathFinder/Nodes" index="25"]
+position = Vector2( 5344, 4948 )
+
+[node name="Position2D93" type="Position2D" parent="PathFinder/Nodes" index="26"]
+position = Vector2( 5642, 4520 )
+
+[node name="Position2D58" type="Position2D" parent="PathFinder/Nodes" index="27"]
 position = Vector2( 9709, 4529 )
 
-[node name="Position2D76" type="Position2D" parent="PathFinder/Nodes" index="25"]
-position = Vector2( 9709, 5809 )
+[node name="Position2D76" type="Position2D" parent="PathFinder/Nodes" index="28"]
+position = Vector2( 9684, 5834 )
 
-[node name="Position2D77" type="Position2D" parent="PathFinder/Nodes" index="26"]
+[node name="Position2D77" type="Position2D" parent="PathFinder/Nodes" index="29"]
 position = Vector2( 8183, 5843 )
 
-[node name="Position2D78" type="Position2D" parent="PathFinder/Nodes" index="27"]
-position = Vector2( 10726, 5818 )
+[node name="Position2D78" type="Position2D" parent="PathFinder/Nodes" index="30"]
+position = Vector2( 10652, 5818 )
 
-[node name="Position2D74" type="Position2D" parent="PathFinder/Nodes" index="28"]
-position = Vector2( 9965, 4536 )
+[node name="Position2D74" type="Position2D" parent="PathFinder/Nodes" index="31"]
+position = Vector2( 10009, 4517 )
 
-[node name="Position2D64" type="Position2D" parent="PathFinder/Nodes" index="29"]
-position = Vector2( 9686, 3751 )
+[node name="Position2D85" type="Position2D" parent="PathFinder/Nodes" index="32"]
+position = Vector2( 9696, 3869 )
 
-[node name="Position2D65" type="Position2D" parent="PathFinder/Nodes" index="30"]
-position = Vector2( 9263, 3494 )
+[node name="Position2D65" type="Position2D" parent="PathFinder/Nodes" index="33"]
+position = Vector2( 9381, 3605 )
 
-[node name="Position2D66" type="Position2D" parent="PathFinder/Nodes" index="31"]
-position = Vector2( 9218, 2958 )
+[node name="Position2D66" type="Position2D" parent="PathFinder/Nodes" index="34"]
+position = Vector2( 9359, 3076 )
 
-[node name="Position2D67" type="Position2D" parent="PathFinder/Nodes" index="32"]
-position = Vector2( 9784, 2898 )
+[node name="Position2D67" type="Position2D" parent="PathFinder/Nodes" index="35"]
+position = Vector2( 9712, 2670 )
 
-[node name="Position2D68" type="Position2D" parent="PathFinder/Nodes" index="33"]
-position = Vector2( 9769, 2581 )
+[node name="Position2D92" type="Position2D" parent="PathFinder/Nodes" index="36"]
+position = Vector2( 9008, 2589 )
 
-[node name="Position2D70" type="Position2D" parent="PathFinder/Nodes" index="34"]
-position = Vector2( 5793, 2605 )
+[node name="Position2D70" type="Position2D" parent="PathFinder/Nodes" index="37"]
+position = Vector2( 5801, 2896 )
 
-[node name="Position2D71" type="Position2D" parent="PathFinder/Nodes" index="35"]
+[node name="Position2D91" type="Position2D" parent="PathFinder/Nodes" index="38"]
+position = Vector2( 6129, 2611 )
+
+[node name="Position2D71" type="Position2D" parent="PathFinder/Nodes" index="39"]
 position = Vector2( 5769, 3685 )
 
-[node name="Position2D72" type="Position2D" parent="PathFinder/Nodes" index="36"]
+[node name="Position2D72" type="Position2D" parent="PathFinder/Nodes" index="40"]
 position = Vector2( 4361, 3725 )
 
-[node name="Position2D73" type="Position2D" parent="PathFinder/Nodes" index="37"]
+[node name="Position2D73" type="Position2D" parent="PathFinder/Nodes" index="41"]
 position = Vector2( 4353, 2997 )
 
-[node name="Position2D75" type="Position2D" parent="PathFinder/Nodes" index="38"]
-position = Vector2( 3985, 2293 )
+[node name="Position2D75" type="Position2D" parent="PathFinder/Nodes" index="42"]
+position = Vector2( 4033, 2283 )
 
-[node name="Position2D69" type="Position2D" parent="PathFinder/Nodes" index="39"]
+[node name="Position2D69" type="Position2D" parent="PathFinder/Nodes" index="43"]
 position = Vector2( 9769, 2287 )
 
-[node name="Position2D59" type="Position2D" parent="PathFinder/Nodes" index="40"]
+[node name="Position2D59" type="Position2D" parent="PathFinder/Nodes" index="44"]
 position = Vector2( 8170, 4526 )
 
-[node name="Position2D60" type="Position2D" parent="PathFinder/Nodes" index="41"]
-position = Vector2( 10765, 4526 )
+[node name="Position2D60" type="Position2D" parent="PathFinder/Nodes" index="45"]
+position = Vector2( 11125, 4515 )
 
-[node name="Position2D61" type="Position2D" parent="PathFinder/Nodes" index="42"]
-position = Vector2( 12217, 4515 )
+[node name="Position2D84" type="Position2D" parent="PathFinder/Nodes" index="46"]
+position = Vector2( 10769, 4964 )
 
-[node name="Position2D62" type="Position2D" parent="PathFinder/Nodes" index="43"]
+[node name="Position2D61" type="Position2D" parent="PathFinder/Nodes" index="47"]
+position = Vector2( 11846, 4546 )
+
+[node name="Position2D87" type="Position2D" parent="PathFinder/Nodes" index="48"]
+position = Vector2( 12228, 4164 )
+
+[node name="Position2D62" type="Position2D" parent="PathFinder/Nodes" index="49"]
 position = Vector2( 12228, 3116 )
 
-[node name="Position2D63" type="Position2D" parent="PathFinder/Nodes" index="44"]
+[node name="Position2D63" type="Position2D" parent="PathFinder/Nodes" index="50"]
 position = Vector2( 12152, 2307 )
 
-[node name="Position2D39" type="Position2D" parent="PathFinder/Nodes" index="45"]
-position = Vector2( 3736, 4505 )
+[node name="Position2D39" type="Position2D" parent="PathFinder/Nodes" index="51"]
+position = Vector2( 3740, 4535 )
 
-[node name="Position2D40" type="Position2D" parent="PathFinder/Nodes" index="46"]
+[node name="Position2D40" type="Position2D" parent="PathFinder/Nodes" index="52"]
 position = Vector2( 3273, 4961 )
 
-[node name="Position2D35" type="Position2D" parent="PathFinder/Nodes" index="47"]
+[node name="Position2D35" type="Position2D" parent="PathFinder/Nodes" index="53"]
 position = Vector2( 2513, 5774 )
 
-[node name="Position2D41" type="Position2D" parent="PathFinder/Nodes" index="48"]
+[node name="Position2D41" type="Position2D" parent="PathFinder/Nodes" index="54"]
 position = Vector2( 1025, 5804 )
 
-[node name="Position2D42" type="Position2D" parent="PathFinder/Nodes" index="49"]
+[node name="Position2D42" type="Position2D" parent="PathFinder/Nodes" index="55"]
 position = Vector2( 194, 5087 )
 
-[node name="Position2D43" type="Position2D" parent="PathFinder/Nodes" index="50"]
+[node name="Position2D43" type="Position2D" parent="PathFinder/Nodes" index="56"]
 position = Vector2( 182, 2822 )
 
-[node name="Position2D79" type="Position2D" parent="PathFinder/Nodes" index="51"]
+[node name="Position2D79" type="Position2D" parent="PathFinder/Nodes" index="57"]
 position = Vector2( 161, 184 )
 
-[node name="Position2D80" type="Position2D" parent="PathFinder/Nodes" index="52"]
+[node name="Position2D80" type="Position2D" parent="PathFinder/Nodes" index="58"]
 position = Vector2( 607, -292 )
 
-[node name="Position2D81" type="Position2D" parent="PathFinder/Nodes" index="53"]
+[node name="Position2D81" type="Position2D" parent="PathFinder/Nodes" index="59"]
 position = Vector2( 2971, -292 )
 
-[node name="Position2D44" type="Position2D" parent="PathFinder/Nodes" index="54"]
+[node name="Position2D44" type="Position2D" parent="PathFinder/Nodes" index="60"]
 position = Vector2( 996, 2085 )
 
-[node name="Position2D45" type="Position2D" parent="PathFinder/Nodes" index="55"]
+[node name="Position2D45" type="Position2D" parent="PathFinder/Nodes" index="61"]
 position = Vector2( 2301, 1992 )
 
-[node name="Position2D47" type="Position2D" parent="PathFinder/Nodes" index="56"]
+[node name="Position2D47" type="Position2D" parent="PathFinder/Nodes" index="62"]
 position = Vector2( 2246, 177 )
 
-[node name="Position2D48" type="Position2D" parent="PathFinder/Nodes" index="57"]
+[node name="Position2D48" type="Position2D" parent="PathFinder/Nodes" index="63"]
 position = Vector2( 2581, 169 )
 
-[node name="Position2D49" type="Position2D" parent="PathFinder/Nodes" index="58"]
+[node name="Position2D49" type="Position2D" parent="PathFinder/Nodes" index="64"]
 position = Vector2( 3110, 720 )
 
-[node name="Position2D50" type="Position2D" parent="PathFinder/Nodes" index="59"]
-position = Vector2( 3672, 752 )
+[node name="Position2D50" type="Position2D" parent="PathFinder/Nodes" index="65"]
+position = Vector2( 4383, 1181 )
 
-[node name="Position2D51" type="Position2D" parent="PathFinder/Nodes" index="60"]
-position = Vector2( 3680, 1258 )
+[node name="Position2D51" type="Position2D" parent="PathFinder/Nodes" index="66"]
+position = Vector2( 3685, 991 )
 
-[node name="Position2D52" type="Position2D" parent="PathFinder/Nodes" index="61"]
-position = Vector2( 6087, 1173 )
+[node name="Position2D52" type="Position2D" parent="PathFinder/Nodes" index="67"]
+position = Vector2( 6357, 1179 )
 
-[node name="Position2D53" type="Position2D" parent="PathFinder/Nodes" index="62"]
+[node name="Position2D88" type="Position2D" parent="PathFinder/Nodes" index="68"]
+position = Vector2( 7234, 410 )
+
+[node name="Position2D89" type="Position2D" parent="PathFinder/Nodes" index="69"]
+position = Vector2( 8167, 421 )
+
+[node name="Position2D90" type="Position2D" parent="PathFinder/Nodes" index="70"]
+position = Vector2( 8450, 936 )
+
+[node name="Position2D53" type="Position2D" parent="PathFinder/Nodes" index="71"]
 position = Vector2( 7295, -35 )
 
-[node name="Position2D54" type="Position2D" parent="PathFinder/Nodes" index="63"]
+[node name="Position2D54" type="Position2D" parent="PathFinder/Nodes" index="72"]
 position = Vector2( 8247, -3 )
 
-[node name="Position2D55" type="Position2D" parent="PathFinder/Nodes" index="64"]
+[node name="Position2D55" type="Position2D" parent="PathFinder/Nodes" index="73"]
 position = Vector2( 8295, 2213 )
 
-[node name="Position2D56" type="Position2D" parent="PathFinder/Nodes" index="65"]
-position = Vector2( 11693, 2213 )
+[node name="Position2D56" type="Position2D" parent="PathFinder/Nodes" index="74"]
+position = Vector2( 11760, 1999 )
 
-[node name="Position2D57" type="Position2D" parent="PathFinder/Nodes" index="66"]
-position = Vector2( 11731, 182 )
+[node name="Position2D57" type="Position2D" parent="PathFinder/Nodes" index="75"]
+position = Vector2( 12515, 153 )
 
-[node name="Position2D46" type="Position2D" parent="PathFinder/Nodes" index="67"]
+[node name="Position2D64" type="Position2D" parent="PathFinder/Nodes" index="76"]
+position = Vector2( 11724, 944 )
+
+[node name="Position2D68" type="Position2D" parent="PathFinder/Nodes" index="77"]
+position = Vector2( 11717, 1543 )
+
+[node name="Position2D86" type="Position2D" parent="PathFinder/Nodes" index="78"]
+position = Vector2( 10883, 2241 )
+
+[node name="Position2D46" type="Position2D" parent="PathFinder/Nodes" index="79"]
 position = Vector2( 3225, 2857 )
 
-[node name="Position2D34" type="Position2D" parent="PathFinder/Nodes" index="68"]
+[node name="Position2D34" type="Position2D" parent="PathFinder/Nodes" index="80"]
 position = Vector2( 1764, 7244 )
 
-[node name="Position2D33" type="Position2D" parent="PathFinder/Nodes" index="69"]
-position = Vector2( 3707, 8031 )
+[node name="Position2D33" type="Position2D" parent="PathFinder/Nodes" index="81"]
+position = Vector2( 3728, 8062 )
 
-[node name="Position2D30" type="Position2D" parent="PathFinder/Nodes" index="70"]
+[node name="Position2D30" type="Position2D" parent="PathFinder/Nodes" index="82"]
 position = Vector2( 8703, 6669 )
 
-[node name="Position2D28" type="Position2D" parent="PathFinder/Nodes" index="71"]
+[node name="Position2D28" type="Position2D" parent="PathFinder/Nodes" index="83"]
 position = Vector2( 11407, 8475 )
 
-[node name="Position2D13" type="Position2D" parent="PathFinder/Nodes" index="72"]
-position = Vector2( 9535, 8431 )
+[node name="Position2D13" type="Position2D" parent="PathFinder/Nodes" index="84"]
+position = Vector2( 9545, 8464 )
 
-[node name="Position2D14" type="Position2D" parent="PathFinder/Nodes" index="73"]
+[node name="Position2D14" type="Position2D" parent="PathFinder/Nodes" index="85"]
 position = Vector2( 8862, 7809 )
 
-[node name="Position2D15" type="Position2D" parent="PathFinder/Nodes" index="74"]
+[node name="Position2D15" type="Position2D" parent="PathFinder/Nodes" index="86"]
 position = Vector2( 8582, 7817 )
 rotation = 0.201052
 
-[node name="Position2D16" type="Position2D" parent="PathFinder/Nodes" index="75"]
+[node name="Position2D16" type="Position2D" parent="PathFinder/Nodes" index="87"]
 position = Vector2( 7675, 8745 )
 rotation = 0.201052
 
-[node name="Position2D17" type="Position2D" parent="PathFinder/Nodes" index="76"]
+[node name="Position2D17" type="Position2D" parent="PathFinder/Nodes" index="88"]
 position = Vector2( 6399, 8738 )
 rotation = 0.201052
 
-[node name="Position2D18" type="Position2D" parent="PathFinder/Nodes" index="77"]
+[node name="Position2D18" type="Position2D" parent="PathFinder/Nodes" index="89"]
 position = Vector2( 5508, 9629 )
 rotation = 0.201052
 
-[node name="Position2D19" type="Position2D" parent="PathFinder/Nodes" index="78"]
+[node name="Position2D19" type="Position2D" parent="PathFinder/Nodes" index="90"]
 position = Vector2( 4760, 9608 )
 rotation = 0.201052
 
-[node name="Position2D20" type="Position2D" parent="PathFinder/Nodes" index="79"]
+[node name="Position2D20" type="Position2D" parent="PathFinder/Nodes" index="91"]
 position = Vector2( 3855, 8746 )
 rotation = 0.201052
 
-[node name="Position2D21" type="Position2D" parent="PathFinder/Nodes" index="80"]
-position = Vector2( 3081, 8739 )
+[node name="Position2D21" type="Position2D" parent="PathFinder/Nodes" index="92"]
+position = Vector2( 3088, 8757 )
 rotation = 0.201052
 
 [node name="EnemyRacer" parent="PathFinder" instance=ExtResource( 1 )]
@@ -643,7 +679,7 @@ end_cap_mode = 2
 antialiased = true
 
 [node name="Line2D22" type="Line2D" parent="Lines"]
-points = PoolVector2Array( 12352, 3264, 12352, 4416, 12096, 4672, 11200, 4672, 10880, 4992, 10880, 5760, 10688, 5952 )
+points = PoolVector2Array( 12352, 3264, 12352, 4416, 12219.7, 4548.35, 12096, 4672, 11200, 4672, 10880, 4992, 10880, 5760, 10688, 5952 )
 width = 16.0
 default_color = Color( 1.7, 0.517969, 0, 1 )
 joint_mode = 2
