@@ -30,6 +30,21 @@ position = Vector2( 3081, 8728 )
 [node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="13"]
 current = false
 
+[node name="Line2D9" parent="GameWorld/Lines" index="14"]
+default_color = Color( 1.7, 0.14, 1.38, 1 )
+
+[node name="Line2D24" parent="GameWorld/Lines" index="15"]
+default_color = Color( 1.7, 0.14, 1.38, 1 )
+
+[node name="Line2D25" parent="GameWorld/Lines" index="16"]
+default_color = Color( 1.7, 0.14, 1.38, 1 )
+
+[node name="Line2D10" parent="GameWorld/Lines" index="17"]
+default_color = Color( 1.7, 0.14, 1.38, 1 )
+
+[node name="Line2D17" parent="GameWorld/Lines" index="18"]
+default_color = Color( 1.7, 0.14, 1.38, 1 )
+
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 9216 )
 current = true
