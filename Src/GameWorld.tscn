@@ -10,7 +10,7 @@
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
-polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5504, 9792, 6400, 8896, 7744, 8896, 8640, 8000, 8832, 8000, 9472, 8640, 12672, 8640, 13184, 8128, 14080, 8128, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, -64, 11520, -64, 11520, 2112, 8448, 2112, 8448, -256, 7232, -256, 5952, 1024, 3840, 1024, 3840, 320, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
+polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5568, 9792, 6400, 8960, 7744, 8960, 8704, 8000, 8768, 8000, 9408, 8640, 12672, 8640, 13184, 8128, 14080, 8128, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, -64, 11840, -64, 11520, 256, 11520, 1472, 10816, 2112, 9856, 2112, 8512, 768, 8512, 128, 8384, 0, 7232, 0, 6208, 1024, 4544, 1024, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -20,7 +20,7 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 192, 192 )
-polygon = PoolVector2Array( 192, 2304, 192, -64, 448, -320, 2560, -320, 3328, 448, 3008, 448, 2432, -128, 1920, -128, 1920, 1728, 768, 1728 )
+polygon = PoolVector2Array( 192, 2304, 192, -64, 448, -320, 2560, -320, 3328, 448, 3136, 448, 2432, -256, 1920, -256, 1920, 1600, 1792, 1728, 768, 1728 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 832, 3200 )
@@ -28,7 +28,7 @@ polygon = PoolVector2Array( -448, -320, 192, -960, 1600, -960, 2240, -320, 2240,
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 1024, 768 )
-polygon = PoolVector2Array( 1408, -512, 1472, -512, 2048, 64, 2496, 64, 2496, 640, 5120, 640, 6400, -640, 7040, -640, 7040, 1344, 2624, 1344, 2624, 2048, 3136, 2048, 3136, 3136, 2368, 3904, 2368, 1984, 1408, 1024 )
+polygon = PoolVector2Array( 1408, -384, 1600, -384, 2624, 640, 5632, 640, 6400, -128, 7040, -128, 7040, 0, 8384, 1344, 2624, 1344, 2624, 2048, 3136, 2048, 3136, 3136, 2368, 3904, 2368, 1984, 1408, 1024 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 512, 3136 )
@@ -40,7 +40,7 @@ polygon = PoolVector2Array( -192, 4800, 1024, 3584, 2560, 3584, 2560, 4288, 2048
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 3520, 3264 )
-polygon = PoolVector2Array( -128, 5312, 384, 4800, 384, 4096, 4544, 4096, 4864, 4416, 4864, 4608, 4160, 5312, 2880, 5312, 1984, 6208, 1216, 6208, 320, 5312 )
+polygon = PoolVector2Array( -128, 5312, 384, 4800, 384, 4096, 1472, 4096, 1600, 3968, 3456, 3968, 3584, 4096, 4544, 4096, 4864, 4416, 4864, 4608, 4160, 5312, 2752, 5312, 1984, 6080, 1216, 6080, 448, 5312 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 1472, 3136 )
@@ -48,23 +48,23 @@ polygon = PoolVector2Array( 2240, 3776, 1216, 2688, 2368, 1536, 3776, 1536, 3776
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 1472, 2944 )
-polygon = PoolVector2Array( 2496, 4096, 2496, 3328, 4032, 3328, 4032, 1728, 6592, 1728, 6592, 4096 )
+polygon = PoolVector2Array( 2496, 4096, 2496, 3328, 4032, 3328, 4032, 1728, 6592, 1728, 6592, 3008, 6144, 3456, 6144, 3776, 6464, 4096, 5440, 4096, 5376, 4160, 3776, 4160, 3712, 4096 )
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 3776, 2240 )
-polygon = PoolVector2Array( 4480, 2432, 4480, 3520, 5760, 3520, 5824, 3456, 5824, 2432 )
+polygon = PoolVector2Array( 4480, 2432, 4480, 3520, 4608, 3520, 4736, 3392, 4864, 3392, 4992, 3520, 5632, 3520, 5824, 3328, 5824, 2432 )
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Wall"]
-position = Vector2( 4224, 2540.8 )
-polygon = PoolVector2Array( 5568, 2131.2, 5568, 3200, 6400, 3200, 6400, 2131.2 )
+position = Vector2( 4224, 2560 )
+polygon = PoolVector2Array( 5568, 2112, 5568, 2816, 5696, 2944, 5696, 3072, 5568, 3200, 6208, 3200, 6400, 3008, 6400, 2368, 6656, 2112 )
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 4992, 1280 )
-polygon = PoolVector2Array( 3264, 4672, 3264, 5760, 3584, 5760, 3584, 5184, 7040, 5184, 7040, 6400, 7616, 6400, 8704, 5312, 8704, 3840, 8000, 3136, 8000, 2176, 8704, 1472, 8704, 1280, 8384, 960, 7360, 1984, 7360, 3392, 5888, 3392, 5888, 4672 )
+polygon = PoolVector2Array( 2944, 5184, 2944, 5440, 3264, 5760, 3584, 5760, 3584, 5184, 7040, 5184, 7040, 6400, 7616, 6400, 8704, 5312, 8704, 3840, 8000, 3136, 8000, 2176, 8704, 1472, 8704, 1280, 8384, 960, 7360, 1984, 7360, 3392, 6208, 3392, 5888, 3712, 5888, 4480, 5696, 4672, 3456, 4672 )
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 3648, 3264 )
-polygon = PoolVector2Array( 4736, 4096, 4992, 4352, 5184, 4352, 5440, 4096 )
+polygon = PoolVector2Array( 4800, 4096, 5056, 4352, 5120, 4352, 5376, 4096 )
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 3904, 3328 )
@@ -80,11 +80,11 @@ polygon = PoolVector2Array( 6016, 3840, 6912, 4736, 8000, 4736, 8448, 4288, 9152
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 5120, 1280 )
-polygon = PoolVector2Array( 8064, 704, 7232, 1536, 7232, 768, 6784, 768, 6784, -1024, 8064, -1024 )
+polygon = PoolVector2Array( 8064, 704, 7232, 1536, 7232, 768, 7104, 768, 6784, 448, 6784, -256, 7552, -1024, 8064, -1024 )
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 4352, 1344 )
-polygon = PoolVector2Array( 7552, 1024, 5568, 1024, 5568, 1664, 4992, 1664, 4992, 2048, 5120, 2176, 5568, 2176, 5568, 3008 )
+polygon = PoolVector2Array( 7552, 1024, 7424, 1024, 7168, 768, 7168, 512, 6591.87, 1024, 5568, 1024, 5568, 1664, 4992, 1664, 4992, 2048, 5120, 2176, 5568, 2176, 5568, 3008 )
 
 [node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 4928, 1792 )

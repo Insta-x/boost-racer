@@ -14,7 +14,6 @@
 script = ExtResource( 2 )
 
 [node name="GameWorld" parent="." instance=ExtResource( 1 )]
-position = Vector2( -14, 0 )
 
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 9216 )
@@ -43,7 +42,6 @@ player = NodePath("../../GameWorld/PlayerRacer")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-autoplay = true
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -51,5 +49,3 @@ one_shot = true
 autostart = true
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
-
-[editable path="GameWorld"]
