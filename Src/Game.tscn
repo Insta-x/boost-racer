@@ -103,6 +103,8 @@ SFXPath = NodePath("../../CountdownSFX")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -6.0
+bus = "Music"
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 5.0
