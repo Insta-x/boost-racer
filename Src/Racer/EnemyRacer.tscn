@@ -6,30 +6,53 @@
 [node name="EnemyRacer" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="CollisionPolygon2D" parent="." index="2"]
+visible = false
+
+[node name="ThrustingParticles" parent="." index="3"]
+visible = false
+
 [node name="Label" type="Label" parent="." index="4"]
+visible = false
 margin_left = -11.0
 margin_top = -40.0
 margin_right = 29.0
 margin_bottom = -26.0
 
 [node name="RayCastLeft" type="RayCast2D" parent="." index="5"]
+visible = false
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 3
 collide_with_areas = true
 
 [node name="RayCastRight" type="RayCast2D" parent="." index="6"]
+visible = false
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 3
 collide_with_areas = true
 
 [node name="RayCastFront" type="RayCast2D" parent="." index="7"]
+visible = false
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 3
 collide_with_areas = true
 
 [node name="Target" type="RayCast2D" parent="." index="8"]
+visible = false
 cast_to = Vector2( 0, 0 )
 collide_with_areas = true
+
+[node name="BoostingParticles" parent="." index="9"]
+visible = false
+
+[node name="BoostChargeParticles" parent="." index="11"]
+visible = false
+
+[node name="BoostingSFX" parent="." index="12"]
+visible = false
+
+[node name="LightOccluder2D" parent="." index="13"]
+visible = false

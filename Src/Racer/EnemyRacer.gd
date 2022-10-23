@@ -2,6 +2,10 @@ extends Racer
 
 class_name EnemyRacer
 
+onready var body_2 := $Polygon2D
+onready var body_1 := $Polygon2D2
+
+
 var target_velocity := Vector2.ZERO
 var adjust_velocity := Vector2.ZERO
 var guideID := -1

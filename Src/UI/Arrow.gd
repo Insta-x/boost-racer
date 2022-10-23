@@ -26,12 +26,12 @@ func _physics_process(delta):
 		maju = !maju
 		
 	var dir = (finish_node.global_position - player_node.global_position)
-	if (abs(dir.x) < (get_viewport().size.x + offset.x)/2) and abs(dir.y) <(get_viewport().size.y)/2:
+	if (abs(dir.x) < (get_viewport_rect().size.x + offset.x)/2) and abs(dir.y) <(get_viewport_rect().size.y)/2:
 		hide()
 	elif (game_started):
 		show()
 		dir.normalized()
-		var pos = Vector2(((get_viewport().size.x - size.x)/2), (get_viewport().size.y - size.y)/2)
+		var pos = Vector2(((get_viewport_rect().size.x - size.x)/2), (get_viewport_rect().size.y - size.y)/2)
 		pos += offset.rotated(dir.angle())
 		if (maju):
 			pos+= offset.rotated(dir.angle())/2
