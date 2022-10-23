@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Src/Racer/Racer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/thrust-particle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sound/thruster.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Sound/boost.wav" type="AudioStream" id=4]
 
 [sub_resource type="Gradient" id=1]
@@ -111,9 +110,6 @@ one_shot = true
 position = Vector2( -34, 0 )
 emitting = false
 process_material = SubResource( 7 )
-
-[node name="ThrustingSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
 
 [node name="BoostingSFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -34, 0 )

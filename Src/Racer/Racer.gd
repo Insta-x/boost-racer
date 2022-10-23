@@ -23,11 +23,13 @@ var max_speed := 500.0
 var max_boost_speed := 1000.0
 var can_boost := true
 
+
 var control_locked := true
 
 
 func _ready() -> void:
 	GlobalSignal.connect("game_start", self, "_on_game_start")
+	GlobalSignal.connect("racer_finished", self, "_on_racer_finished")
 
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
@@ -71,11 +73,7 @@ func boost() -> void:
 func set_thrusting(value: bool) -> void:
 	thrusting = value
 	thrusting_particles.emitting = thrusting
-	if (!thrusting_sfx.playing && thrusting):
-		thrusting_sfx.play()
-	elif(!thrusting):
-		thrusting_sfx.stop()
-	
+
 func set_boosting(value: bool) -> void:
 	boosting = value
 	boosting_particles.emitting = boosting
@@ -90,3 +88,7 @@ func _on_DashCooldownTimer_timeout() -> void:
 
 func _on_game_start() -> void:
 	control_locked = false
+
+func _on_racer_finished(var value := 0) -> void:
+	if (value == racer_id):
+		control_locked = true

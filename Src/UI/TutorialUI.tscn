@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Font/Polentical Neon Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Art/tutor-key-space.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[node name="TutorialUI" type="HBoxContainer"]
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+custom_constants/separation = 50
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 240.0
+margin_bottom = 108.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureRect"]
+margin_right = 240.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0.984314, 0.94902, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "SPACE"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 240.0
+margin_bottom = 106.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0.984314, 0.94902, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BRAKE"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 290.0
+margin_right = 530.0
+margin_bottom = 108.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
+margin_right = 240.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="VBoxContainer2/TextureRect"]
+margin_right = 240.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0.984314, 0.94902, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "L SHIFT"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+margin_top = 68.0
+margin_right = 240.0
+margin_bottom = 106.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0.984314, 0.94902, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BOOST"
+align = 1
+valign = 1

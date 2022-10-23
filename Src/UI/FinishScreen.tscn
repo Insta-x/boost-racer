@@ -64,9 +64,9 @@ rect_scale = Vector2( 1.01797, 0.988632 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Control/CenterContainer"]
 margin_left = 618.0
-margin_top = 318.0
+margin_top = 265.0
 margin_right = 1301.0
-margin_bottom = 762.0
+margin_bottom = 814.0
 custom_constants/separation = 20
 
 [node name="PersonalBest" type="Label" parent="ColorRect/Control/CenterContainer/VBoxContainer"]
@@ -83,74 +83,84 @@ uppercase = true
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Control/CenterContainer/VBoxContainer"]
 margin_top = 70.0
 margin_right = 683.0
-margin_bottom = 360.0
+margin_bottom = 465.0
 custom_constants/separation = 20
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 131.0
+margin_left = 28.0
 margin_right = 331.0
-margin_bottom = 290.0
+margin_bottom = 395.0
 custom_constants/separation = 20
 
 [node name="ScorePanel" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_bottom = 42.0
+margin_right = 303.0
+margin_bottom = 63.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel2" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 62.0
-margin_bottom = 104.0
+margin_top = 83.0
+margin_right = 303.0
+margin_bottom = 146.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel3" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 124.0
-margin_bottom = 166.0
+margin_top = 166.0
+margin_right = 303.0
+margin_bottom = 229.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel4" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 186.0
-margin_bottom = 228.0
+margin_top = 249.0
+margin_right = 303.0
+margin_bottom = 312.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel5" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 248.0
-margin_bottom = 290.0
+margin_top = 332.0
+margin_right = 303.0
+margin_bottom = 395.0
 size_flags_horizontal = 4
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 351.0
-margin_right = 551.0
-margin_bottom = 290.0
+margin_right = 654.0
+margin_bottom = 395.0
 custom_constants/separation = 20
 
 [node name="ScorePanel" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 5 )]
-margin_bottom = 42.0
+margin_right = 303.0
+margin_bottom = 63.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel2" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 5 )]
-margin_top = 62.0
-margin_bottom = 104.0
+margin_top = 83.0
+margin_right = 303.0
+margin_bottom = 146.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel3" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 5 )]
-margin_top = 124.0
-margin_bottom = 166.0
+margin_top = 166.0
+margin_right = 303.0
+margin_bottom = 229.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel4" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 5 )]
-margin_top = 186.0
-margin_bottom = 228.0
+margin_top = 249.0
+margin_right = 303.0
+margin_bottom = 312.0
 size_flags_horizontal = 4
 
 [node name="ScorePanel5" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 5 )]
-margin_top = 248.0
-margin_bottom = 290.0
+margin_top = 332.0
+margin_right = 303.0
+margin_bottom = 395.0
 size_flags_horizontal = 4
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/Control/CenterContainer/VBoxContainer"]
-margin_top = 380.0
+margin_top = 485.0
 margin_right = 683.0
-margin_bottom = 444.0
+margin_bottom = 549.0
 alignment = 1
 
 [node name="RetryButton" type="TextureButton" parent="ColorRect/Control/CenterContainer/VBoxContainer/HBoxContainer2"]

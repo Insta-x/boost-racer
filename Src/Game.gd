@@ -1,6 +1,6 @@
 extends Node
 
-
+onready var BGM := $BGM
 var race_time : int
 
 
@@ -26,4 +26,5 @@ func _on_player_finished() -> void:
 
 
 func _on_StartTimer_timeout() -> void:
+	BGM.play()
 	start()

@@ -1,14 +1,23 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Src/GameWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Game.gd" type="Script" id=2]
 [ext_resource path="res://Src/UI/PlayerUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Art/arrow.png" type="Texture" id=4]
-[ext_resource path="res://Src/Arrow.gd" type="Script" id=5]
+[ext_resource path="res://Src/UI/Arrow.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sound/music.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Assets/game_world.tres" type="Environment" id=7]
 [ext_resource path="res://Src/UI/FinishScreen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/GameCamera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Font/Polentical Neon Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/Sound/countdown.wav" type="AudioStream" id=11]
+[ext_resource path="res://Src/UI/CountdownLabel.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 2
+outline_color = Color( 0.988235, 0.988235, 0.988235, 1 )
+font_data = ExtResource( 10 )
 
 [node name="Game" type="Node"]
 script = ExtResource( 2 )
@@ -48,6 +57,9 @@ default_color = Color( 1.7, 0.14, 1.38, 1 )
 [node name="Line2D17" parent="GameWorld/Lines" index="18"]
 default_color = Color( 1.7, 0.14, 1.38, 1 )
 
+[node name="Camera2D" parent="GameWorld/PlayerRacer" index="8"]
+current = false
+
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 9216 )
 current = true
@@ -74,13 +86,29 @@ script = ExtResource( 5 )
 finish_area = NodePath("../../GameWorld/FinishArea2D")
 player = NodePath("../../GameWorld/PlayerRacer")
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+margin_top = 100.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "3"
+align = 1
+valign = 1
+script = ExtResource( 12 )
+TimerPath = NodePath("../../StartTimer")
+SFXPath = NodePath("../../CountdownSFX")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="CountdownSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 

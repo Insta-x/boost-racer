@@ -12,10 +12,10 @@ var size := Vector2(40,75)
 var anim_time := 0.4
 var temp := 0.0
 var maju := false
-
+var game_started := false
 
 func _ready() -> void:
-	GlobalSignal.connect("game_start", self, "show")
+	GlobalSignal.connect("game_start", self, "start")
 
 
 func _physics_process(delta):
@@ -27,9 +27,9 @@ func _physics_process(delta):
 		
 	var dir = (finish_node.global_position - player_node.global_position)
 	if (abs(dir.x) < (get_viewport().size.x + offset.x)/2) and abs(dir.y) <(get_viewport().size.y)/2:
-		self.hide()
-	else:
-		self.show()
+		hide()
+	elif (game_started):
+		show()
 		dir.normalized()
 		var pos = Vector2(((get_viewport().size.x - size.x)/2), (get_viewport().size.y - size.y)/2)
 		pos += offset.rotated(dir.angle())
@@ -38,3 +38,5 @@ func _physics_process(delta):
 		set_rotation(dir.angle())
 		set_position(pos)
 
+func start():
+	game_started = true
