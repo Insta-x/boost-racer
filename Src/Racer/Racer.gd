@@ -22,8 +22,8 @@ var max_speed := 500.0
 var max_boost_speed := 1000.0
 var can_boost := true
 
-
 var control_locked := true
+var reached_finish := false
 
 
 func _ready() -> void:

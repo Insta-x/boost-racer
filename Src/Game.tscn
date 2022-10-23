@@ -45,9 +45,6 @@ position = Vector2( 12160, 2283 )
 [node name="Position2D21" parent="GameWorld/PathFinder/Nodes" index="96"]
 position = Vector2( 3081, 8728 )
 
-[node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="13"]
-current = false
-
 [node name="Line2D9" parent="GameWorld/Lines" index="14"]
 default_color = Color( 1.7, 0.14, 1.38, 1 )
 
@@ -77,6 +74,8 @@ environment = ExtResource( 7 )
 
 [node name="PlayerUI" parent="CanvasLayer" instance=ExtResource( 3 )]
 visible = false
+racers = [ NodePath("../../GameWorld/PlayerRacer"), NodePath("../../GameWorld/PathFinder/EnemyRacer"), NodePath("../../GameWorld/PathFinder/EnemyRacer2"), NodePath("../../GameWorld/PathFinder/EnemyRacer3"), NodePath("../../GameWorld/PathFinder/EnemyRacer4"), NodePath("../../GameWorld/PathFinder/EnemyRacer5"), NodePath("../../GameWorld/PathFinder/EnemyRacer6"), NodePath("../../GameWorld/PathFinder/EnemyRacer7"), NodePath("../../GameWorld/PathFinder/EnemyRacer8"), NodePath("../../GameWorld/PathFinder/EnemyRacer9") ]
+finish_line = NodePath("../../GameWorld/FinishArea2D")
 
 [node name="Arrow" type="TextureRect" parent="CanvasLayer"]
 visible = false

@@ -326,6 +326,9 @@ position = Vector2( -192, 9216 )
 [node name="RacerLock9" parent="." instance=ExtResource( 5 )]
 position = Vector2( -320, 9088 )
 
+[node name="RacerLock10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 8992 )
+
 [node name="PathFinder" parent="." instance=ExtResource( 3 )]
 
 [node name="Position2D" type="Position2D" parent="PathFinder/Nodes" index="0"]
@@ -629,12 +632,6 @@ rotation = 0.201052
 [node name="EnemyRacer" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( -64, 9216 )
 
-[node name="Camera2D" type="Camera2D" parent="PathFinder/EnemyRacer"]
-current = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="EnemyRacer2" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( 64, 9344 )
 
@@ -655,6 +652,9 @@ position = Vector2( -320, 8960 )
 
 [node name="EnemyRacer8" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( -192, 8960 )
+
+[node name="EnemyRacer9" parent="PathFinder" instance=ExtResource( 1 )]
+position = Vector2( 0, 8992 )
 
 [node name="Lines" type="Node2D" parent="."]
 __meta__ = {
