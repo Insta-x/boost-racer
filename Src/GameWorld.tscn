@@ -100,12 +100,6 @@ polygon = PoolVector2Array( 1920, 1728, 3072, 1728, 3072, 640, 7040, 640, 7040, 
 [node name="PlayerRacer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 177, 8817 )
 
-[node name="Camera2D" type="Camera2D" parent="PlayerRacer"]
-current = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="FinishArea2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 13504, -64 )
 
