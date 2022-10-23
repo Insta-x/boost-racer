@@ -20,6 +20,7 @@ func set_label_ranking(var value : int) -> void:
 func set_label_name(var value : String) -> void:
 	NameLabel.text = value
 
+
 func set_label_time(var value : int) -> void:
 	var milisecond := value%1000
 	var second := (value/1000)%60

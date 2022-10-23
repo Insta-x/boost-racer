@@ -92,3 +92,4 @@ func _on_game_start() -> void:
 func _on_racer_finished(var value := 0) -> void:
 	if (value == racer_id):
 		control_locked = true
+		reached_finish = true
