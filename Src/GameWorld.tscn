@@ -1,30 +1,92 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Src/Racer/EnemyRacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Lee/PathFinder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/RaceComponents/FinishArea2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Src/RaceComponents/RacerLock.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Art/finish-line.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/background.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/finish-line.png" type="Texture" id=8]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 832, 8576, 896, 8576, 3072, 8576, 3584, 8064, 3584, 7360, 2048, 7360 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 384, 8192, 1536, 7040, 3520, 7040, 2496, 5952, 960, 5952, 384, 5376 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 1024, 5632, 2432, 5632, 3072, 4992, 3072, 2880, 2432, 2240, 1024, 2240, 384, 2880, 384, 4992 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 1984, 1920, 2112, 1792, 2112, -64, 2624, -64, 3328, 640, 3520, 640, 2752, -128, 640, -128, 384, 128, 384, 2496, 960, 1920 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 3392, 4672, 4160, 3904, 4160, 2880, 4096, 2816, 3840, 2816, 3648, 2624, 3648, 2304, 3840, 2112, 9408, 2112, 8064, 768, 8064, 640, 7424, 640, 6656, 1408, 3648, 1408, 2624, 384, 2432, 384, 2432, 1792, 3392, 2752 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 4480, 2560, 4288, 2560, 4224, 2496, 4224, 2432, 4288, 2368, 9600, 2368, 9600, 2496, 5824, 2496, 5632, 2688, 5632, 3392, 5440, 3584, 4672, 3584, 4480, 3392 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( 9344, 2688, 6144, 2688, 5952, 2880, 5952, 3712, 5760, 3904, 4480, 3904, 4032, 4352, 9472, 4352, 9600, 4224, 9600, 4096, 9408, 3904, 9280, 3904, 9152, 3776, 9152, 2944, 9344, 2752 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 3712, 6912, 3712, 6208, 3904, 6016, 4992, 6016, 5248, 5760, 5248, 5568, 5056, 5376, 5056, 5056, 5248, 4864, 5248, 4672, 3840, 4672, 2688, 5824 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( 3968, 7040, 5184, 7040, 5248, 7104, 6848, 7104, 6912, 7040, 7936, 7040, 7616, 6720, 7616, 6400, 8064, 5952, 8064, 4672, 5760, 4672, 5504, 4928, 5504, 6144, 5376, 6272, 4160, 6272, 3968, 6464 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( 5504, 9344, 6272, 8576, 7680, 8576, 8384, 7872, 8384, 7680, 8064, 7360, 7104, 7360, 6976, 7232, 5120, 7232, 4992, 7360, 4032, 7360, 3904, 7488, 3904, 8064, 3392, 8576, 3968, 8576, 4736, 9344 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+polygon = PoolVector2Array( 8704, 7616, 8768, 7616, 9024, 7360, 8448, 7360 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+polygon = PoolVector2Array( 9088, 7872, 9536, 8320, 11200, 8320, 10304, 7424, 9344, 7424, 9088, 7680 )
+
+[sub_resource type="OccluderPolygon2D" id=13]
+polygon = PoolVector2Array( 10560, 7104, 10880, 6784, 9088, 6784, 8832, 7040, 8832, 7104 )
+
+[sub_resource type="OccluderPolygon2D" id=14]
+polygon = PoolVector2Array( 8384, 5760, 8512, 5632, 8640, 5632, 8768, 5760, 9408, 5760, 9600, 5568, 9600, 4672, 8256, 4672, 8256, 5760 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+polygon = PoolVector2Array( 9792, 5760, 10432, 5760, 10624, 5568, 10624, 4928, 10880, 4672, 9792, 4672, 9792, 5376, 9920, 5504, 9920, 5632 )
+
+[sub_resource type="OccluderPolygon2D" id=16]
+polygon = PoolVector2Array( 8576, 7040, 8576, 6592, 8704, 6464, 11840, 6464, 12032, 6656, 12032, 7680, 12608, 7680, 13696, 6592, 13696, 5120, 12992, 4416, 12992, 3456, 13696, 2752, 13696, 2560, 13376, 2240, 12352, 3264, 12352, 4416, 12096, 4672, 11200, 4672, 10880, 4992, 10880, 5760, 10688, 5952, 8448, 5952, 7936, 6464, 7936, 6720, 8256, 7040 )
+
+[sub_resource type="OccluderPolygon2D" id=17]
+polygon = PoolVector2Array( 13760, 6976, 13760, 7680, 13568, 7872, 13056, 7872, 12608, 8320, 11520, 8320, 10624, 7424, 11264, 6784, 11520, 6784, 11712, 6976, 11712, 8000, 12736, 8000 )
+
+[sub_resource type="OccluderPolygon2D" id=18]
+polygon = PoolVector2Array( 11840, 4352, 12096, 4096, 12096, 3712, 11904, 3520, 11904, 3328, 12096, 3136, 12096, 2560, 10304, 4352 )
+
+[sub_resource type="OccluderPolygon2D" id=19]
+polygon = PoolVector2Array( 11520, 1856, 10944, 2368, 10176, 2368, 9920, 2624, 9920, 2816, 9536, 3200, 9536, 3392, 9664, 3520, 9920, 3520, 9920, 4352, 11904, 2368, 11776, 2368, 11520, 2112 )
+
+[sub_resource type="OccluderPolygon2D" id=20]
+polygon = PoolVector2Array( 12352, 2816, 13184, 1984, 13184, 256, 12672, 256, 11904, 1024, 11904, 1728, 12224, 2048, 12352, 2048 )
+
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 512, 144 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 8 )
 region = Rect2( 512, 0, 512, 144 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 8 )
 region = Rect2( 1024, 0, 512, 144 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -32,8 +94,19 @@ animations = [ {
 
 [node name="GameWorld" type="Node2D"]
 
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 7232, 4224 )
+scale = Vector2( 300, 300 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="OuterWall" type="StaticBody2D" parent="."]
 collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
 polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5568, 9792, 6400, 8960, 7744, 8960, 8704, 8000, 8768, 8000, 9408, 8640, 12672, 8640, 13184, 8128, 13888, 8128, 14080, 7936, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, 256, 13952, -192, 13632, -512, 13184, -64, 11840, -64, 11520, 256, 11520, 1472, 10816, 2112, 9856, 2112, 8512, 768, 8512, 128, 8384, 0, 7232, 0, 6208, 1024, 4544, 1024, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
@@ -43,86 +116,169 @@ __meta__ = {
 
 [node name="Wall" type="StaticBody2D" parent="."]
 collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 192, 192 )
 polygon = PoolVector2Array( 192, 2304, 192, -64, 448, -320, 2560, -320, 3328, 448, 3136, 448, 2432, -256, 1920, -256, 1920, 1600, 1792, 1728, 768, 1728 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 832, 3200 )
 polygon = PoolVector2Array( -448, -320, 192, -960, 1600, -960, 2240, -320, 2240, 1792, 1600, 2432, 192, 2432, -448, 1792 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 1024, 768 )
 polygon = PoolVector2Array( 1408, -384, 1600, -384, 2624, 640, 5632, 640, 6400, -128, 7040, -128, 7040, 0, 8384, 1344, 2816, 1344, 2624, 1536, 2624, 1856, 2816, 2048, 3072, 2048, 3136, 2112, 3136, 3136, 2368, 3904, 2368, 1984, 1408, 1024 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 512, 3136 )
 polygon = PoolVector2Array( -128, 5056, -128, 2240, 448, 2816, 1984, 2816, 3008, 3904, 1024, 3904 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 1024, 3776 )
 polygon = PoolVector2Array( -192, 4800, 1024, 3584, 2560, 3584, 2560, 4288, 2048, 4800 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 3520, 3264 )
 polygon = PoolVector2Array( -128, 5312, 384, 4800, 384, 4224, 512, 4096, 1472, 4096, 1600, 3968, 3456, 3968, 3584, 4096, 4544, 4096, 4864, 4416, 4864, 4608, 4160, 5312, 2752, 5312, 1984, 6080, 1216, 6080, 448, 5312 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 1472, 3136 )
 polygon = PoolVector2Array( 2240, 3776, 1216, 2688, 2368, 1536, 3776, 1536, 3776, 1728, 3584, 1920, 3584, 2240, 3776, 2432, 3776, 2624, 3520, 2880, 2432, 2880, 2240, 3072 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 1472, 2944 )
 polygon = PoolVector2Array( 2496, 4096, 2496, 3520, 2688, 3328, 3904, 3328, 4032, 3200, 4032, 1984, 4288, 1728, 6592, 1728, 6592, 3008, 6144, 3456, 6144, 3776, 6464, 4096, 5440, 4096, 5376, 4160, 3776, 4160, 3712, 4096 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 3776, 2240 )
 polygon = PoolVector2Array( 4480, 2432, 4480, 3520, 4608, 3520, 4736, 3392, 4864, 3392, 4992, 3520, 5632, 3520, 5824, 3328, 5824, 2432 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 4224, 2560 )
 polygon = PoolVector2Array( 5568, 2112, 5568, 2816, 5696, 2944, 5696, 3072, 5568, 3200, 6208, 3200, 6400, 3008, 6400, 2368, 6656, 2112 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 4992, 1280 )
 polygon = PoolVector2Array( 2944, 5184, 2944, 5440, 3264, 5760, 3584, 5760, 3584, 5312, 3712, 5184, 6848, 5184, 7040, 5376, 7040, 6400, 7616, 6400, 8704, 5312, 8704, 3840, 8000, 3136, 8000, 2176, 8704, 1472, 8704, 1280, 8384, 960, 7360, 1984, 7360, 3136, 7104, 3392, 6208, 3392, 5888, 3712, 5888, 4480, 5696, 4672, 3456, 4672 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 3648, 3264 )
 polygon = PoolVector2Array( 4800, 4096, 5056, 4352, 5120, 4352, 5376, 4096 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 3904, 3328 )
 polygon = PoolVector2Array( 5184, 4544, 5184, 4352, 5440, 4096, 6400, 4096, 7296, 4992, 5632, 4992 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 3264, 3072 )
 polygon = PoolVector2Array( 5568, 4032, 5568, 3968, 5824, 3712, 7616, 3712, 7296, 4032 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 4608, 3584 )
 polygon = PoolVector2Array( 6016, 3840, 6912, 4736, 8000, 4736, 8448, 4288, 8960, 4288, 9152, 4096, 9152, 3392, 8128, 4416, 7104, 4416, 7104, 3392, 6912, 3200, 6656, 3200 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 5120, 1280 )
 polygon = PoolVector2Array( 8064, 704, 7232, 1536, 7232, 768, 7104, 768, 6784, 448, 6784, -256, 7552, -1024, 8064, -1024 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 4352, 1344 )
 polygon = PoolVector2Array( 7552, 1024, 7424, 1024, 7168, 768, 7168, 512, 6591.87, 1024, 5824, 1024, 5568, 1280, 5568, 1472, 5376, 1664, 5184, 1856, 5184, 2048, 5312, 2176, 5568, 2176, 5568, 3008 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 4928, 1792 )
 polygon = PoolVector2Array( 5376, 2560, 6912, 2560, 7168, 2304, 7168, 1920, 6976, 1728, 6976, 1536, 7168, 1344, 7168, 768 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 2496, 2048 )
 polygon = PoolVector2Array( 7104, 2176, 7104, 2048, 6912, 1856, 6784, 1856, 6656, 1728, 6656, 896, 6848, 704, 6848, 640, 3648, 640, 3456, 832, 3456, 1664, 3264, 1856, 1984, 1856, 1536, 2304, 6976, 2304 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="Wall"]
+visible = false
 position = Vector2( 2560, 1856 )
 polygon = PoolVector2Array( 2112, 1728, 2880, 1728, 3072, 1536, 3072, 832, 3264, 640, 7040, 640, 7040, 512, 1728, 512, 1664, 576, 1664, 640, 1728, 704, 1920, 704, 1920, 1536 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerRacer" parent="." instance=ExtResource( 2 )]
 position = Vector2( -192, 9216 )
@@ -140,7 +296,7 @@ __meta__ = {
 position = Vector2( -112.177, 115.823 )
 rotation = 0.785398
 scale = Vector2( 0.845836, 1 )
-frames = SubResource( 4 )
+frames = SubResource( 24 )
 
 [node name="RacerLock" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64, 9216 )
@@ -633,7 +789,7 @@ antialiased = true
 [node name="Line2D9" type="Line2D" parent="Lines"]
 points = PoolVector2Array( 4032, 4352, 9472, 4352, 9600, 4224, 9600, 4096, 9408, 3904, 9280, 3904, 9152, 3776, 9152, 2944, 9344, 2752, 9344, 2688, 6144, 2688, 5952, 2880, 5952, 3712, 5760, 3904, 4480, 3904, 4032, 4352 )
 width = 16.0
-default_color = Color( 1.8, 0.14, 1.38, 1 )
+default_color = Color( 1.3, 0.14, 1.1, 1 )
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -800,5 +956,2617 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+position = Vector2( 0, 9600 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D3" type="Light2D" parent="Lights"]
+position = Vector2( 640, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D4" type="Light2D" parent="Lights"]
+position = Vector2( 1152, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D5" type="Light2D" parent="Lights"]
+position = Vector2( 1792, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D6" type="Light2D" parent="Lights"]
+position = Vector2( 2496, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D7" type="Light2D" parent="Lights"]
+position = Vector2( 3072, 8896 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D8" type="Light2D" parent="Lights"]
+position = Vector2( 3840, 8896 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D2" type="Light2D" parent="Lights"]
+position = Vector2( -576, 9024 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D9" type="Light2D" parent="Lights"]
+position = Vector2( 0, 8448 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D10" type="Light2D" parent="Lights"]
+position = Vector2( 0, 7680 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D11" type="Light2D" parent="Lights"]
+position = Vector2( 0, 6976 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D12" type="Light2D" parent="Lights"]
+position = Vector2( 800, 8608 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D21" type="Light2D" parent="Lights"]
+position = Vector2( 576, 8128 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D22" type="Light2D" parent="Lights"]
+position = Vector2( 1536, 7104 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D23" type="Light2D" parent="Lights"]
+position = Vector2( 2752, 7104 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D13" type="Light2D" parent="Lights"]
+position = Vector2( 1152, 8192 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D15" type="Light2D" parent="Lights"]
+position = Vector2( 1760, 7584 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D16" type="Light2D" parent="Lights"]
+position = Vector2( 2016, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D18" type="Light2D" parent="Lights"]
+position = Vector2( 2912, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D20" type="Light2D" parent="Lights"]
+position = Vector2( 3616, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D24" type="Light2D" parent="Lights"]
+position = Vector2( 1792, 8640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D25" type="Light2D" parent="Lights"]
+position = Vector2( 3072, 8640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D26" type="Light2D" parent="Lights"]
+position = Vector2( 4032, 8704 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D27" type="Light2D" parent="Lights"]
+position = Vector2( 4736, 9408 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D36" type="Light2D" parent="Lights"]
+position = Vector2( 5088, 7200 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D37" type="Light2D" parent="Lights"]
+position = Vector2( 4384, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D38" type="Light2D" parent="Lights"]
+position = Vector2( 6432, 7136 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D39" type="Light2D" parent="Lights"]
+position = Vector2( 5696, 7136 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D40" type="Light2D" parent="Lights"]
+position = Vector2( 4704, 7072 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D41" type="Light2D" parent="Lights"]
+position = Vector2( 3936, 7008 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D42" type="Light2D" parent="Lights"]
+position = Vector2( 3936, 6464 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D77" type="Light2D" parent="Lights"]
+position = Vector2( 5472, 5792 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D78" type="Light2D" parent="Lights"]
+position = Vector2( 5088, 5376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D79" type="Light2D" parent="Lights"]
+position = Vector2( 5472, 4928 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D80" type="Light2D" parent="Lights"]
+position = Vector2( 5920, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D81" type="Light2D" parent="Lights"]
+position = Vector2( 6432, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D82" type="Light2D" parent="Lights"]
+position = Vector2( 6880, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D83" type="Light2D" parent="Lights"]
+position = Vector2( 7488, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D84" type="Light2D" parent="Lights"]
+position = Vector2( 8064, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D85" type="Light2D" parent="Lights"]
+position = Vector2( 8096, 5120 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D86" type="Light2D" parent="Lights"]
+position = Vector2( 8224, 5696 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D87" type="Light2D" parent="Lights"]
+position = Vector2( 8576, 5664 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D88" type="Light2D" parent="Lights"]
+position = Vector2( 7872, 6208 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D89" type="Light2D" parent="Lights"]
+position = Vector2( 7648, 6688 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D90" type="Light2D" parent="Lights"]
+position = Vector2( 7520, 7072 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D91" type="Light2D" parent="Lights"]
+position = Vector2( 8064, 6880 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D92" type="Light2D" parent="Lights"]
+position = Vector2( 9056, 5920 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D93" type="Light2D" parent="Lights"]
+position = Vector2( 9536, 5920 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D94" type="Light2D" parent="Lights"]
+position = Vector2( 9888, 5600 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D95" type="Light2D" parent="Lights"]
+position = Vector2( 10272, 5920 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D96" type="Light2D" parent="Lights"]
+position = Vector2( 9632, 5152 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D97" type="Light2D" parent="Lights"]
+position = Vector2( 9760, 4704 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D98" type="Light2D" parent="Lights"]
+position = Vector2( 5248, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D99" type="Light2D" parent="Lights"]
+position = Vector2( 3936, 4608 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D100" type="Light2D" parent="Lights"]
+position = Vector2( 4544, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D101" type="Light2D" parent="Lights"]
+position = Vector2( 3552, 4896 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D102" type="Light2D" parent="Lights"]
+position = Vector2( 4000, 4352 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D103" type="Light2D" parent="Lights"]
+position = Vector2( 4544, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D104" type="Light2D" parent="Lights"]
+position = Vector2( 5216, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D105" type="Light2D" parent="Lights"]
+position = Vector2( 5856, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D106" type="Light2D" parent="Lights"]
+position = Vector2( 6528, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D107" type="Light2D" parent="Lights"]
+position = Vector2( 7168, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D108" type="Light2D" parent="Lights"]
+position = Vector2( 7776, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D109" type="Light2D" parent="Lights"]
+position = Vector2( 8192, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D110" type="Light2D" parent="Lights"]
+position = Vector2( 8768, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D111" type="Light2D" parent="Lights"]
+position = Vector2( 9312, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D112" type="Light2D" parent="Lights"]
+position = Vector2( 9536, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D113" type="Light2D" parent="Lights"]
+position = Vector2( 8800, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D114" type="Light2D" parent="Lights"]
+position = Vector2( 8320, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D115" type="Light2D" parent="Lights"]
+position = Vector2( 9568, 4000 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D116" type="Light2D" parent="Lights"]
+position = Vector2( 9888, 3552 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D117" type="Light2D" parent="Lights"]
+position = Vector2( 9184, 3744 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D118" type="Light2D" parent="Lights"]
+position = Vector2( 10016, 4320 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D119" type="Light2D" parent="Lights"]
+position = Vector2( 10336, 4000 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D120" type="Light2D" parent="Lights"]
+position = Vector2( 10656, 3648 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D121" type="Light2D" parent="Lights"]
+position = Vector2( 9184, 2944 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D122" type="Light2D" parent="Lights"]
+position = Vector2( 9888, 2816 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D123" type="Light2D" parent="Lights"]
+position = Vector2( 9280, 2656 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D124" type="Light2D" parent="Lights"]
+position = Vector2( 8800, 2528 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D125" type="Light2D" parent="Lights"]
+position = Vector2( 8416, 2656 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D126" type="Light2D" parent="Lights"]
+position = Vector2( 8000, 2528 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D127" type="Light2D" parent="Lights"]
+position = Vector2( 7584, 2656 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D128" type="Light2D" parent="Lights"]
+position = Vector2( 6976, 2528 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D129" type="Light2D" parent="Lights"]
+position = Vector2( 6400, 2656 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D130" type="Light2D" parent="Lights"]
+position = Vector2( 5856, 2528 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D131" type="Light2D" parent="Lights"]
+position = Vector2( 5920, 2944 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D132" type="Light2D" parent="Lights"]
+position = Vector2( 5664, 3328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D133" type="Light2D" parent="Lights"]
+position = Vector2( 5760, 3872 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D134" type="Light2D" parent="Lights"]
+position = Vector2( 5248, 3616 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D135" type="Light2D" parent="Lights"]
+position = Vector2( 4896, 3872 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D136" type="Light2D" parent="Lights"]
+position = Vector2( 4672, 3616 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D137" type="Light2D" parent="Lights"]
+position = Vector2( 4448, 3232 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D138" type="Light2D" parent="Lights"]
+position = Vector2( 4448, 2848 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D139" type="Light2D" parent="Lights"]
+position = Vector2( 4192, 2528 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D140" type="Light2D" parent="Lights"]
+position = Vector2( 3680, 2304 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D141" type="Light2D" parent="Lights"]
+position = Vector2( 4320, 2144 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D142" type="Light2D" parent="Lights"]
+position = Vector2( 4768, 2336 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D143" type="Light2D" parent="Lights"]
+position = Vector2( 5152, 2144 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D144" type="Light2D" parent="Lights"]
+position = Vector2( 5568, 2336 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D145" type="Light2D" parent="Lights"]
+position = Vector2( 6112, 2144 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D146" type="Light2D" parent="Lights"]
+position = Vector2( 6656, 2336 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D147" type="Light2D" parent="Lights"]
+position = Vector2( 7168, 2144 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D148" type="Light2D" parent="Lights"]
+position = Vector2( 7744, 2336 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D149" type="Light2D" parent="Lights"]
+position = Vector2( 8320, 2144 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D150" type="Light2D" parent="Lights"]
+position = Vector2( 8864, 2336 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D151" type="Light2D" parent="Lights"]
+position = Vector2( 9440, 2144 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D152" type="Light2D" parent="Lights"]
+position = Vector2( 9184, 1824 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D153" type="Light2D" parent="Lights"]
+position = Vector2( 8928, 1568 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D154" type="Light2D" parent="Lights"]
+position = Vector2( 8672, 1312 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D155" type="Light2D" parent="Lights"]
+position = Vector2( 8384, 1024 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D156" type="Light2D" parent="Lights"]
+position = Vector2( 8096, 640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D157" type="Light2D" parent="Lights"]
+position = Vector2( 7456, 608 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D158" type="Light2D" parent="Lights"]
+position = Vector2( 7072, 960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D159" type="Light2D" parent="Lights"]
+position = Vector2( 6816, 1184 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D160" type="Light2D" parent="Lights"]
+position = Vector2( 6368, 1376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D161" type="Light2D" parent="Lights"]
+position = Vector2( 5856, 1376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D162" type="Light2D" parent="Lights"]
+position = Vector2( 5312, 1376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D163" type="Light2D" parent="Lights"]
+position = Vector2( 4896, 1376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D164" type="Light2D" parent="Lights"]
+position = Vector2( 4512, 1376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D165" type="Light2D" parent="Lights"]
+position = Vector2( 3968, 1376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D166" type="Light2D" parent="Lights"]
+position = Vector2( 3552, 1280 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D167" type="Light2D" parent="Lights"]
+position = Vector2( 3104, 800 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D168" type="Light2D" parent="Lights"]
+position = Vector2( 2176, 0 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D170" type="Light2D" parent="Lights"]
+position = Vector2( 2848, 224 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D171" type="Light2D" parent="Lights"]
+position = Vector2( 3424, 672 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D172" type="Light2D" parent="Lights"]
+position = Vector2( 3072, 160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D173" type="Light2D" parent="Lights"]
+position = Vector2( 2560, -160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D174" type="Light2D" parent="Lights"]
+position = Vector2( 1760, -160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D175" type="Light2D" parent="Lights"]
+position = Vector2( 1216, -160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D176" type="Light2D" parent="Lights"]
+position = Vector2( 640, -160 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D177" type="Light2D" parent="Lights"]
+position = Vector2( 352, 128 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D178" type="Light2D" parent="Lights"]
+position = Vector2( 352, 576 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D179" type="Light2D" parent="Lights"]
+position = Vector2( 352, 992 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D180" type="Light2D" parent="Lights"]
+position = Vector2( 352, 1568 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D181" type="Light2D" parent="Lights"]
+position = Vector2( 352, 2176 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D182" type="Light2D" parent="Lights"]
+position = Vector2( 2144, 1568 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D183" type="Light2D" parent="Lights"]
+position = Vector2( 2400, 1152 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D184" type="Light2D" parent="Lights"]
+position = Vector2( 2144, 768 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D185" type="Light2D" parent="Lights"]
+position = Vector2( 2400, 544 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.6, 0.5, 1.7, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D169" type="Light2D" parent="Lights"]
+position = Vector2( 4800, 768 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D43" type="Light2D" parent="Lights"]
+position = Vector2( 4320, 6240 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D186" type="Light2D" parent="Lights"]
+position = Vector2( 9472, 8320 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D187" type="Light2D" parent="Lights"]
+position = Vector2( 10368, 8352 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D188" type="Light2D" parent="Lights"]
+position = Vector2( 11232, 8352 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D189" type="Light2D" parent="Lights"]
+position = Vector2( 10976, 7808 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D190" type="Light2D" parent="Lights"]
+position = Vector2( 10336, 7392 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D191" type="Light2D" parent="Lights"]
+position = Vector2( 9248, 7136 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D192" type="Light2D" parent="Lights"]
+position = Vector2( 10368, 7136 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D193" type="Light2D" parent="Lights"]
+position = Vector2( 10944, 6752 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D194" type="Light2D" parent="Lights"]
+position = Vector2( 10080, 6752 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D195" type="Light2D" parent="Lights"]
+position = Vector2( 9152, 6752 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D196" type="Light2D" parent="Lights"]
+position = Vector2( 9632, 6496 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D197" type="Light2D" parent="Lights"]
+position = Vector2( 8672, 6528 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D198" type="Light2D" parent="Lights"]
+position = Vector2( 12000, 6656 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D199" type="Light2D" parent="Lights"]
+position = Vector2( 11744, 7264 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D200" type="Light2D" parent="Lights"]
+position = Vector2( 11744, 7968 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D201" type="Light2D" parent="Lights"]
+position = Vector2( 12544, 7712 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D202" type="Light2D" parent="Lights"]
+position = Vector2( 13120, 7552 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D203" type="Light2D" parent="Lights"]
+position = Vector2( 13472, 6848 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D204" type="Light2D" parent="Lights"]
+position = Vector2( 13792, 7232 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D205" type="Light2D" parent="Lights"]
+position = Vector2( 13696, 7776 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D206" type="Light2D" parent="Lights"]
+position = Vector2( 13056, 7904 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D207" type="Light2D" parent="Lights"]
+position = Vector2( 12640, 8352 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D208" type="Light2D" parent="Lights"]
+position = Vector2( 12096, 8352 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D209" type="Light2D" parent="Lights"]
+position = Vector2( 13760, 5760 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D210" type="Light2D" parent="Lights"]
+position = Vector2( 13760, 5216 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D212" type="Light2D" parent="Lights"]
+position = Vector2( 13600, 4960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D213" type="Light2D" parent="Lights"]
+position = Vector2( 13056, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D214" type="Light2D" parent="Lights"]
+position = Vector2( 13024, 3488 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D215" type="Light2D" parent="Lights"]
+position = Vector2( 13664, 2848 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D216" type="Light2D" parent="Lights"]
+position = Vector2( 11936, 3360 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D217" type="Light2D" parent="Lights"]
+position = Vector2( 12320, 3840 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D218" type="Light2D" parent="Lights"]
+position = Vector2( 12320, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D219" type="Light2D" parent="Lights"]
+position = Vector2( 11872, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D220" type="Light2D" parent="Lights"]
+position = Vector2( 11520, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D221" type="Light2D" parent="Lights"]
+position = Vector2( 11040, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D222" type="Light2D" parent="Lights"]
+position = Vector2( 10560, 4640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D223" type="Light2D" parent="Lights"]
+position = Vector2( 10848, 5024 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D224" type="Light2D" parent="Lights"]
+position = Vector2( 10848, 5440 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D225" type="Light2D" parent="Lights"]
+position = Vector2( 10496, 5728 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D226" type="Light2D" parent="Lights"]
+position = Vector2( 10336, 4256 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D227" type="Light2D" parent="Lights"]
+position = Vector2( 10784, 3808 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.7, 0.517969, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D228" type="Light2D" parent="Lights"]
+position = Vector2( 10944, 3360 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D229" type="Light2D" parent="Lights"]
+position = Vector2( 11424, 3200 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D230" type="Light2D" parent="Lights"]
+position = Vector2( 11584, 2720 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D231" type="Light2D" parent="Lights"]
+position = Vector2( 12128, 2624 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D232" type="Light2D" parent="Lights"]
+position = Vector2( 12352, 3200 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D233" type="Light2D" parent="Lights"]
+position = Vector2( 12704, 2880 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D234" type="Light2D" parent="Lights"]
+position = Vector2( 12832, 2368 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D235" type="Light2D" parent="Lights"]
+position = Vector2( 13376, 2208 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D236" type="Light2D" parent="Lights"]
+position = Vector2( 13728, 2592 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D237" type="Light2D" parent="Lights"]
+position = Vector2( 13216, 1632 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D238" type="Light2D" parent="Lights"]
+position = Vector2( 13216, 1216 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D239" type="Light2D" parent="Lights"]
+position = Vector2( 13216, 800 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D240" type="Light2D" parent="Lights"]
+position = Vector2( 13216, 320 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D241" type="Light2D" parent="Lights"]
+position = Vector2( 12800, 224 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D242" type="Light2D" parent="Lights"]
+position = Vector2( 12288, 576 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D243" type="Light2D" parent="Lights"]
+position = Vector2( 11904, 960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D244" type="Light2D" parent="Lights"]
+position = Vector2( 11872, 1280 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D245" type="Light2D" parent="Lights"]
+position = Vector2( 11872, 1760 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D246" type="Light2D" parent="Lights"]
+position = Vector2( 11552, 2112 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D247" type="Light2D" parent="Lights"]
+position = Vector2( 11168, 2080 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D248" type="Light2D" parent="Lights"]
+position = Vector2( 12320, 2080 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.6, 0, 0, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D249" type="Light2D" parent="Lights"]
+position = Vector2( 10848, 2304 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D250" type="Light2D" parent="Lights"]
+position = Vector2( 10400, 2336 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D251" type="Light2D" parent="Lights"]
+position = Vector2( 10112, 2368 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.3, 0.14, 1.1, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D211" type="Light2D" parent="Lights"]
+position = Vector2( 13760, 6368 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D44" type="Light2D" parent="Lights"]
+position = Vector2( 5056, 6240 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D45" type="Light2D" parent="Lights"]
+position = Vector2( 4768, 6048 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D46" type="Light2D" parent="Lights"]
+position = Vector2( 3840, 6112 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D47" type="Light2D" parent="Lights"]
+position = Vector2( 3744, 6944 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D48" type="Light2D" parent="Lights"]
+position = Vector2( 3328, 6560 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D49" type="Light2D" parent="Lights"]
+position = Vector2( 2848, 6048 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D50" type="Light2D" parent="Lights"]
+position = Vector2( 2848, 5600 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D51" type="Light2D" parent="Lights"]
+position = Vector2( 3104, 4992 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D52" type="Light2D" parent="Lights"]
+position = Vector2( 2112, 5664 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D53" type="Light2D" parent="Lights"]
+position = Vector2( 1184, 5664 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D54" type="Light2D" parent="Lights"]
+position = Vector2( 736, 5408 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D55" type="Light2D" parent="Lights"]
+position = Vector2( 352, 4992 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D56" type="Light2D" parent="Lights"]
+position = Vector2( 352, 4352 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D57" type="Light2D" parent="Lights"]
+position = Vector2( 352, 3648 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D58" type="Light2D" parent="Lights"]
+position = Vector2( 352, 2912 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D59" type="Light2D" parent="Lights"]
+position = Vector2( 768, 2464 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D60" type="Light2D" parent="Lights"]
+position = Vector2( 1216, 2208 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D61" type="Light2D" parent="Lights"]
+position = Vector2( 1728, 2208 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D62" type="Light2D" parent="Lights"]
+position = Vector2( 2272, 2208 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D63" type="Light2D" parent="Lights"]
+position = Vector2( 2688, 2432 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D64" type="Light2D" parent="Lights"]
+position = Vector2( 3072, 2816 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D65" type="Light2D" parent="Lights"]
+position = Vector2( 3104, 3296 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D66" type="Light2D" parent="Lights"]
+position = Vector2( 3104, 3776 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D67" type="Light2D" parent="Lights"]
+position = Vector2( 3104, 4384 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.36, 1.47, 1.38, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D28" type="Light2D" parent="Lights"]
+position = Vector2( 5632, 9280 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D29" type="Light2D" parent="Lights"]
+position = Vector2( 6272, 8608 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D30" type="Light2D" parent="Lights"]
+position = Vector2( 7616, 8608 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D31" type="Light2D" parent="Lights"]
+position = Vector2( 8416, 7776 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D32" type="Light2D" parent="Lights"]
+position = Vector2( 8736, 7648 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D33" type="Light2D" parent="Lights"]
+position = Vector2( 9056, 7776 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D34" type="Light2D" parent="Lights"]
+position = Vector2( 8032, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D35" type="Light2D" parent="Lights"]
+position = Vector2( 7136, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 1.35727, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D68" type="Light2D" parent="Lights"]
+position = Vector2( 2976, 6432 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D69" type="Light2D" parent="Lights"]
+position = Vector2( 2336, 5920 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D70" type="Light2D" parent="Lights"]
+position = Vector2( 1632, 5920 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D71" type="Light2D" parent="Lights"]
+position = Vector2( 352, 5376 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D72" type="Light2D" parent="Lights"]
+position = Vector2( 352, 5888 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D73" type="Light2D" parent="Lights"]
+position = Vector2( 352, 6400 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D74" type="Light2D" parent="Lights"]
+position = Vector2( 352, 6784 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D75" type="Light2D" parent="Lights"]
+position = Vector2( 352, 7232 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D76" type="Light2D" parent="Lights"]
+position = Vector2( 352, 7712 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D15" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D16" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D17" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D18" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D19" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D20" type="LightOccluder2D" parent="Lights"]
+visible = false
+occluder = SubResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [editable path="PathFinder"]
