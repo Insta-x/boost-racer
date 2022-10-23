@@ -18,21 +18,20 @@ script = ExtResource( 2 )
 [node name="CollisionPolygon2D17" parent="GameWorld/Wall" index="16"]
 polygon = PoolVector2Array( 7552, 1024, 7424, 1024, 7168, 768, 7168, 512, 6591.87, 1024, 5824, 1024, 5568, 1280, 5568, 1472, 5184, 1856, 5184, 2048, 5312, 2176, 5568, 2176, 5568, 3008 )
 
+[node name="Position2D2" parent="GameWorld/PathFinder/Nodes" index="1"]
+position = Vector2( 13411, 32 )
+
 [node name="Position2D4" parent="GameWorld/PathFinder/Nodes" index="3"]
 position = Vector2( 13918, 2635 )
 
-[node name="Position2D63" parent="GameWorld/PathFinder/Nodes" index="50"]
+[node name="Position2D63" parent="GameWorld/PathFinder/Nodes" index="54"]
 position = Vector2( 12196, 2231 )
 
-[node name="Position2D21" parent="GameWorld/PathFinder/Nodes" index="92"]
+[node name="Position2D21" parent="GameWorld/PathFinder/Nodes" index="96"]
 position = Vector2( 3081, 8728 )
-
-[node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="13"]
-current = false
 
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 9216 )
-current = true
 following = NodePath("../GameWorld/PlayerRacer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -15,16 +15,19 @@ margin_bottom = -26.0
 [node name="RayCastLeft" type="RayCast2D" parent="." index="5"]
 enabled = true
 cast_to = Vector2( 0, 0 )
+collision_mask = 3
 collide_with_areas = true
 
 [node name="RayCastRight" type="RayCast2D" parent="." index="6"]
 enabled = true
 cast_to = Vector2( 0, 0 )
+collision_mask = 3
 collide_with_areas = true
 
 [node name="RayCastFront" type="RayCast2D" parent="." index="7"]
 enabled = true
 cast_to = Vector2( 0, 0 )
+collision_mask = 3
 collide_with_areas = true
 
 [node name="Target" type="RayCast2D" parent="." index="8"]
