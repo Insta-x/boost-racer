@@ -48,6 +48,7 @@ default_color = Color( 1.7, 0.14, 1.38, 1 )
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 9216 )
 current = true
+debug_full_map = true
 following = NodePath("../GameWorld/PlayerRacer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
