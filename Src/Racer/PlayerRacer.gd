@@ -5,6 +5,8 @@ class_name PlayerRacer
 
 onready var BoostChargeDoneSFX := $BoostChargeDoneSFX
 
+func _ready():
+	GlobalSignal.connect("player_finished",self,"_on_player_finished")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("boost"):
@@ -24,3 +26,6 @@ func _on_DashCooldownTimer_timeout() -> void:
 	can_boost = true
 	boost_charge_particles.emitting = false
 	BoostChargeDoneSFX.play()
+
+func _on_player_finished():
+	control_locked = true

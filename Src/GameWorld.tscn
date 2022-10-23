@@ -376,17 +376,21 @@ position = Vector2( 151, 8578 )
 
 [node name="EnemyRacer2" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( 471, 8834 )
+racer_id = -2
 
 [node name="EnemyRacer3" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( 351, 8562 )
+racer_id = -3
 
 [node name="EnemyRacer4" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( 479, 8643 )
+racer_id = -4
 
 [node name="EnemyRacer5" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( 129, 8371 )
-
-[editable path="PathFinder"]
+racer_id = -5
 
 [node name="Polygon2D2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 128, 8832 )
+
+[editable path="PathFinder"]

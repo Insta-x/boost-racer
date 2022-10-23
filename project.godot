@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/Racer/EnemyRacer.gd"
 }, {
-"base": "EditorVCSInterface",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
-}, {
 "base": "Racer",
 "class": "PlayerRacer",
 "language": "GDScript",
@@ -37,7 +32,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AreaGuider": "",
 "EnemyRacer": "",
-"GitAPI": "",
 "PlayerRacer": "",
 "Racer": ""
 }
@@ -59,7 +53,7 @@ window/size/height=1080
 
 [gdnative]
 
-singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+singletons=[  ]
 
 [global]
 

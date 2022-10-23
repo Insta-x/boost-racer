@@ -31,7 +31,7 @@ func _physics_process(delta:float) -> void:
 	calc_target_velocity()
 	avoid_wall()
 	actions()
-	debug()
+	#debug()
 	if thrusting and not boosting: boost()
 
 func actions() -> void:
