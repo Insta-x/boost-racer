@@ -12,7 +12,7 @@
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
-polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5568, 9792, 6400, 8960, 7744, 8960, 8704, 8000, 8768, 8000, 9408, 8640, 12672, 8640, 13184, 8128, 14080, 8128, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, -64, 11840, -64, 11520, 256, 11520, 1472, 10816, 2112, 9856, 2112, 8512, 768, 8512, 128, 8384, 0, 7232, 0, 6208, 1024, 4544, 1024, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
+polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5568, 9792, 6400, 8960, 7744, 8960, 8704, 8000, 8768, 8000, 9408, 8640, 12672, 8640, 13184, 8128, 14080, 8128, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, 256, 13952, -192, 13632, -512, 13184, -64, 11840, -64, 11520, 256, 11520, 1472, 10816, 2112, 9856, 2112, 8512, 768, 8512, 128, 8384, 0, 7232, 0, 6208, 1024, 4544, 1024, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -107,7 +107,7 @@ position = Vector2( -192, 9216 )
 position = Vector2( 13504, -64 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FinishArea2D"]
-polygon = PoolVector2Array( 0, 0, -320, 0, -256, 192, -192, 256, 0, 320 )
+polygon = PoolVector2Array( 128, -448, -320, 0, -256, 192, -192, 256, 0, 320, 448, -128 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -392,18 +392,18 @@ position = Vector2( 3081, 8739 )
 rotation = 0.201052
 
 [node name="EnemyRacer" parent="PathFinder" instance=ExtResource( 1 )]
-position = Vector2( 151, 8578 )
+position = Vector2( -64, 9216 )
 
 [node name="EnemyRacer2" parent="PathFinder" instance=ExtResource( 1 )]
-position = Vector2( 471, 8834 )
+position = Vector2( 64, 9344 )
 
 [node name="EnemyRacer3" parent="PathFinder" instance=ExtResource( 1 )]
-position = Vector2( 351, 8562 )
+position = Vector2( 64, 9216 )
 
 [node name="EnemyRacer4" parent="PathFinder" instance=ExtResource( 1 )]
-position = Vector2( 479, 8643 )
+position = Vector2( -64, 9344 )
 
 [node name="EnemyRacer5" parent="PathFinder" instance=ExtResource( 1 )]
-position = Vector2( 129, 8371 )
+position = Vector2( -192, 9088 )
 
 [editable path="PathFinder"]
