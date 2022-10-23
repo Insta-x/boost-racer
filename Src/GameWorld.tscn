@@ -98,7 +98,7 @@ position = Vector2( 2560, 1856 )
 polygon = PoolVector2Array( 1920, 1728, 3072, 1728, 3072, 640, 7040, 640, 7040, 512, 1664, 512, 1664, 704, 1920, 704 )
 
 [node name="PlayerRacer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 177, 8817 )
+position = Vector2( 128, 8832 )
 
 [node name="FinishArea2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 13504, -64 )

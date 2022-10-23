@@ -17,6 +17,7 @@ script = ExtResource( 2 )
 position = Vector2( -14, 0 )
 
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
+position = Vector2( 128, 8832 )
 current = true
 following = NodePath("../GameWorld/PlayerRacer")
 

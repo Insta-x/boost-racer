@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	global_position = following.global_position
+	follow(delta)
 	
 	shake_time_left = move_toward(shake_time_left, 0.0, delta)
 	
@@ -26,6 +26,16 @@ func _process(delta: float) -> void:
 			)
 
 
+func follow(delta: float) -> void:
+	var target_position = following.global_position
+	var velocity_offset = following.linear_velocity * 0.3
+	var look_offset = Vector2.RIGHT.rotated(following.rotation) * 75.0
+	target_position += look_offset
+	global_position = global_position.move_toward(target_position, 800.0 * delta)
+#	global_position = following.global_position
+	zoom = zoom.move_toward(lerp(Vector2.ONE, Vector2(2.5, 2.5), following.linear_velocity.length() / 1000.0), 0.5 * delta)
+
+
 func shake(duration : float = 0.1, power : int = 20) -> void:
 	shake_time_left = duration
 	shake_total_time = duration
@@ -33,4 +43,4 @@ func shake(duration : float = 0.1, power : int = 20) -> void:
 
 
 func _on_player_boosted() -> void:
-	shake(1.5, 8)
+	shake(1.5, 13)
