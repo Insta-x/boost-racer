@@ -51,6 +51,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalSignal="*res://Src/Singleton/GlobalSignal.gd"
+GlobalSettings="*res://Src/Singleton/GlobalSettings.gd"
 
 [display]
 

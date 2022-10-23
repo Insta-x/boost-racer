@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Src/GameWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Game.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Font/Polentical Neon Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Sound/countdown.wav" type="AudioStream" id=11]
 [ext_resource path="res://Src/UI/CountdownLabel.gd" type="Script" id=12]
+[ext_resource path="res://Src/WorldComponents/GameWorldEnvironment.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -67,6 +68,7 @@ following = NodePath("../GameWorld/PlayerRacer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )
+script = ExtResource( 13 )
 
 [node name="FinishScreen" parent="." instance=ExtResource( 8 )]
 
