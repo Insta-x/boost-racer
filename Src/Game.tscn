@@ -14,10 +14,9 @@
 script = ExtResource( 2 )
 
 [node name="GameWorld" parent="." instance=ExtResource( 1 )]
-position = Vector2( -14, 0 )
 
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
-position = Vector2( 128, 8832 )
+position = Vector2( -192, 9216 )
 current = true
 following = NodePath("../GameWorld/PlayerRacer")
 
@@ -43,7 +42,6 @@ player = NodePath("../../GameWorld/PlayerRacer")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-autoplay = true
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 5.0
