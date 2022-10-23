@@ -26,8 +26,8 @@ environment = ExtResource( 7 )
 
 [node name="Arrow" type="TextureRect" parent="CanvasLayer"]
 margin_left = 1820.0
-margin_right = 1920.0
-margin_bottom = 150.0
+margin_right = 1860.0
+margin_bottom = 75.0
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 finish_area = NodePath("../../GameWorld/FinishArea2D")
