@@ -49,7 +49,6 @@ initial_velocity_random = 0.2
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 50.0
-scale = 0.6
 scale_random = 0.5
 color = Color( 2, 2, 2, 1 )
 color_ramp = SubResource( 6 )
@@ -91,7 +90,7 @@ polygon = PoolVector2Array( 36, -2, 8, -16, -18, -22, -22, -18, -18, -4, -18, 4,
 [node name="ThrustingParticles" type="Particles2D" parent="."]
 position = Vector2( -26, 0 )
 emitting = false
-amount = 60
+amount = 150
 local_coords = false
 process_material = SubResource( 3 )
 texture = ExtResource( 2 )
