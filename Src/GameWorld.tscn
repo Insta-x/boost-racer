@@ -9,6 +9,29 @@
 [ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Art/finish-line.png" type="Texture" id=8]
 
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 512, 144 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 512, 0, 512, 144 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1024, 0, 512, 144 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 832, 8576, 896, 8576, 3072, 8576, 3584, 8064, 3584, 7360, 2048, 7360 )
 
@@ -68,29 +91,6 @@ polygon = PoolVector2Array( 11520, 1856, 10944, 2368, 10176, 2368, 9920, 2624, 9
 
 [sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 12352, 2816, 13184, 1984, 13184, 256, 12672, 256, 11904, 1024, 11904, 1728, 12224, 2048, 12352, 2048 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 512, 144 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 512, 0, 512, 144 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 1024, 0, 512, 144 )
-
-[sub_resource type="SpriteFrames" id=24]
-animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [node name="GameWorld" type="Node2D"]
 

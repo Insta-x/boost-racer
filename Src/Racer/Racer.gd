@@ -6,7 +6,6 @@ onready var thrusting_particles := $ThrustingParticles
 onready var boosting_particles := $BoostingParticles
 onready var dash_cooldown_timer := $DashCooldownTimer
 onready var boost_charge_particles := $BoostChargeParticles
-onready var thrusting_sfx := $ThrustingSFX
 onready var boosting_sfx := $BoostingSFX
 
 export (int) var racer_id := -1
@@ -73,6 +72,7 @@ func boost() -> void:
 func set_thrusting(value: bool) -> void:
 	thrusting = value
 	thrusting_particles.emitting = thrusting
+
 
 func set_boosting(value: bool) -> void:
 	boosting = value

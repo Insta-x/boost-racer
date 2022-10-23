@@ -33,7 +33,7 @@ func _physics_process(delta:float) -> void:
 	calc_target_velocity()
 	avoid_wall()
 	actions()
-	debug()
+	#debug()
 
 func actions() -> void:
 	# kalo ga searah, searahin dulu
@@ -59,7 +59,8 @@ func actions() -> void:
 		boost()
 		
 	thrusting = drot < deg2rad(45) or drot > deg2rad(360-45)
-	
+	thrusting_particles.emitting = thrusting
+
 
 onready var raycastL := $RayCastLeft
 onready var raycastR := $RayCastRight
