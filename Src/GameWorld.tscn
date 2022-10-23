@@ -10,7 +10,7 @@
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
-polygon = PoolVector2Array( 0, 8960, -64, 9024, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 0, 9024, 0, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5504, 9792, 6400, 8896, 7744, 8896, 8640, 8000, 8832, 8000, 9472, 8640, 12672, 8640, 13184, 8128, 14080, 8128, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, -64, 11520, -64, 11520, 2112, 8448, 2112, 8448, -256, 7232, -256, 5952, 1024, 3840, 1024, 3840, 320, 3008, -512, 512, -512, 0, 0 )
+polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5504, 9792, 6400, 8896, 7744, 8896, 8640, 8000, 8832, 8000, 9472, 8640, 12672, 8640, 13184, 8128, 14080, 8128, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, -64, 11520, -64, 11520, 2112, 8448, 2112, 8448, -256, 7232, -256, 5952, 1024, 3840, 1024, 3840, 320, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -32,7 +32,7 @@ polygon = PoolVector2Array( 1408, -512, 1472, -512, 2048, 64, 2496, 64, 2496, 64
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 512, 3136 )
-polygon = PoolVector2Array( -128, 5184, -128, 2240, 448, 2816, 1984, 2816, 3008, 3904, 1152, 3904 )
+polygon = PoolVector2Array( -128, 5056, -128, 2240, 448, 2816, 1984, 2816, 3008, 3904, 1024, 3904 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Wall"]
 position = Vector2( 1024, 3776 )
@@ -99,7 +99,7 @@ position = Vector2( 2560, 1856 )
 polygon = PoolVector2Array( 1920, 1728, 3072, 1728, 3072, 640, 7040, 640, 7040, 512, 1664, 512, 1664, 704, 1920, 704 )
 
 [node name="PlayerRacer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 8832 )
+position = Vector2( -192, 9216 )
 
 [node name="FinishArea2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 13504, -64 )
@@ -110,5 +110,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Polygon2D2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 8832 )
+[node name="RacerLock" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 9216 )
+
+[node name="RacerLock2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -192, 8960 )
+
+[node name="RacerLock3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 9344 )
+
+[node name="RacerLock4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -64, 9344 )
+
+[node name="RacerLock5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -64, 9216 )
+
+[node name="RacerLock6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -320, 8960 )
+
+[node name="RacerLock7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -192, 9088 )
+
+[node name="RacerLock8" parent="." instance=ExtResource( 1 )]
+position = Vector2( -192, 9216 )
+
+[node name="RacerLock9" parent="." instance=ExtResource( 1 )]
+position = Vector2( -320, 9088 )
