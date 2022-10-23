@@ -14,6 +14,7 @@ var finish_line_pos : Vector2
 func _ready() -> void:
 	GlobalSignal.connect("game_start", self, "show")
 	GlobalSignal.connect("start_time", self, "set_start_time")
+	GlobalSignal.connect("player_finished", self,  "_on_player_finished")
 	
 	finish_line_pos = get_node(finish_line).global_position
 	
@@ -29,8 +30,11 @@ func _physics_process(delta: float) -> void:
 	var rank := 1
 	var player_dist : float = racers[0].global_position.distance_to(finish_line_pos)
 	
+	if racers[0].reached_finish:
+		return
+	
 	for i in range(1, racers.size()):
-		if racers[i].global_position.distance_to(finish_line_pos) < player_dist:
+		if racers[i].global_position.distance_to(finish_line_pos) < player_dist or racers[i].reached_finish:
 			rank += 1
 	
 	rank_label.text = str(rank)
@@ -49,3 +53,7 @@ func _physics_process(delta: float) -> void:
 func set_start_time(value: float) -> void:
 	start_time = value
 	timerLabel.text = str((OS.get_ticks_msec() - start_time) / 1000.0)
+
+
+func _on_player_finished() -> void:
+	hide()
