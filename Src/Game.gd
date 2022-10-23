@@ -1,6 +1,7 @@
 extends Node
 
 onready var BGM := $BGM
+
 var race_time : int
 
 

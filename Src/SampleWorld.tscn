@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/SampleWorld.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Src/UI/TutorialUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Art/background.png" type="Texture" id=8]
+[ext_resource path="res://Src/WorldComponents/WorldLightsContainer.gd" type="Script" id=9]
+[ext_resource path="res://Src/WorldComponents/GameWorldEnvironment.gd" type="Script" id=10]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 192, 192, 1600, 192, 1792, 448, 1792, 1280, 2176, 1536, 1664, 1536, 1088, 960, 448, 768, 192, 512 )
@@ -62,6 +64,7 @@ position = Vector2( 64, 64 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 5 )
+script = ExtResource( 10 )
 
 [node name="GameCamera" parent="." instance=ExtResource( 3 )]
 current = true
@@ -119,6 +122,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="Lights" type="Node2D" parent="."]
+script = ExtResource( 9 )
 
 [node name="Light2D" type="Light2D" parent="Lights"]
 position = Vector2( 96, 32 )

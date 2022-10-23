@@ -147,8 +147,14 @@ margin_left = 200.0
 margin_top = -40.0
 margin_right = 1720.0
 margin_bottom = 88.0
+alignment = 1
 
-[node name="MusicButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 758.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+
+[node name="MusicButton" type="TextureButton" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 128.0
 toggle_mode = true
@@ -156,7 +162,7 @@ pressed = true
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 11 )
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 margin_left = 134.0
 margin_top = 29.0
 margin_right = 320.0
@@ -168,6 +174,34 @@ custom_constants/shadow_offset_y = 1
 custom_fonts/font = SubResource( 2 )
 text = "Music"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 762.0
+margin_right = 1520.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+margin_left = 48.0
+margin_top = 29.0
+margin_right = 624.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0.6, 0.898039, 0.313726, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = SubResource( 2 )
+text = "Low Quality Mode"
+align = 2
+
+[node name="LowQualityButton" type="TextureButton" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+margin_left = 628.0
+margin_right = 758.0
+margin_bottom = 128.0
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
@@ -176,4 +210,5 @@ bus = "Music"
 [connection signal="pressed" from="CenterContainer/MenuContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuContainer/VBoxContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
-[connection signal="toggled" from="MarginContainer/HBoxContainer/MusicButton" to="." method="_on_MusicButton_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/HBoxContainer/MusicButton" to="." method="_on_MusicButton_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/HBoxContainer2/LowQualityButton" to="." method="_on_LowQualityButton_toggled"]
