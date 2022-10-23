@@ -45,7 +45,7 @@ position = Vector2( 12160, 2283 )
 [node name="Position2D21" parent="GameWorld/PathFinder/Nodes" index="96"]
 position = Vector2( 3081, 8728 )
 
-[node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="12"]
+[node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="13"]
 current = false
 
 [node name="Line2D9" parent="GameWorld/Lines" index="14"]
