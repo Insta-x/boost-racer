@@ -13,6 +13,11 @@ var anim_time := 0.4
 var temp := 0.0
 var maju := false
 
+
+func _ready() -> void:
+	GlobalSignal.connect("game_start", self, "show")
+
+
 func _physics_process(delta):
 	if (temp < anim_time):
 		temp+= delta
