@@ -12,6 +12,7 @@ func _ready() -> void:
 func start() -> void:
 	race_time = OS.get_ticks_msec()
 	GlobalSignal.emit_signal("game_start")
+	GlobalSignal.emit_signal("start_time", race_time)
 
 
 func _on_racer_finished(racer_id: int) -> void:
