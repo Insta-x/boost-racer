@@ -406,4 +406,306 @@ position = Vector2( -64, 9344 )
 [node name="EnemyRacer5" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( -192, 9088 )
 
+[node name="Lines" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line2D" type="Line2D" parent="Lines"]
+points = PoolVector2Array( -576, 9024, 0, 9600, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5568, 9792, 6400, 8960, 7744, 8960, 8704, 8000, 8768, 8000, 9408, 8640, 12672, 8640, 13184, 8128, 13888, 8128, 14080, 7936, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, 256, 13952, -192, 13632, -512, 13184, -64, 11840, -64, 11520, 256, 11520, 1472, 10816, 2112, 9856, 2112, 8512, 768, 8512, 128, 8384, 0, 7232, 0, 6208, 1024, 4544, 1024, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024 )
+width = 16.0
+default_color = Color( 1.5, 1.5, 1.5, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D2" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 832, 8576, 3072, 8576, 3584, 8064, 3584, 7360, 2048, 7360, 832, 8576 )
+width = 16.0
+default_color = Color( 0.706875, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D3" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 384, 8192, 1536, 7040, 3520, 7040, 2496, 5952, 960, 5952, 384, 5376, 384, 8192 )
+width = 16.0
+default_color = Color( 0.706875, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D4" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 6976, 7232, 5120, 7232, 4992, 7360, 4032, 7360, 3904, 7488, 3904, 8064, 3392, 8576, 3968, 8576, 4736, 9344, 5504, 9344, 6272, 8576 )
+width = 16.0
+default_color = Color( 0.706875, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D5" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 2432, 5632, 3072, 4992, 3072, 2880, 2432, 2240, 1024, 2240, 384, 2880, 384, 4992, 1024, 5632, 2432, 5632 )
+width = 16.0
+default_color = Color( 0.36, 1.47, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D13" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 384, 2496, 960, 1920, 1984, 1920, 2112, 1792, 2112, -64, 2624, -64, 3328, 640, 3520, 640, 2752, -128, 640, -128, 384, 128, 384, 2496 )
+width = 16.0
+default_color = Color( 0.52, 0.36, 1.8, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D6" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 5376, 6272, 5504, 6144, 5504, 4928, 5760, 4672, 8064, 4672, 8064, 5952, 7616, 6400, 7616, 6720, 7936, 7040, 6912, 7040 )
+width = 16.0
+default_color = Color( 0.6, 0.5, 1.7, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D20" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 8256, 7040, 7936, 6720, 7936, 6464, 8448, 5952, 10688, 5952 )
+width = 16.0
+default_color = Color( 0.6, 0.5, 1.7, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D27" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10432, 5760, 9792, 5760, 9920, 5632, 9920, 5504, 9792, 5376, 9792, 4672 )
+width = 16.0
+default_color = Color( 0.6, 0.5, 1.7, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D23" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 8256, 4672, 8256, 5760, 8384, 5760, 8512, 5632, 8640, 5632, 8768, 5760, 9408, 5760, 9600, 5568, 9600, 4672 )
+width = 16.0
+default_color = Color( 0.6, 0.5, 1.7, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D7" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 4992, 6016, 3904, 6016, 3712, 6208, 3712, 6912, 2688, 5824, 3328, 5184 )
+width = 16.0
+default_color = Color( 0.36, 1.47, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D21" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 5376, 6272, 4160, 6272, 3968, 6464, 3968, 7040, 5184, 7040, 5248, 7104, 6848, 7104, 6912, 7040 )
+width = 16.0
+default_color = Color( 0.36, 1.47, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D12" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 4992, 6016, 5248, 5760, 5248, 5568, 5056, 5376, 5056, 5056, 5248, 4864, 5248, 4672, 3840, 4672, 3328, 5184 )
+width = 16.0
+default_color = Color( 0.6, 0.5, 1.7, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D8" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 2624, 384, 2432, 384, 2432, 1792, 3392, 2752, 3392, 4672, 4160, 3904, 4160, 2880, 4096, 2816, 3840, 2816, 3648, 2624 )
+width = 16.0
+default_color = Color( 0.6, 0.5, 1.7, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D9" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 4032, 4352, 9472, 4352, 9600, 4224, 9600, 4096, 9408, 3904, 9280, 3904, 9152, 3776, 9152, 2944, 9344, 2752, 9344, 2688, 6144, 2688, 5952, 2880, 5952, 3712, 5760, 3904, 4480, 3904, 4032, 4352 )
+width = 16.0
+default_color = Color( 1.8, 0.14, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D24" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 8256, 4672, 9600, 4672 )
+width = 16.0
+default_color = Color( 1.8, 0.14, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D25" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10688, 3584, 9920, 4352, 9920, 3520, 9664, 3520, 9536, 3392, 9536, 3200, 9920, 2816, 9920, 2624, 10176, 2368, 10944, 2368 )
+width = 16.0
+default_color = Color( 1.8, 0.14, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D10" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 5440, 3584, 4672, 3584, 4480, 3392, 4480, 2560, 4288, 2560, 4224, 2496, 4224, 2432, 4288, 2368, 9600, 2368, 9600, 2496, 5824, 2496, 5632, 2688, 5632, 3392, 5440, 3584 )
+width = 16.0
+default_color = Color( 1.8, 0.14, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D17" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 2624, 384, 3648, 1408, 6656, 1408, 7424, 640, 8064, 640, 8064, 768, 9408, 2112, 3840, 2112, 3648, 2304, 3648, 2624 )
+width = 16.0
+default_color = Color( 1.8, 0.14, 1.38, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D11" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 8448, 7360, 9024, 7360, 8768, 7616, 8704, 7616, 8448, 7360 )
+width = 16.0
+default_color = Color( 1.35727, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D15" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10304, 7424, 9344, 7424, 9088, 7680, 9088, 7872, 9536, 8320, 11200, 8320, 10304, 7424 )
+width = 16.0
+default_color = Color( 1.35727, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D18" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10624, 7424, 11520, 8320, 12608, 8320, 13056, 7872, 13568, 7872, 13760, 7680, 13760, 6976, 12736, 8000, 11712, 8000, 11712, 6976, 11520, 6784, 11264, 6784, 10624, 7424 )
+width = 16.0
+default_color = Color( 1.35727, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D14" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 6976, 7232, 7104, 7360, 8064, 7360, 8384, 7680, 8384, 7872, 7680, 8576, 6272, 8576 )
+width = 16.0
+default_color = Color( 1.35727, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D16" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 8832, 7104, 8832, 7040, 9088, 6784, 10880, 6784, 10560, 7104, 8832, 7104 )
+width = 16.0
+default_color = Color( 1.35727, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D19" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 8256, 7040, 8576, 7040, 8576, 6592, 8704, 6464, 11840, 6464, 12032, 6656, 12032, 7680, 12608, 7680, 13696, 6592, 13696, 5120 )
+width = 16.0
+default_color = Color( 1.35727, 1.47, 0.36, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D22" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 12352, 3264, 12352, 4416, 12096, 4672, 11200, 4672, 10880, 4992, 10880, 5760, 10688, 5952 )
+width = 16.0
+default_color = Color( 1.7, 0.517969, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D29" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 13696, 5120, 12992, 4416, 12992, 3456, 13696, 2752 )
+width = 16.0
+default_color = Color( 1.7, 0.517969, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D30" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 13696, 2752, 13696, 2560, 13376, 2240, 12352, 3264 )
+width = 16.0
+default_color = Color( 1.6, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D31" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 12096, 3136, 12096, 2560, 10880, 3776 )
+width = 16.0
+default_color = Color( 1.6, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D32" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10688, 3584, 11904, 2368, 11776, 2368, 11520, 2112, 11520, 1856, 10944, 2368 )
+width = 16.0
+default_color = Color( 1.6, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D33" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 12352, 2816, 13184, 1984, 13184, 256, 12672, 256, 11904, 1024, 11904, 1728, 12224, 2048, 12352, 2048, 12352, 2816 )
+width = 16.0
+default_color = Color( 1.6, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D26" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10432, 5760, 10624, 5568, 10624, 4928, 10880, 4672, 9792, 4672 )
+width = 16.0
+default_color = Color( 1.7, 0.517969, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Line2D28" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 10880, 3776, 10304, 4352, 11840, 4352, 12096, 4096, 12096, 3712, 11904, 3520, 11904, 3328, 12096, 3136 )
+width = 16.0
+default_color = Color( 1.7, 0.517969, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
 [editable path="PathFinder"]
