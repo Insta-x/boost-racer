@@ -9,6 +9,29 @@
 [ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Art/finish-line.png" type="Texture" id=8]
 
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 512, 144 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 512, 0, 512, 144 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1024, 0, 512, 144 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 832, 8576, 896, 8576, 3072, 8576, 3584, 8064, 3584, 7360, 2048, 7360 )
 
@@ -69,29 +92,6 @@ polygon = PoolVector2Array( 11520, 1856, 10944, 2368, 10176, 2368, 9920, 2624, 9
 [sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 12352, 2816, 13184, 1984, 13184, 256, 12672, 256, 11904, 1024, 11904, 1728, 12224, 2048, 12352, 2048 )
 
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 512, 144 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 512, 0, 512, 144 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 1024, 0, 512, 144 )
-
-[sub_resource type="SpriteFrames" id=24]
-animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="GameWorld" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
@@ -109,6 +109,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OuterWall"]
+visible = false
 polygon = PoolVector2Array( -640, 9088, -640, 9024, -64, 8448, -64, -576, 14144, -576, 14144, 9984, 4736, 9920, 3840, 9024, 640, 9024, 0, 9664, -64, 9664, 640, 8960, 3008, 8960, 3072, 8896, 3840, 8896, 4736, 9792, 5568, 9792, 6400, 8960, 7744, 8960, 8704, 8000, 8768, 8000, 9408, 8640, 12672, 8640, 13184, 8128, 13888, 8128, 14080, 7936, 14080, 5120, 13376, 4416, 13376, 3456, 14080, 2752, 14080, 2432, 13504, 1856, 13504, 256, 13952, -192, 13632, -512, 13184, -64, 11840, -64, 11520, 256, 11520, 1472, 10816, 2112, 9856, 2112, 8512, 768, 8512, 128, 8384, 0, 7232, 0, 6208, 1024, 4544, 1024, 3008, -512, 512, -512, 0, 0, 0, 8448, -576, 9024, 0, 9600, -64, 9664 )
 __meta__ = {
 "_edit_lock_": true
@@ -977,51 +978,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D4" type="Light2D" parent="Lights"]
-position = Vector2( 1152, 8960 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D5" type="Light2D" parent="Lights"]
-position = Vector2( 1792, 8960 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D6" type="Light2D" parent="Lights"]
-position = Vector2( 2496, 8960 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D7" type="Light2D" parent="Lights"]
-position = Vector2( 3072, 8896 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D8" type="Light2D" parent="Lights"]
-position = Vector2( 3840, 8896 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D2" type="Light2D" parent="Lights"]
 position = Vector2( -576, 9024 )
 texture = ExtResource( 7 )
@@ -1040,24 +996,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D10" type="Light2D" parent="Lights"]
-position = Vector2( 0, 7680 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D11" type="Light2D" parent="Lights"]
-position = Vector2( 0, 6976 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D12" type="Light2D" parent="Lights"]
 position = Vector2( 800, 8608 )
 texture = ExtResource( 7 )
@@ -1068,39 +1006,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D21" type="Light2D" parent="Lights"]
-position = Vector2( 576, 8128 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D22" type="Light2D" parent="Lights"]
-position = Vector2( 1536, 7104 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D23" type="Light2D" parent="Lights"]
-position = Vector2( 2752, 7104 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D13" type="Light2D" parent="Lights"]
-position = Vector2( 1152, 8192 )
+position = Vector2( 960, 7648 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -1110,16 +1017,6 @@ __meta__ = {
 }
 
 [node name="Light2D15" type="Light2D" parent="Lights"]
-position = Vector2( 1760, 7584 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D16" type="Light2D" parent="Lights"]
 position = Vector2( 2016, 7328 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
@@ -1129,28 +1026,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D18" type="Light2D" parent="Lights"]
-position = Vector2( 2912, 7328 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D20" type="Light2D" parent="Lights"]
-position = Vector2( 3616, 7328 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D24" type="Light2D" parent="Lights"]
-position = Vector2( 1792, 8640 )
+position = Vector2( 3872, 7616 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -1160,7 +1037,7 @@ __meta__ = {
 }
 
 [node name="Light2D25" type="Light2D" parent="Lights"]
-position = Vector2( 3072, 8640 )
+position = Vector2( 3072, 8608 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -1170,7 +1047,7 @@ __meta__ = {
 }
 
 [node name="Light2D26" type="Light2D" parent="Lights"]
-position = Vector2( 4032, 8704 )
+position = Vector2( 4128, 8768 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -1180,17 +1057,7 @@ __meta__ = {
 }
 
 [node name="Light2D27" type="Light2D" parent="Lights"]
-position = Vector2( 4736, 9408 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D36" type="Light2D" parent="Lights"]
-position = Vector2( 5088, 7200 )
+position = Vector2( 5120, 9376 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -1200,7 +1067,7 @@ __meta__ = {
 }
 
 [node name="Light2D37" type="Light2D" parent="Lights"]
-position = Vector2( 4384, 7328 )
+position = Vector2( 4992, 7232 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -1209,48 +1076,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D38" type="Light2D" parent="Lights"]
-position = Vector2( 6432, 7136 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D39" type="Light2D" parent="Lights"]
-position = Vector2( 5696, 7136 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D40" type="Light2D" parent="Lights"]
-position = Vector2( 4704, 7072 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D41" type="Light2D" parent="Lights"]
-position = Vector2( 3936, 7008 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D42" type="Light2D" parent="Lights"]
-position = Vector2( 3936, 6464 )
+position = Vector2( 6048, 7136 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -1260,17 +1087,7 @@ __meta__ = {
 }
 
 [node name="Light2D77" type="Light2D" parent="Lights"]
-position = Vector2( 5472, 5792 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D78" type="Light2D" parent="Lights"]
-position = Vector2( 5088, 5376 )
+position = Vector2( 5472, 5664 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1280,17 +1097,7 @@ __meta__ = {
 }
 
 [node name="Light2D79" type="Light2D" parent="Lights"]
-position = Vector2( 5472, 4928 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D80" type="Light2D" parent="Lights"]
-position = Vector2( 5920, 4640 )
+position = Vector2( 5632, 4736 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1300,37 +1107,7 @@ __meta__ = {
 }
 
 [node name="Light2D81" type="Light2D" parent="Lights"]
-position = Vector2( 6432, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D82" type="Light2D" parent="Lights"]
-position = Vector2( 6880, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D83" type="Light2D" parent="Lights"]
-position = Vector2( 7488, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D84" type="Light2D" parent="Lights"]
-position = Vector2( 8064, 4640 )
+position = Vector2( 6528, 4640 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1340,7 +1117,7 @@ __meta__ = {
 }
 
 [node name="Light2D85" type="Light2D" parent="Lights"]
-position = Vector2( 8096, 5120 )
+position = Vector2( 8096, 4672 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1350,17 +1127,7 @@ __meta__ = {
 }
 
 [node name="Light2D86" type="Light2D" parent="Lights"]
-position = Vector2( 8224, 5696 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D87" type="Light2D" parent="Lights"]
-position = Vector2( 8576, 5664 )
+position = Vector2( 8224, 5792 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1370,37 +1137,7 @@ __meta__ = {
 }
 
 [node name="Light2D88" type="Light2D" parent="Lights"]
-position = Vector2( 7872, 6208 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D89" type="Light2D" parent="Lights"]
-position = Vector2( 7648, 6688 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D90" type="Light2D" parent="Lights"]
-position = Vector2( 7520, 7072 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D91" type="Light2D" parent="Lights"]
-position = Vector2( 8064, 6880 )
+position = Vector2( 7680, 6720 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1419,18 +1156,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D93" type="Light2D" parent="Lights"]
-position = Vector2( 9536, 5920 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D94" type="Light2D" parent="Lights"]
-position = Vector2( 9888, 5600 )
+position = Vector2( 9632, 5312 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1440,47 +1167,7 @@ __meta__ = {
 }
 
 [node name="Light2D95" type="Light2D" parent="Lights"]
-position = Vector2( 10272, 5920 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D96" type="Light2D" parent="Lights"]
-position = Vector2( 9632, 5152 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D97" type="Light2D" parent="Lights"]
-position = Vector2( 9760, 4704 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D98" type="Light2D" parent="Lights"]
-position = Vector2( 5248, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D99" type="Light2D" parent="Lights"]
-position = Vector2( 3936, 4608 )
+position = Vector2( 10112, 5920 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1500,7 +1187,7 @@ __meta__ = {
 }
 
 [node name="Light2D101" type="Light2D" parent="Lights"]
-position = Vector2( 3552, 4896 )
+position = Vector2( 3424, 4672 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -1519,16 +1206,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D103" type="Light2D" parent="Lights"]
-position = Vector2( 4544, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D104" type="Light2D" parent="Lights"]
 position = Vector2( 5216, 4384 )
 texture = ExtResource( 7 )
@@ -1539,28 +1216,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D105" type="Light2D" parent="Lights"]
-position = Vector2( 5856, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D106" type="Light2D" parent="Lights"]
-position = Vector2( 6528, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D107" type="Light2D" parent="Lights"]
-position = Vector2( 7168, 4384 )
+position = Vector2( 6144, 4384 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1570,27 +1227,7 @@ __meta__ = {
 }
 
 [node name="Light2D108" type="Light2D" parent="Lights"]
-position = Vector2( 7776, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D109" type="Light2D" parent="Lights"]
-position = Vector2( 8192, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D110" type="Light2D" parent="Lights"]
-position = Vector2( 8768, 4384 )
+position = Vector2( 7392, 4384 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1600,27 +1237,7 @@ __meta__ = {
 }
 
 [node name="Light2D111" type="Light2D" parent="Lights"]
-position = Vector2( 9312, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D112" type="Light2D" parent="Lights"]
-position = Vector2( 9536, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D113" type="Light2D" parent="Lights"]
-position = Vector2( 8800, 4640 )
+position = Vector2( 8672, 4384 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1630,17 +1247,7 @@ __meta__ = {
 }
 
 [node name="Light2D114" type="Light2D" parent="Lights"]
-position = Vector2( 8320, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D115" type="Light2D" parent="Lights"]
-position = Vector2( 9568, 4000 )
+position = Vector2( 9568, 4640 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1650,7 +1257,7 @@ __meta__ = {
 }
 
 [node name="Light2D116" type="Light2D" parent="Lights"]
-position = Vector2( 9888, 3552 )
+position = Vector2( 9856, 3584 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1660,27 +1267,7 @@ __meta__ = {
 }
 
 [node name="Light2D117" type="Light2D" parent="Lights"]
-position = Vector2( 9184, 3744 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D118" type="Light2D" parent="Lights"]
-position = Vector2( 10016, 4320 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D119" type="Light2D" parent="Lights"]
-position = Vector2( 10336, 4000 )
+position = Vector2( 9184, 3424 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1690,17 +1277,7 @@ __meta__ = {
 }
 
 [node name="Light2D120" type="Light2D" parent="Lights"]
-position = Vector2( 10656, 3648 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D121" type="Light2D" parent="Lights"]
-position = Vector2( 9184, 2944 )
+position = Vector2( 10304, 4000 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1710,17 +1287,7 @@ __meta__ = {
 }
 
 [node name="Light2D122" type="Light2D" parent="Lights"]
-position = Vector2( 9888, 2816 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D123" type="Light2D" parent="Lights"]
-position = Vector2( 9280, 2656 )
+position = Vector2( 9888, 2656 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1730,27 +1297,7 @@ __meta__ = {
 }
 
 [node name="Light2D124" type="Light2D" parent="Lights"]
-position = Vector2( 8800, 2528 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D125" type="Light2D" parent="Lights"]
-position = Vector2( 8416, 2656 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D126" type="Light2D" parent="Lights"]
-position = Vector2( 8000, 2528 )
+position = Vector2( 8640, 2528 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1769,18 +1316,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D128" type="Light2D" parent="Lights"]
-position = Vector2( 6976, 2528 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D129" type="Light2D" parent="Lights"]
-position = Vector2( 6400, 2656 )
+position = Vector2( 6816, 2528 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1799,38 +1336,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D131" type="Light2D" parent="Lights"]
-position = Vector2( 5920, 2944 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D132" type="Light2D" parent="Lights"]
-position = Vector2( 5664, 3328 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D133" type="Light2D" parent="Lights"]
-position = Vector2( 5760, 3872 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D134" type="Light2D" parent="Lights"]
-position = Vector2( 5248, 3616 )
+position = Vector2( 5920, 3520 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1849,58 +1356,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D136" type="Light2D" parent="Lights"]
-position = Vector2( 4672, 3616 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D137" type="Light2D" parent="Lights"]
-position = Vector2( 4448, 3232 )
+position = Vector2( 4192, 3328 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D138" type="Light2D" parent="Lights"]
-position = Vector2( 4448, 2848 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D139" type="Light2D" parent="Lights"]
-position = Vector2( 4192, 2528 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
+color = Color( 0.6, 0.5, 1.7, 1 )
 shadow_enabled = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Light2D140" type="Light2D" parent="Lights"]
-position = Vector2( 3680, 2304 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D141" type="Light2D" parent="Lights"]
-position = Vector2( 4320, 2144 )
+position = Vector2( 3872, 2144 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1919,48 +1386,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D143" type="Light2D" parent="Lights"]
-position = Vector2( 5152, 2144 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D144" type="Light2D" parent="Lights"]
-position = Vector2( 5568, 2336 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D145" type="Light2D" parent="Lights"]
 position = Vector2( 6112, 2144 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D146" type="Light2D" parent="Lights"]
-position = Vector2( 6656, 2336 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D147" type="Light2D" parent="Lights"]
-position = Vector2( 7168, 2144 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -1979,58 +1406,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D149" type="Light2D" parent="Lights"]
-position = Vector2( 8320, 2144 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D150" type="Light2D" parent="Lights"]
-position = Vector2( 8864, 2336 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D151" type="Light2D" parent="Lights"]
-position = Vector2( 9440, 2144 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D152" type="Light2D" parent="Lights"]
-position = Vector2( 9184, 1824 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D153" type="Light2D" parent="Lights"]
 position = Vector2( 8928, 1568 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D154" type="Light2D" parent="Lights"]
-position = Vector2( 8672, 1312 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -2049,28 +1426,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D156" type="Light2D" parent="Lights"]
-position = Vector2( 8096, 640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D157" type="Light2D" parent="Lights"]
-position = Vector2( 7456, 608 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D158" type="Light2D" parent="Lights"]
-position = Vector2( 7072, 960 )
+position = Vector2( 7712, 608 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -2080,17 +1437,7 @@ __meta__ = {
 }
 
 [node name="Light2D159" type="Light2D" parent="Lights"]
-position = Vector2( 6816, 1184 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D160" type="Light2D" parent="Lights"]
-position = Vector2( 6368, 1376 )
+position = Vector2( 6976, 1024 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -2100,17 +1447,7 @@ __meta__ = {
 }
 
 [node name="Light2D161" type="Light2D" parent="Lights"]
-position = Vector2( 5856, 1376 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D162" type="Light2D" parent="Lights"]
-position = Vector2( 5312, 1376 )
+position = Vector2( 6048, 1376 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -2120,17 +1457,7 @@ __meta__ = {
 }
 
 [node name="Light2D163" type="Light2D" parent="Lights"]
-position = Vector2( 4896, 1376 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D164" type="Light2D" parent="Lights"]
-position = Vector2( 4512, 1376 )
+position = Vector2( 5056, 1376 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -2140,17 +1467,7 @@ __meta__ = {
 }
 
 [node name="Light2D165" type="Light2D" parent="Lights"]
-position = Vector2( 3968, 1376 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D166" type="Light2D" parent="Lights"]
-position = Vector2( 3552, 1280 )
+position = Vector2( 3936, 1376 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.3, 0.14, 1.1, 1 )
@@ -2170,27 +1487,7 @@ __meta__ = {
 }
 
 [node name="Light2D168" type="Light2D" parent="Lights"]
-position = Vector2( 2176, 0 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D170" type="Light2D" parent="Lights"]
-position = Vector2( 2848, 224 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D171" type="Light2D" parent="Lights"]
-position = Vector2( 3424, 672 )
+position = Vector2( 2624, 0 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -2200,7 +1497,7 @@ __meta__ = {
 }
 
 [node name="Light2D172" type="Light2D" parent="Lights"]
-position = Vector2( 3072, 160 )
+position = Vector2( 3552, 672 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -2210,17 +1507,7 @@ __meta__ = {
 }
 
 [node name="Light2D173" type="Light2D" parent="Lights"]
-position = Vector2( 2560, -160 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D174" type="Light2D" parent="Lights"]
-position = Vector2( 1760, -160 )
+position = Vector2( 2784, -160 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -2230,37 +1517,7 @@ __meta__ = {
 }
 
 [node name="Light2D175" type="Light2D" parent="Lights"]
-position = Vector2( 1216, -160 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D176" type="Light2D" parent="Lights"]
-position = Vector2( 640, -160 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D177" type="Light2D" parent="Lights"]
-position = Vector2( 352, 128 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D178" type="Light2D" parent="Lights"]
-position = Vector2( 352, 576 )
+position = Vector2( 1792, -160 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -2270,17 +1527,7 @@ __meta__ = {
 }
 
 [node name="Light2D179" type="Light2D" parent="Lights"]
-position = Vector2( 352, 992 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D180" type="Light2D" parent="Lights"]
-position = Vector2( 352, 1568 )
+position = Vector2( 352, 768 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -2290,27 +1537,7 @@ __meta__ = {
 }
 
 [node name="Light2D181" type="Light2D" parent="Lights"]
-position = Vector2( 352, 2176 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D182" type="Light2D" parent="Lights"]
-position = Vector2( 2144, 1568 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D183" type="Light2D" parent="Lights"]
-position = Vector2( 2400, 1152 )
+position = Vector2( 352, 1888 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
@@ -2320,40 +1547,10 @@ __meta__ = {
 }
 
 [node name="Light2D184" type="Light2D" parent="Lights"]
-position = Vector2( 2144, 768 )
+position = Vector2( 2144, 928 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D185" type="Light2D" parent="Lights"]
-position = Vector2( 2400, 544 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.6, 0.5, 1.7, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D169" type="Light2D" parent="Lights"]
-position = Vector2( 4800, 768 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D43" type="Light2D" parent="Lights"]
-position = Vector2( 4320, 6240 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
 shadow_enabled = true
 __meta__ = {
 "_edit_lock_": true
@@ -2361,16 +1558,6 @@ __meta__ = {
 
 [node name="Light2D186" type="Light2D" parent="Lights"]
 position = Vector2( 9472, 8320 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D187" type="Light2D" parent="Lights"]
-position = Vector2( 10368, 8352 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2389,38 +1576,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D189" type="Light2D" parent="Lights"]
-position = Vector2( 10976, 7808 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D190" type="Light2D" parent="Lights"]
-position = Vector2( 10336, 7392 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D191" type="Light2D" parent="Lights"]
-position = Vector2( 9248, 7136 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D192" type="Light2D" parent="Lights"]
-position = Vector2( 10368, 7136 )
+position = Vector2( 10336, 7360 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2430,7 +1587,7 @@ __meta__ = {
 }
 
 [node name="Light2D193" type="Light2D" parent="Lights"]
-position = Vector2( 10944, 6752 )
+position = Vector2( 11104, 6496 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2440,27 +1597,7 @@ __meta__ = {
 }
 
 [node name="Light2D194" type="Light2D" parent="Lights"]
-position = Vector2( 10080, 6752 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D195" type="Light2D" parent="Lights"]
-position = Vector2( 9152, 6752 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D196" type="Light2D" parent="Lights"]
-position = Vector2( 9632, 6496 )
+position = Vector2( 9952, 6752 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2470,7 +1607,7 @@ __meta__ = {
 }
 
 [node name="Light2D197" type="Light2D" parent="Lights"]
-position = Vector2( 8672, 6528 )
+position = Vector2( 8704, 6592 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2480,17 +1617,7 @@ __meta__ = {
 }
 
 [node name="Light2D198" type="Light2D" parent="Lights"]
-position = Vector2( 12000, 6656 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D199" type="Light2D" parent="Lights"]
-position = Vector2( 11744, 7264 )
+position = Vector2( 12000, 7008 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2500,17 +1627,7 @@ __meta__ = {
 }
 
 [node name="Light2D200" type="Light2D" parent="Lights"]
-position = Vector2( 11744, 7968 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D201" type="Light2D" parent="Lights"]
-position = Vector2( 12544, 7712 )
+position = Vector2( 12128, 7936 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2520,17 +1637,7 @@ __meta__ = {
 }
 
 [node name="Light2D202" type="Light2D" parent="Lights"]
-position = Vector2( 13120, 7552 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D203" type="Light2D" parent="Lights"]
-position = Vector2( 13472, 6848 )
+position = Vector2( 13024, 7328 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2550,17 +1657,7 @@ __meta__ = {
 }
 
 [node name="Light2D205" type="Light2D" parent="Lights"]
-position = Vector2( 13696, 7776 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D206" type="Light2D" parent="Lights"]
-position = Vector2( 13056, 7904 )
+position = Vector2( 13536, 7904 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2571,36 +1668,6 @@ __meta__ = {
 
 [node name="Light2D207" type="Light2D" parent="Lights"]
 position = Vector2( 12640, 8352 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D208" type="Light2D" parent="Lights"]
-position = Vector2( 12096, 8352 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D209" type="Light2D" parent="Lights"]
-position = Vector2( 13760, 5760 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D210" type="Light2D" parent="Lights"]
-position = Vector2( 13760, 5216 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -2620,47 +1687,7 @@ __meta__ = {
 }
 
 [node name="Light2D213" type="Light2D" parent="Lights"]
-position = Vector2( 13056, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D214" type="Light2D" parent="Lights"]
-position = Vector2( 13024, 3488 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D215" type="Light2D" parent="Lights"]
-position = Vector2( 13664, 2848 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D216" type="Light2D" parent="Lights"]
-position = Vector2( 11936, 3360 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D217" type="Light2D" parent="Lights"]
-position = Vector2( 12320, 3840 )
+position = Vector2( 13056, 3872 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.7, 0.517969, 0, 1 )
@@ -2670,17 +1697,7 @@ __meta__ = {
 }
 
 [node name="Light2D218" type="Light2D" parent="Lights"]
-position = Vector2( 12320, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D219" type="Light2D" parent="Lights"]
-position = Vector2( 11872, 4384 )
+position = Vector2( 12320, 3968 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.7, 0.517969, 0, 1 )
@@ -2690,37 +1707,7 @@ __meta__ = {
 }
 
 [node name="Light2D220" type="Light2D" parent="Lights"]
-position = Vector2( 11520, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D221" type="Light2D" parent="Lights"]
-position = Vector2( 11040, 4384 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D222" type="Light2D" parent="Lights"]
-position = Vector2( 10560, 4640 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D223" type="Light2D" parent="Lights"]
-position = Vector2( 10848, 5024 )
+position = Vector2( 11680, 4608 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.7, 0.517969, 0, 1 )
@@ -2730,17 +1717,7 @@ __meta__ = {
 }
 
 [node name="Light2D224" type="Light2D" parent="Lights"]
-position = Vector2( 10848, 5440 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.7, 0.517969, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D225" type="Light2D" parent="Lights"]
-position = Vector2( 10496, 5728 )
+position = Vector2( 10656, 5216 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.7, 0.517969, 0, 1 )
@@ -2750,7 +1727,7 @@ __meta__ = {
 }
 
 [node name="Light2D226" type="Light2D" parent="Lights"]
-position = Vector2( 10336, 4256 )
+position = Vector2( 10560, 4640 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.7, 0.517969, 0, 1 )
@@ -2760,7 +1737,7 @@ __meta__ = {
 }
 
 [node name="Light2D227" type="Light2D" parent="Lights"]
-position = Vector2( 10784, 3808 )
+position = Vector2( 10720, 3872 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.7, 0.517969, 0, 1 )
@@ -2770,17 +1747,7 @@ __meta__ = {
 }
 
 [node name="Light2D228" type="Light2D" parent="Lights"]
-position = Vector2( 10944, 3360 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D229" type="Light2D" parent="Lights"]
-position = Vector2( 11424, 3200 )
+position = Vector2( 11072, 3232 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2790,7 +1757,7 @@ __meta__ = {
 }
 
 [node name="Light2D230" type="Light2D" parent="Lights"]
-position = Vector2( 11584, 2720 )
+position = Vector2( 11744, 2848 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2800,7 +1767,7 @@ __meta__ = {
 }
 
 [node name="Light2D231" type="Light2D" parent="Lights"]
-position = Vector2( 12128, 2624 )
+position = Vector2( 12288, 2176 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2819,28 +1786,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D233" type="Light2D" parent="Lights"]
-position = Vector2( 12704, 2880 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D234" type="Light2D" parent="Lights"]
-position = Vector2( 12832, 2368 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D235" type="Light2D" parent="Lights"]
-position = Vector2( 13376, 2208 )
+position = Vector2( 12800, 2432 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2850,7 +1797,7 @@ __meta__ = {
 }
 
 [node name="Light2D236" type="Light2D" parent="Lights"]
-position = Vector2( 13728, 2592 )
+position = Vector2( 13760, 2720 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2860,17 +1807,7 @@ __meta__ = {
 }
 
 [node name="Light2D237" type="Light2D" parent="Lights"]
-position = Vector2( 13216, 1632 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D238" type="Light2D" parent="Lights"]
-position = Vector2( 13216, 1216 )
+position = Vector2( 13248, 1856 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2880,17 +1817,7 @@ __meta__ = {
 }
 
 [node name="Light2D239" type="Light2D" parent="Lights"]
-position = Vector2( 13216, 800 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D240" type="Light2D" parent="Lights"]
-position = Vector2( 13216, 320 )
+position = Vector2( 13216, 736 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2900,17 +1827,7 @@ __meta__ = {
 }
 
 [node name="Light2D241" type="Light2D" parent="Lights"]
-position = Vector2( 12800, 224 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D242" type="Light2D" parent="Lights"]
-position = Vector2( 12288, 576 )
+position = Vector2( 12640, 192 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2920,27 +1837,7 @@ __meta__ = {
 }
 
 [node name="Light2D243" type="Light2D" parent="Lights"]
-position = Vector2( 11904, 960 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D244" type="Light2D" parent="Lights"]
-position = Vector2( 11872, 1280 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D245" type="Light2D" parent="Lights"]
-position = Vector2( 11872, 1760 )
+position = Vector2( 11840, 992 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2950,27 +1847,7 @@ __meta__ = {
 }
 
 [node name="Light2D246" type="Light2D" parent="Lights"]
-position = Vector2( 11552, 2112 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D247" type="Light2D" parent="Lights"]
-position = Vector2( 11168, 2080 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.6, 0, 0, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D248" type="Light2D" parent="Lights"]
-position = Vector2( 12320, 2080 )
+position = Vector2( 11456, 1824 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.6, 0, 0, 1 )
@@ -2989,28 +1866,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D250" type="Light2D" parent="Lights"]
-position = Vector2( 10400, 2336 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D251" type="Light2D" parent="Lights"]
-position = Vector2( 10112, 2368 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.3, 0.14, 1.1, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D211" type="Light2D" parent="Lights"]
-position = Vector2( 13760, 6368 )
+position = Vector2( 13760, 6144 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -3019,18 +1876,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D44" type="Light2D" parent="Lights"]
-position = Vector2( 5056, 6240 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D45" type="Light2D" parent="Lights"]
-position = Vector2( 4768, 6048 )
+position = Vector2( 4800, 6240 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3050,47 +1897,7 @@ __meta__ = {
 }
 
 [node name="Light2D47" type="Light2D" parent="Lights"]
-position = Vector2( 3744, 6944 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D48" type="Light2D" parent="Lights"]
-position = Vector2( 3328, 6560 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D49" type="Light2D" parent="Lights"]
-position = Vector2( 2848, 6048 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D50" type="Light2D" parent="Lights"]
-position = Vector2( 2848, 5600 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D51" type="Light2D" parent="Lights"]
-position = Vector2( 3104, 4992 )
+position = Vector2( 3712, 6944 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3100,17 +1907,7 @@ __meta__ = {
 }
 
 [node name="Light2D52" type="Light2D" parent="Lights"]
-position = Vector2( 2112, 5664 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D53" type="Light2D" parent="Lights"]
-position = Vector2( 1184, 5664 )
+position = Vector2( 2464, 5664 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3120,17 +1917,7 @@ __meta__ = {
 }
 
 [node name="Light2D54" type="Light2D" parent="Lights"]
-position = Vector2( 736, 5408 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D55" type="Light2D" parent="Lights"]
-position = Vector2( 352, 4992 )
+position = Vector2( 992, 5664 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3140,17 +1927,7 @@ __meta__ = {
 }
 
 [node name="Light2D56" type="Light2D" parent="Lights"]
-position = Vector2( 352, 4352 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D57" type="Light2D" parent="Lights"]
-position = Vector2( 352, 3648 )
+position = Vector2( 352, 4320 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3160,17 +1937,7 @@ __meta__ = {
 }
 
 [node name="Light2D58" type="Light2D" parent="Lights"]
-position = Vector2( 352, 2912 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D59" type="Light2D" parent="Lights"]
-position = Vector2( 768, 2464 )
+position = Vector2( 320, 3008 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3180,17 +1947,7 @@ __meta__ = {
 }
 
 [node name="Light2D60" type="Light2D" parent="Lights"]
-position = Vector2( 1216, 2208 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D61" type="Light2D" parent="Lights"]
-position = Vector2( 1728, 2208 )
+position = Vector2( 992, 2208 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3200,17 +1957,7 @@ __meta__ = {
 }
 
 [node name="Light2D62" type="Light2D" parent="Lights"]
-position = Vector2( 2272, 2208 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D63" type="Light2D" parent="Lights"]
-position = Vector2( 2688, 2432 )
+position = Vector2( 2080, 2208 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
@@ -3229,41 +1976,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D65" type="Light2D" parent="Lights"]
-position = Vector2( 3104, 3296 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D66" type="Light2D" parent="Lights"]
-position = Vector2( 3104, 3776 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D67" type="Light2D" parent="Lights"]
-position = Vector2( 3104, 4384 )
+position = Vector2( 3104, 3840 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.36, 1.47, 1.38, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D28" type="Light2D" parent="Lights"]
-position = Vector2( 5632, 9280 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
 shadow_enabled = true
 __meta__ = {
 "_edit_lock_": true
@@ -3289,16 +2006,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D31" type="Light2D" parent="Lights"]
-position = Vector2( 8416, 7776 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D32" type="Light2D" parent="Lights"]
 position = Vector2( 8736, 7648 )
 texture = ExtResource( 7 )
@@ -3309,28 +2016,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D33" type="Light2D" parent="Lights"]
-position = Vector2( 9056, 7776 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D34" type="Light2D" parent="Lights"]
-position = Vector2( 8032, 7328 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 1.35727, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D35" type="Light2D" parent="Lights"]
-position = Vector2( 7136, 7328 )
+position = Vector2( 7776, 7328 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 1.35727, 1.47, 0.36, 1 )
@@ -3340,17 +2027,7 @@ __meta__ = {
 }
 
 [node name="Light2D68" type="Light2D" parent="Lights"]
-position = Vector2( 2976, 6432 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D69" type="Light2D" parent="Lights"]
-position = Vector2( 2336, 5920 )
+position = Vector2( 2944, 6368 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -3360,7 +2037,7 @@ __meta__ = {
 }
 
 [node name="Light2D70" type="Light2D" parent="Lights"]
-position = Vector2( 1632, 5920 )
+position = Vector2( 1824, 5888 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
@@ -3379,16 +2056,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D72" type="Light2D" parent="Lights"]
-position = Vector2( 352, 5888 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D73" type="Light2D" parent="Lights"]
 position = Vector2( 352, 6400 )
 texture = ExtResource( 7 )
@@ -3399,28 +2066,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D74" type="Light2D" parent="Lights"]
-position = Vector2( 352, 6784 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Light2D75" type="Light2D" parent="Lights"]
 position = Vector2( 352, 7232 )
-texture = ExtResource( 7 )
-texture_scale = 2.0
-color = Color( 0.706875, 1.47, 0.36, 1 )
-shadow_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D76" type="Light2D" parent="Lights"]
-position = Vector2( 352, 7712 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0.706875, 1.47, 0.36, 1 )
