@@ -18,16 +18,16 @@ var turning_stabilizer := 0.0
 var turn_history := []
 
 var targetpos := Vector2.ZERO
-var targetspeed := 650
+var targetspeed := 750
 func _ready():
 	pass # Replace with function body.
 
 func calc_target_velocity():
 	if next == -1: return
-	targetpos = get_parent().arr[next].position
+	targetpos = get_parent().arr[next].position + (get_parent().arr[nextnext].position - get_parent().arr[next].position).normalized() * 50 - linear_velocity.normalized() * 50
 	target_velocity = (targetpos - position).normalized() * targetspeed#position.distance_to(targetpos))
-	if position.distance_to(targetpos) / targetspeed < 1:
-		target_velocity *= position.distance_to(targetpos) / targetspeed 
+	#if position.distance_to(targetpos) / targetspeed < 0.5:
+	#	target_velocity *= position.distance_to(targetpos) / targetspeed 
 		
 func _physics_process(delta:float) -> void:
 	calc_target_velocity()
@@ -41,7 +41,7 @@ func actions() -> void:
 	braking = false
 	#boosting = true
 	#$Target.cast_to = target_velocity + adjust_velocity #debugging purpose
-	$Target.cast_to = targetpos - position
+	$Target.cast_to = adjust_velocity
 	var target_rotation := (target_velocity + adjust_velocity - linear_velocity).angle()
 	var drot := (target_rotation - rotation)
 	if drot < 0: drot += PI * 2
@@ -54,7 +54,7 @@ func actions() -> void:
 	
 	# braking
 	var vrot = linear_velocity.angle_to(target_velocity + adjust_velocity)
-	braking = (deg2rad(45) < vrot and vrot < deg2rad(360-45)) and linear_velocity.length() > 50 or linear_velocity.length() - (target_velocity + adjust_velocity).length() > -30
+	braking = (deg2rad(30) < vrot and vrot < deg2rad(360-30)) and linear_velocity.length() > 50 or linear_velocity.length() - (target_velocity + adjust_velocity).length() > -30
 	
 	# boosting
 	#boosting = false
@@ -63,7 +63,7 @@ func actions() -> void:
 	#		boost()
 			
 	# thrusting
-	if PI/2 < deg2rad(90-45) and drot < deg2rad(270+45): 
+	if deg2rad(45) < drot and drot < deg2rad(360-45): 
 		thrusting = false
 		return
 	
@@ -100,9 +100,9 @@ func avoid_wall() -> void:
 	if raycastF.is_colliding():
 		adjust_velocity += raycastF.get_collision_normal().normalized() * (linear_velocity.length() - raycastF.get_collision_point().distance_to(global_position))
 	var d = linear_velocity.angle_to(targetpos-position)
-	if (d < deg2rad(15) or d > deg2rad(360-15)) and linear_velocity.length() > 50:
-		if (targetpos-position).length() / linear_velocity.length() < 1 + ADJRATE / 3:
-			adjust_velocity += (get_parent().arr[nextnext].position - position).normalized() * targetspeed * 0.5 - target_velocity * 0.5
+	if (d < deg2rad(45) or d > deg2rad(360-45)) and linear_velocity.length() > 50:
+		if (targetpos-position).length() / linear_velocity.length() / cos(d) < ADJRATE:
+			adjust_velocity += (get_parent().arr[nextnext].position - position).normalized() * linear_velocity.length() * 0.5 - target_velocity * 0.5
 
 
 func debug() -> void:

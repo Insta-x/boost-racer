@@ -16,7 +16,7 @@ func dist(a: Vector2, b: Vector2):
 func cekwall(racer: EnemyRacer) -> void:
 	# cek apa bs ke nextnext?
 	var X : Vector2 = (arr[racer.nextnext].position - racer.position).normalized().rotated(PI/2)
-	for x in [-50, 0, 50]:
+	for x in [-35, 0, 35]:
 		var pos = racer.position + X * x
 		raycast.position = pos
 		raycast.cast_to = arr[racer.nextnext].position - pos
@@ -28,7 +28,7 @@ func cekwall(racer: EnemyRacer) -> void:
 		
 	# cek udh gbs ke next
 	var flag = 0
-	for x in [-50, 0, 50]:
+	for x in [-35, 0, 35]:
 		var pos = racer.position + X * x
 		raycast.position = pos
 		raycast.cast_to = arr[racer.next].position - pos
