@@ -15,6 +15,10 @@ func start() -> void:
 	GlobalSignal.emit_signal("game_start")
 	GlobalSignal.emit_signal("start_time", race_time)
 
+func _input(event):
+	if (event.is_action_pressed("ui_cancel")):
+		get_tree().change_scene("res://Src/UI/Menu.tscn")
+
 
 func _on_racer_finished(racer_id: int) -> void:
 	var finish_time := OS.get_ticks_msec() - race_time
