@@ -1,9 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Src/GameWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Game.gd" type="Script" id=2]
+[ext_resource path="res://Src/UI/PlayerUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Art/arrow.png" type="Texture" id=4]
+[ext_resource path="res://Src/Arrow.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sound/music.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/game_world.tres" type="Environment" id=7]
+[ext_resource path="res://Src/UI/FinishScreen.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node"]
 script = ExtResource( 2 )
 
 [node name="GameWorld" parent="." instance=ExtResource( 1 )]
+position = Vector2( -14, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 7 )
+
+[node name="FinishScreen" parent="." instance=ExtResource( 8 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerUI" parent="CanvasLayer" instance=ExtResource( 3 )]
+
+[node name="Arrow" type="TextureRect" parent="CanvasLayer"]
+margin_left = 1820.0
+margin_right = 1920.0
+margin_bottom = 150.0
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+finish_area = NodePath("../../GameWorld/FinishArea2D")
+player = NodePath("../../GameWorld/PlayerRacer")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[editable path="GameWorld"]
