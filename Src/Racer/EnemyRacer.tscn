@@ -27,13 +27,6 @@ enabled = true
 cast_to = Vector2( 0, 0 )
 collide_with_areas = true
 
-[node name="RayCastPredict" type="RayCast2D" parent="." index="8"]
-enabled = true
-cast_to = Vector2( 0, 0 )
-collision_mask = 128
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="Target" type="RayCast2D" parent="." index="9"]
+[node name="Target" type="RayCast2D" parent="." index="8"]
 cast_to = Vector2( 0, 0 )
 collide_with_areas = true

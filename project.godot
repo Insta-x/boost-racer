@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="boost-racer"
-run/main_scene="res://Src/SampleWorld.tscn"
+run/main_scene="res://Src/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
