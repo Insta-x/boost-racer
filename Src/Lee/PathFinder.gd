@@ -9,6 +9,16 @@ var balancer := []
 var next := []
 var racers := []
 
+var colors := [
+	Color("#bc0b22"),
+	Color("#009900"),
+	Color("#831bf9"),
+	Color("#c16a00"),
+	Color("#9e0962"),
+	Color("#9e8b00"),
+	Color("#1adde0"),
+	Color("#ff991c")
+]
 
 func dist(a: Vector2, b: Vector2):
 	return pow(a.distance_to(b), 1) 
@@ -93,7 +103,9 @@ func _ready():
 		if racer.get("guideID") == null: continue
 		racer.guideID = len(next)
 		racer.racer_id = racer.guideID + 1
+		racer.get_node("Polygon2D").color = colors[racer.guideID % len(colors)]
 		racers.append(racer)
+		
 		# djikstra yg agk random :v
 		var vis := []
 		var queue := []
