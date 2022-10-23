@@ -23,12 +23,21 @@ var max_speed := 500.0
 var max_boost_speed := 1000.0
 var can_boost := true
 
+var control_locked := true
+
+
+func _ready() -> void:
+	GlobalSignal.connect("game_start", self, "_on_game_start")
+
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+	angular_velocity = turning * turn_speed * (0.5 if thrusting or boosting else 1.0)
+	
+	if control_locked:
+		return
+	
 	if thrusting:
 		applied_force = Vector2.RIGHT.rotated(rotation) * thrust_force
-	
-	angular_velocity = turning * turn_speed * (0.5 if thrusting or boosting else 1.0)
 	
 	if boosting:
 		applied_force = Vector2.RIGHT.rotated(rotation) * boost_force
@@ -74,7 +83,10 @@ func set_boosting(value: bool) -> void:
 		boosting_sfx.play()
 
 
-
 func _on_DashCooldownTimer_timeout() -> void:
 	can_boost = true
 	boost_charge_particles.emitting = false
+
+
+func _on_game_start() -> void:
+	control_locked = false
