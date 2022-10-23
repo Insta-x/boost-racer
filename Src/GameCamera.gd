@@ -1,6 +1,7 @@
 extends Camera2D
 
 
+export (bool) var debug_full_map := false
 export (NodePath) onready var following = get_node(following) as PlayerRacer
 
 var shake_time_left := 0.0
@@ -10,9 +11,16 @@ var strength := 0
 
 func _ready() -> void:
 	GlobalSignal.connect("player_boosted", self, "_on_player_boosted")
+	
+	if debug_full_map:
+		zoom = Vector2(14, 14)
+		global_position = Vector2(6800, 5000)
 
 
 func _process(delta: float) -> void:
+	if debug_full_map:
+		return
+	
 	follow(delta)
 	
 	shake_time_left = move_toward(shake_time_left, 0.0, delta)
