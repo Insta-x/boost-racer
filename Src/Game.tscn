@@ -23,6 +23,15 @@ position = Vector2( -192, 9216 )
 current = true
 following = NodePath("../GameWorld/PlayerRacer")
 
+[node name="Position2D4" parent="GameWorld/PathFinder/Nodes" index="3"]
+position = Vector2( 13918, 2635 )
+
+[node name="Position2D63" parent="GameWorld/PathFinder/Nodes" index="44"]
+position = Vector2( 12196, 2231 )
+
+[node name="Position2D21" parent="GameWorld/PathFinder/Nodes" index="80"]
+position = Vector2( 3081, 8728 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )
 
