@@ -74,6 +74,7 @@ following = NodePath("../PlayerRacer")
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
+bus = "Music"
 
 [node name="Lines" type="Node2D" parent="."]
 

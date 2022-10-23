@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Font/Polentical Neon Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Src/UI/Menu.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/Art/button-exit-hover.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Art/button-tutor-hover.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Art/button-tutor.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/checkbox.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Art/checkbox-marked.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -45,10 +47,10 @@ margin_bottom = 1080.0
 
 [node name="MenuContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 436.0
-margin_top = 184.0
+margin_top = 174.0
 margin_right = 1483.0
-margin_bottom = 896.0
-custom_constants/separation = 60
+margin_bottom = 906.0
+custom_constants/separation = 120
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/MenuContainer"]
 margin_right = 1047.0
@@ -62,16 +64,21 @@ text = "BOOST RACER"
 align = 1
 valign = 1
 
-[node name="PlayButton" type="TextureButton" parent="CenterContainer/MenuContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MenuContainer"]
+margin_top = 268.0
+margin_right = 1047.0
+margin_bottom = 732.0
+custom_constants/separation = 40
+
+[node name="PlayButton" type="TextureButton" parent="CenterContainer/MenuContainer/VBoxContainer"]
 margin_left = 267.0
-margin_top = 208.0
 margin_right = 779.0
-margin_bottom = 336.0
+margin_bottom = 128.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
 
-[node name="PlayLabel" type="Label" parent="CenterContainer/MenuContainer/PlayButton"]
+[node name="PlayLabel" type="Label" parent="CenterContainer/MenuContainer/VBoxContainer/PlayButton"]
 margin_right = 512.0
 margin_bottom = 128.0
 custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
@@ -84,16 +91,16 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="TutorialButton" type="TextureButton" parent="CenterContainer/MenuContainer"]
+[node name="TutorialButton" type="TextureButton" parent="CenterContainer/MenuContainer/VBoxContainer"]
 margin_left = 267.0
-margin_top = 396.0
+margin_top = 168.0
 margin_right = 779.0
-margin_bottom = 524.0
+margin_bottom = 296.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 8 )
 
-[node name="TutorialLabel" type="Label" parent="CenterContainer/MenuContainer/TutorialButton"]
+[node name="TutorialLabel" type="Label" parent="CenterContainer/MenuContainer/VBoxContainer/TutorialButton"]
 margin_right = 512.0
 margin_bottom = 128.0
 custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
@@ -103,16 +110,16 @@ text = "Tutorial"
 align = 1
 valign = 1
 
-[node name="ExitButton" type="TextureButton" parent="CenterContainer/MenuContainer"]
+[node name="ExitButton" type="TextureButton" parent="CenterContainer/MenuContainer/VBoxContainer"]
 margin_left = 267.0
-margin_top = 584.0
+margin_top = 336.0
 margin_right = 779.0
-margin_bottom = 712.0
+margin_bottom = 464.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 7 )
 
-[node name="ExitLabel" type="Label" parent="CenterContainer/MenuContainer/ExitButton"]
+[node name="ExitLabel" type="Label" parent="CenterContainer/MenuContainer/VBoxContainer/ExitButton"]
 margin_right = 512.0
 margin_bottom = 128.0
 custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
@@ -125,10 +132,48 @@ align = 1
 valign = 1
 uppercase = true
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -128.0
+custom_constants/margin_right = 200
+custom_constants/margin_top = -40
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 200.0
+margin_top = -40.0
+margin_right = 1720.0
+margin_bottom = 88.0
+
+[node name="MusicButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 128.0
+toggle_mode = true
+pressed = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 134.0
+margin_top = 29.0
+margin_right = 320.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0.6, 0.898039, 0.313726, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = SubResource( 2 )
+text = "Music"
+
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+bus = "Music"
 
-[connection signal="pressed" from="CenterContainer/MenuContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuContainer/VBoxContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/MusicButton" to="." method="_on_MusicButton_toggled"]
