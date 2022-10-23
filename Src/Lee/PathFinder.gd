@@ -92,6 +92,7 @@ func _ready():
 		randomize()
 		if racer.get("guideID") == null: continue
 		racer.guideID = len(next)
+		racer.racer_id = racer.guideID + 1
 		racers.append(racer)
 		# djikstra yg agk random :v
 		var vis := []

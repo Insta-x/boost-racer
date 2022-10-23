@@ -76,7 +76,7 @@ func avoid_wall() -> void:
 	
 	raycastL.cast_to = linear_velocity.rotated(-CEKDEG) * ADJRATE * 1.2 + Vector2.RIGHT.rotated(rotation - CEKDEG) * 40
 	raycastR.cast_to = linear_velocity.rotated(CEKDEG) * ADJRATE * 1.2 + Vector2.RIGHT.rotated(rotation + CEKDEG) * 40
-	raycastF.cast_to = linear_velocity * ADJRATE  * 1.2
+	raycastF.cast_to = linear_velocity * ADJRATE  * 1.2 + Vector2.RIGHT * 40
 	if raycastL.is_colliding():
 		adjust_velocity += linear_velocity.rotated(PI/2).normalized() * (raycastL.cast_to.length() - raycastL.get_collision_point().distance_to(global_position))
 	if raycastR.is_colliding():
@@ -85,6 +85,8 @@ func avoid_wall() -> void:
 	#	adjust_velocity += raycastP.get_collider().target_velocity * 0.5 - target_velocity * 0.5
 	if raycastF.is_colliding():
 		adjust_velocity += raycastF.get_collision_normal().normalized() * (linear_velocity.length() - raycastF.get_collision_point().distance_to(global_position))
+		if linear_velocity.length() < 20:
+			adjust_velocity += raycastF.get_collision_normal().normalized() * 6000
 	var d = linear_velocity.angle_to(targetpos-position)
 	if (d < deg2rad(45) or d > deg2rad(360-45)) and linear_velocity.length() > 50:
 		if (targetpos-position).length() / linear_velocity.length() / cos(d) < ADJRATE:

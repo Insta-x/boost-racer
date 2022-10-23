@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Src/Racer/EnemyRacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Src/RaceComponents/RacerLock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Art/background.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/finish-line.png" type="Texture" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 832, 8576, 896, 8576, 3072, 8576, 3584, 8064, 3584, 7360, 2048, 7360 )
@@ -67,6 +68,29 @@ polygon = PoolVector2Array( 11520, 1856, 10944, 2368, 10176, 2368, 9920, 2624, 9
 
 [sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 12352, 2816, 13184, 1984, 13184, 256, 12672, 256, 11904, 1024, 11904, 1728, 12224, 2048, 12352, 2048 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 512, 144 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 512, 0, 512, 144 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1024, 0, 512, 144 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -267,6 +291,12 @@ polygon = PoolVector2Array( 128, -448, -320, 0, -256, 192, -192, 256, 0, 320, 44
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FinishArea2D"]
+position = Vector2( -112.177, 115.823 )
+rotation = 0.785398
+scale = Vector2( 0.845836, 1 )
+frames = SubResource( 24 )
 
 [node name="RacerLock" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64, 9216 )
