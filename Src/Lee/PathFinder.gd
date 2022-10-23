@@ -5,28 +5,37 @@ onready var arr : Array = $Nodes.get_children()
 onready var raycast := $RayCast2D
 
 var adj := []
+var balancer := []
 var next := []
 var racers := []
 
 
 func dist(a: Vector2, b: Vector2):
-	return pow(a.distance_to(b), 0.6) 
+	return pow(a.distance_to(b), 1) 
 
 func cekwall(racer: EnemyRacer) -> void:
 	# cek apa bs ke nextnext?
-	raycast.position = racer.position
-	raycast.cast_to = arr[racer.nextnext].position - racer.position
-	raycast.force_raycast_update()
-	if not raycast.is_colliding():
-		racer.next = racer.nextnext
-		racer.nextnext = next[racer.guideID][racer.nextnext]
-		return
+	var X : Vector2 = (arr[racer.nextnext].position - racer.position).normalized().rotated(PI/2)
+	for x in [-50, 0, 50]:
+		var pos = racer.position + X * x
+		raycast.position = pos
+		raycast.cast_to = arr[racer.nextnext].position - pos
+		raycast.force_raycast_update()
+		if not raycast.is_colliding():
+			racer.next = racer.nextnext
+			racer.nextnext = next[racer.guideID][racer.nextnext]
+			return
 		
 	# cek udh gbs ke next
-	raycast.position = racer.position
-	raycast.cast_to = arr[racer.next].position - racer.position
-	raycast.force_raycast_update()
-	if raycast.is_colliding():
+	var flag = 0
+	for x in [-50, 0, 50]:
+		var pos = racer.position + X * x
+		raycast.position = pos
+		raycast.cast_to = arr[racer.next].position - pos
+		raycast.force_raycast_update()
+		if raycast.is_colliding():
+			flag += 1
+	if flag == 3:
 		updatenext(racer.position, racer.guideID)
 
 func updatenext(pos : Vector2, guide_id : int) -> void:
@@ -45,20 +54,42 @@ func updatenext(pos : Vector2, guide_id : int) -> void:
 	racers[guide_id].nextnext = next[guide_id][nxt]
 
 func _ready():
-	randomize()
 	print("jumlah titik:", n)
 	# bikin grafnya
-	for x in n: adj.append([])
-	for i in n: for j in i:
-		raycast.position = arr[i].position
-		raycast.cast_to = arr[j].position - arr[i].position
-		raycast.force_raycast_update()
-		if not raycast.is_colliding():
-			adj[i].append(Vector2(j, dist(arr[i].position, arr[j].position)))
+	for i in n: adj.append([])
+	var ARR = []
+	for i in n: ARR.append(0)
+	for i in n: balancer.append(ARR.duplicate())
+	
+	for i in n: 
+		var to := []
+		for j in n:
+			if i == j: continue
+			raycast.position = arr[i].position
+			raycast.cast_to = arr[j].position - arr[i].position
+			raycast.force_raycast_update()
+			if not raycast.is_colliding():
+				var flag := 0
+				for k in len(to):
+					var u : Vector2 = arr[i].position
+					var v : Vector2 = arr[j].position
+					var w : Vector2 = arr[to[k]].position
+					var d := (v-u).angle_to(w-u)
+					if d < 0: d += PI * 2
+					if d < deg2rad(25) or d > deg2rad(360-25):
+						flag += 1
+						if dist(v, u) < dist(w, u):
+							to[k] = j
+				if flag == 0:
+					to.push_back(j)
+		print(i, to)
+		for j in to:
 			adj[j].append(Vector2(i, dist(arr[i].position, arr[j].position)))
+			#adj[j].append(Vector2(i, dist(arr[i].position, arr[j].position)))
 	
 	# assign tiap enemies
 	for racer in self.get_children():
+		randomize()
 		if racer.get("guideID") == null: continue
 		racer.guideID = len(next)
 		racers.append(racer)
@@ -80,15 +111,18 @@ func _ready():
 			for V in adj[u]:
 				var v := int(V.x)
 				if vis[v] != inf: continue
-				queue.push_back(Vector3(d + (V.y) * (1 + randf() * 10), v, u))
-		
-		var nextarr = []
-		for i in n: nextarr.push_back(-1)
-		for i in n: nextarr[i] = vis[i]
-		print(nextarr)
-		next.append(nextarr)
+				queue.push_back(Vector3(d + (V.y) * (1 + balancer[u][v] * 2) * (1 + randf() * 0.2), v, u))
+			if u == 0: print(d)
+		var t = 0
+		while t != 1:
+			balancer[t][vis[t]] += 1
+			balancer[vis[t]][t] += 1
+			t = vis[t]
+			
+		next.append(vis)
+		print(vis)
 		updatenext(racer.position, racer.guideID)
-	
+		
 	$Timer.start()
 
 

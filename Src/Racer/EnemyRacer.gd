@@ -25,8 +25,10 @@ func _ready():
 func calc_target_velocity():
 	if next == -1: return
 	targetpos = get_parent().arr[next].position
-	target_velocity = (targetpos - position).normalized() * (targetspeed)#position.distance_to(targetpos))
-
+	target_velocity = (targetpos - position).normalized() * targetspeed#position.distance_to(targetpos))
+	if position.distance_to(targetpos) / targetspeed < 1:
+		target_velocity *= position.distance_to(targetpos) / targetspeed 
+		
 func _physics_process(delta:float) -> void:
 	calc_target_velocity()
 	avoid_wall()
@@ -38,7 +40,8 @@ func actions() -> void:
 	# kalo ga searah, searahin dulu
 	braking = false
 	#boosting = true
-	$Target.cast_to = target_velocity + adjust_velocity #debugging purpose
+	#$Target.cast_to = target_velocity + adjust_velocity #debugging purpose
+	$Target.cast_to = targetpos - position
 	var target_rotation := (target_velocity + adjust_velocity - linear_velocity).angle()
 	var drot := (target_rotation - rotation)
 	if drot < 0: drot += PI * 2
