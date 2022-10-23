@@ -1,12 +1,79 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Src/Racer/EnemyRacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Racer/PlayerRacer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Lee/PathFinder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/RaceComponents/FinishArea2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Src/RaceComponents/RacerLock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Art/background.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/light_mask.png" type="Texture" id=7]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 832, 8576, 896, 8576, 3072, 8576, 3584, 8064, 3584, 7360, 2048, 7360 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 384, 8192, 1536, 7040, 3520, 7040, 2496, 5952, 960, 5952, 384, 5376 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 1024, 5632, 2432, 5632, 3072, 4992, 3072, 2880, 2432, 2240, 1024, 2240, 384, 2880, 384, 4992 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 1984, 1920, 2112, 1792, 2112, -64, 2624, -64, 3328, 640, 3520, 640, 2752, -128, 640, -128, 384, 128, 384, 2496, 960, 1920 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 3392, 4672, 4160, 3904, 4160, 2880, 4096, 2816, 3840, 2816, 3648, 2624, 3648, 2304, 3840, 2112, 9408, 2112, 8064, 768, 8064, 640, 7424, 640, 6656, 1408, 3648, 1408, 2624, 384, 2432, 384, 2432, 1792, 3392, 2752 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 4480, 2560, 4288, 2560, 4224, 2496, 4224, 2432, 4288, 2368, 9600, 2368, 9600, 2496, 5824, 2496, 5632, 2688, 5632, 3392, 5440, 3584, 4672, 3584, 4480, 3392 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( 9344, 2688, 6144, 2688, 5952, 2880, 5952, 3712, 5760, 3904, 4480, 3904, 4032, 4352, 9472, 4352, 9600, 4224, 9600, 4096, 9408, 3904, 9280, 3904, 9152, 3776, 9152, 2944, 9344, 2752 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 3712, 6912, 3712, 6208, 3904, 6016, 4992, 6016, 5248, 5760, 5248, 5568, 5056, 5376, 5056, 5056, 5248, 4864, 5248, 4672, 3840, 4672, 2688, 5824 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( 3968, 7040, 5184, 7040, 5248, 7104, 6848, 7104, 6912, 7040, 7936, 7040, 7616, 6720, 7616, 6400, 8064, 5952, 8064, 4672, 5760, 4672, 5504, 4928, 5504, 6144, 5376, 6272, 4160, 6272, 3968, 6464 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( 5504, 9344, 6272, 8576, 7680, 8576, 8384, 7872, 8384, 7680, 8064, 7360, 7104, 7360, 6976, 7232, 5120, 7232, 4992, 7360, 4032, 7360, 3904, 7488, 3904, 8064, 3392, 8576, 3968, 8576, 4736, 9344 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+polygon = PoolVector2Array( 8704, 7616, 8768, 7616, 9024, 7360, 8448, 7360 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+polygon = PoolVector2Array( 9088, 7872, 9536, 8320, 11200, 8320, 10304, 7424, 9344, 7424, 9088, 7680 )
+
+[sub_resource type="OccluderPolygon2D" id=13]
+polygon = PoolVector2Array( 10560, 7104, 10880, 6784, 9088, 6784, 8832, 7040, 8832, 7104 )
+
+[sub_resource type="OccluderPolygon2D" id=14]
+polygon = PoolVector2Array( 8384, 5760, 8512, 5632, 8640, 5632, 8768, 5760, 9408, 5760, 9600, 5568, 9600, 4672, 8256, 4672, 8256, 5760 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+polygon = PoolVector2Array( 9792, 5760, 10432, 5760, 10624, 5568, 10624, 4928, 10880, 4672, 9792, 4672, 9792, 5376, 9920, 5504, 9920, 5632 )
+
+[sub_resource type="OccluderPolygon2D" id=16]
+polygon = PoolVector2Array( 8576, 7040, 8576, 6592, 8704, 6464, 11840, 6464, 12032, 6656, 12032, 7680, 12608, 7680, 13696, 6592, 13696, 5120, 12992, 4416, 12992, 3456, 13696, 2752, 13696, 2560, 13376, 2240, 12352, 3264, 12352, 4416, 12096, 4672, 11200, 4672, 10880, 4992, 10880, 5760, 10688, 5952, 8448, 5952, 7936, 6464, 7936, 6720, 8256, 7040 )
+
+[sub_resource type="OccluderPolygon2D" id=17]
+polygon = PoolVector2Array( 13760, 6976, 13760, 7680, 13568, 7872, 13056, 7872, 12608, 8320, 11520, 8320, 10624, 7424, 11264, 6784, 11520, 6784, 11712, 6976, 11712, 8000, 12736, 8000 )
+
+[sub_resource type="OccluderPolygon2D" id=18]
+polygon = PoolVector2Array( 11840, 4352, 12096, 4096, 12096, 3712, 11904, 3520, 11904, 3328, 12096, 3136, 12096, 2560, 10304, 4352 )
+
+[sub_resource type="OccluderPolygon2D" id=19]
+polygon = PoolVector2Array( 11520, 1856, 10944, 2368, 10176, 2368, 9920, 2624, 9920, 2816, 9536, 3200, 9536, 3392, 9664, 3520, 9920, 3520, 9920, 4352, 11904, 2368, 11776, 2368, 11520, 2112 )
+
+[sub_resource type="OccluderPolygon2D" id=20]
+polygon = PoolVector2Array( 12352, 2816, 13184, 1984, 13184, 256, 12672, 256, 11904, 1024, 11904, 1728, 12224, 2048, 12352, 2048 )
 
 [node name="GameWorld" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 7232, 4224 )
+scale = Vector2( 300, 300 )
+texture = ExtResource( 6 )
 
 [node name="OuterWall" type="StaticBody2D" parent="."]
 collision_mask = 3
@@ -603,7 +670,7 @@ antialiased = true
 [node name="Line2D9" type="Line2D" parent="Lines"]
 points = PoolVector2Array( 4032, 4352, 9472, 4352, 9600, 4224, 9600, 4096, 9408, 3904, 9280, 3904, 9152, 3776, 9152, 2944, 9344, 2752, 9344, 2688, 6144, 2688, 5952, 2880, 5952, 3712, 5760, 3904, 4480, 3904, 4032, 4352 )
 width = 16.0
-default_color = Color( 1.8, 0.14, 1.38, 1 )
+default_color = Color( 1.3, 0.14, 1.1, 1 )
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -770,5 +837,277 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+position = Vector2( 0, 9600 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D3" type="Light2D" parent="Lights"]
+position = Vector2( 640, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D4" type="Light2D" parent="Lights"]
+position = Vector2( 1152, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D5" type="Light2D" parent="Lights"]
+position = Vector2( 1792, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D6" type="Light2D" parent="Lights"]
+position = Vector2( 2496, 8960 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D7" type="Light2D" parent="Lights"]
+position = Vector2( 3072, 8896 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D8" type="Light2D" parent="Lights"]
+position = Vector2( 3840, 8896 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D2" type="Light2D" parent="Lights"]
+position = Vector2( -576, 9024 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D9" type="Light2D" parent="Lights"]
+position = Vector2( 0, 8448 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D10" type="Light2D" parent="Lights"]
+position = Vector2( 0, 7680 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D11" type="Light2D" parent="Lights"]
+position = Vector2( 0, 6976 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D12" type="Light2D" parent="Lights"]
+position = Vector2( 800, 8608 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D21" type="Light2D" parent="Lights"]
+position = Vector2( 576, 8128 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D22" type="Light2D" parent="Lights"]
+position = Vector2( 1536, 7104 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D23" type="Light2D" parent="Lights"]
+position = Vector2( 2752, 7104 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D13" type="Light2D" parent="Lights"]
+position = Vector2( 1152, 8192 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D15" type="Light2D" parent="Lights"]
+position = Vector2( 1760, 7584 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D16" type="Light2D" parent="Lights"]
+position = Vector2( 2016, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D18" type="Light2D" parent="Lights"]
+position = Vector2( 2912, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D20" type="Light2D" parent="Lights"]
+position = Vector2( 3616, 7328 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D24" type="Light2D" parent="Lights"]
+position = Vector2( 1792, 8640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D25" type="Light2D" parent="Lights"]
+position = Vector2( 3072, 8640 )
+texture = ExtResource( 7 )
+texture_scale = 2.0
+color = Color( 0.706875, 1.47, 0.36, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 1 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 2 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 3 )
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 4 )
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 5 )
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 7 )
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 8 )
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 9 )
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 10 )
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 11 )
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 12 )
+
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 13 )
+
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 14 )
+
+[node name="LightOccluder2D15" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 15 )
+
+[node name="LightOccluder2D16" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 16 )
+
+[node name="LightOccluder2D17" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 17 )
+
+[node name="LightOccluder2D18" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 18 )
+
+[node name="LightOccluder2D19" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 19 )
+
+[node name="LightOccluder2D20" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 20 )
 
 [editable path="PathFinder"]

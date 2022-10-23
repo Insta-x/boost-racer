@@ -30,7 +30,7 @@ position = Vector2( 12196, 2231 )
 [node name="Position2D21" parent="GameWorld/PathFinder/Nodes" index="96"]
 position = Vector2( 3081, 8728 )
 
-[node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="13"]
+[node name="Camera2D" parent="GameWorld/PathFinder/EnemyRacer" index="14"]
 current = false
 
 [node name="Line2D9" parent="GameWorld/Lines" index="14"]
@@ -51,7 +51,6 @@ default_color = Color( 1.7, 0.14, 1.38, 1 )
 [node name="GameCamera" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 9216 )
 current = true
-debug_full_map = true
 following = NodePath("../GameWorld/PlayerRacer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
