@@ -289,7 +289,7 @@ position = Vector2( -192, 9216 )
 position = Vector2( 13504, -64 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FinishArea2D"]
-polygon = PoolVector2Array( 128, -448, -320, 0, -256, 192, -192, 256, 0, 320, 448, -128 )
+polygon = PoolVector2Array( 128, -448, -320, 0, 0, 320, 448, -128 )
 __meta__ = {
 "_edit_lock_": true
 }
