@@ -448,6 +448,15 @@ position = Vector2( -64, 9344 )
 [node name="EnemyRacer5" parent="PathFinder" instance=ExtResource( 1 )]
 position = Vector2( -192, 9088 )
 
+[node name="EnemyRacer6" parent="PathFinder" instance=ExtResource( 1 )]
+position = Vector2( -320, 9088 )
+
+[node name="EnemyRacer7" parent="PathFinder" instance=ExtResource( 1 )]
+position = Vector2( -320, 8960 )
+
+[node name="EnemyRacer8" parent="PathFinder" instance=ExtResource( 1 )]
+position = Vector2( -192, 8960 )
+
 [node name="Lines" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
