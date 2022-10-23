@@ -111,7 +111,7 @@ func _ready():
 			for V in adj[u]:
 				var v := int(V.x)
 				if vis[v] != inf: continue
-				queue.push_back(Vector3(d + (V.y) * (1 + balancer[u][v] * 2) * (1 + randf() * 0.2), v, u))
+				queue.push_back(Vector3(d + (V.y) * (1 + balancer[u][v] * 2) * (1 + randf() * 2), v, u))
 			if u == 0: print(d)
 		var t = 0
 		while t != 1:
