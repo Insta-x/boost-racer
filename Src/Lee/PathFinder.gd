@@ -46,6 +46,7 @@ func updatenext(pos : Vector2, guide_id : int) -> void:
 
 func _ready():
 	randomize()
+	print("jumlah titik:", n)
 	# bikin grafnya
 	for x in n: adj.append([])
 	for i in n: for j in i:
@@ -79,7 +80,7 @@ func _ready():
 			for V in adj[u]:
 				var v := int(V.x)
 				if vis[v] != inf: continue
-				queue.push_back(Vector3(d + V.y * (1 + randf() * 2), v, u))
+				queue.push_back(Vector3(d + (V.y) * (1 + randf() * 10), v, u))
 		
 		var nextarr = []
 		for i in n: nextarr.push_back(-1)

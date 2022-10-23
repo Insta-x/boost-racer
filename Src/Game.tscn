@@ -38,3 +38,4 @@ stream = ExtResource( 6 )
 autoplay = true
 
 [editable path="GameWorld"]
+[editable path="GameWorld/PathFinder"]

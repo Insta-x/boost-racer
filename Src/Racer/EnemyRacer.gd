@@ -18,7 +18,7 @@ var turning_stabilizer := 0.0
 var turn_history := []
 
 var targetpos := Vector2.ZERO
-var targetspeed := 1000
+var targetspeed := 650
 func _ready():
 	pass # Replace with function body.
 
@@ -38,7 +38,7 @@ func actions() -> void:
 	# kalo ga searah, searahin dulu
 	braking = false
 	#boosting = true
-	$Target.cast_to = get_parent().arr[nextnext].position - position #debugging purpose
+	$Target.cast_to = target_velocity + adjust_velocity #debugging purpose
 	var target_rotation := (target_velocity + adjust_velocity - linear_velocity).angle()
 	var drot := (target_rotation - rotation)
 	if drot < 0: drot += PI * 2
@@ -98,7 +98,7 @@ func avoid_wall() -> void:
 		adjust_velocity += raycastF.get_collision_normal().normalized() * (linear_velocity.length() - raycastF.get_collision_point().distance_to(global_position))
 	var d = linear_velocity.angle_to(targetpos-position)
 	if (d < deg2rad(15) or d > deg2rad(360-15)) and linear_velocity.length() > 50:
-		if (targetpos-position).length() / linear_velocity.length() < ADJRATE:
+		if (targetpos-position).length() / linear_velocity.length() < 1 + ADJRATE / 3:
 			adjust_velocity += (get_parent().arr[nextnext].position - position).normalized() * targetspeed * 0.5 - target_velocity * 0.5
 
 
