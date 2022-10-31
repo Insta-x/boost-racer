@@ -8,7 +8,15 @@ var adj := []
 var balancer := []
 var next := []
 var racers := []
-
+var color_1 := ["#d61a88","#9e0962",
+"#ff1c3a" ,"#bc0b22",
+"#ff991c","#c16a00",
+"#ffe81c","#9e8b00",
+"#23e423","#009900",
+"#1adde0","#008789",
+"#3d97ff","#3e5ca0",
+"#831bf9" ,"#522982",
+"#00163f", "#000c24"]
 
 func dist(a: Vector2, b: Vector2):
 	return pow(a.distance_to(b), 1) 
@@ -88,11 +96,16 @@ func _ready():
 			#adj[j].append(Vector2(i, dist(arr[i].position, arr[j].position)))
 	
 	# assign tiap enemies
+	var count = 0
 	for racer in self.get_children():
 		randomize()
 		if racer.get("guideID") == null: continue
 		racer.guideID = len(next)
 		racer.racer_id = racer.guideID + 1
+		racer.body_1.color = Color(color_1[count])
+		count+=1
+		racer.body_2.color = Color(color_1[count])
+		count+=1
 		racers.append(racer)
 		# djikstra yg agk random :v
 		var vis := []
