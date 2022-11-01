@@ -9,9 +9,6 @@ script = ExtResource( 2 )
 [node name="CollisionPolygon2D" parent="." index="2"]
 visible = false
 
-[node name="ThrustingParticles" parent="." index="3"]
-visible = false
-
 [node name="Label" type="Label" parent="." index="4"]
 visible = false
 margin_left = -11.0
@@ -44,9 +41,6 @@ collide_with_areas = true
 visible = false
 cast_to = Vector2( 0, 0 )
 collide_with_areas = true
-
-[node name="BoostingParticles" parent="." index="9"]
-visible = false
 
 [node name="BoostChargeParticles" parent="." index="11"]
 visible = false
